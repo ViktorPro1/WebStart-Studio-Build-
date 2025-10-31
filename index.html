@@ -8,12 +8,13 @@
     <title>WebStart Studio</title>
 
     <!-- 🔹 Секція 2: Політика безпеки (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
-    connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; 
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://www.clarity.ms https://cdnjs.cloudflare.com; 
-    font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; 
-    img-src 'self' data: blob: https:; 
-    style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
+    <meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.onrender.com https://cdnjs.cloudflare.com https://script.google.com https://script.googleusercontent.com;
+  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://www.clarity.ms https://cdnjs.cloudflare.com;
+  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+  img-src 'self' data: blob: https:;
+  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;">
 
     <!-- 🔹 Секція 2: Критичні стилі та оптимізація завантаження CSS (preload, async Font Awesome) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
