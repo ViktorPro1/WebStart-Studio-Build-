@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Про Джона — Djon, твій гід у WebStart Studio</title>
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/djon.html">
+
+    <meta name="description"
+        content="Дізнайтеся більше про Джона — Djon, вашого гіда у WebStart Studio. Інформація про досвід, послуги та підхід до створення сайтів та дизайну.">
+    <meta name="keywords"
+        content="Джон, Djon, WebStart Studio, про автора, веб-дизайн, створення сайтів, гід, портфоліо">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/about-djon">
+
+    <meta property="og:title" content="Про Джона — Djon, твій гід у WebStart Studio">
+    <meta property="og:description"
+        content="Дізнайтеся більше про Джона — Djon, вашого гіда у WebStart Studio. Досвід, послуги та підхід до створення сайтів і дизайну.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/about-djon">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Про Джона — Djon, твій гід у WebStart Studio">
+    <meta name="twitter:description"
+        content="Дізнайтеся більше про Джона — Djon, вашого гіда у WebStart Studio. Досвід, послуги та підхід до створення сайтів і дизайну.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/djon.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+
+    <style>
+        .john-chat-section {
+            --main-color: #007bff;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --box-bg: #fff;
+            --header-bg: #007bff;
+            --header-text: #fff;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999999;
+            font-family: 'Arial', sans-serif;
+            max-width: 320px;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        #john-chat-box {
+            width: 280px;
+            height: 350px;
+            background: var(--box-bg);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            font-size: 13px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+        }
+
+        .john-chat-hidden {
+            transform: translateY(100vh) scale(0.5);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .john-chat-section:not(.john-chat-hidden) {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        #john-chat-header {
+            background: var(--header-bg);
+            color: var(--header-text);
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            position: relative;
+            z-index: 10;
+            border-bottom: 2px solid #0056b3;
+            cursor: move;
+            user-select: none;
+        }
+
+        #john-chat-header span {
+            flex-grow: 1;
+            max-width: calc(100% - 30px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        #john-chat-close {
+            position: static;
+            margin-left: auto;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 9999999;
+            transition: background 0.2s, color 0.2s;
+            border-radius: 50%;
+        }
+
+        #john-chat-close:hover {
+            color: #ffc107;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        #john-chat-content {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .john-message-user {
+            background: #d4edda;
+            color: var(--text-color);
+            align-self: flex-end;
+            padding: 8px 12px;
+            border-radius: 15px 15px 2px 15px;
+            margin: 5px 0;
+            font-size: 13px;
+            max-width: 85%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .john-message-bot {
+            background: var(--box-bg);
+            border: 1px solid #eee;
+            align-self: flex-start;
+            padding: 8px 12px;
+            border-radius: 15px 15px 15px 2px;
+            margin: 5px 0;
+            font-size: 13px;
+            max-width: 85%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        #john-chat-input-container {
+            display: flex;
+            border-top: 1px solid #e9ecef;
+            padding: 8px;
+            background: var(--box-bg);
+        }
+
+        #john-chat-input {
+            flex: 1;
+            padding: 8px 12px;
+            font-size: 13px;
+            border: 1px solid #ced4da;
+            border-radius: 20px;
+            outline: none;
+            min-width: 0;
+            box-sizing: border-box;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        #john-chat-input:focus {
+            border-color: var(--main-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        #john-chat-send {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 8px;
+            background: var(--main-color);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            flex-shrink: 0;
+            font-size: 16px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        #john-chat-send:hover {
+            background: #0056b3;
+        }
+
+        #john-chat-send:active {
+            transform: scale(0.95);
+        }
+
+        .john-chat-link {
+            display: inline-block;
+            margin-top: 5px;
+            background: var(--main-color);
+            color: #fff;
+            padding: 5px 8px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 11px;
+            transition: background 0.2s;
+        }
+
+        .john-chat-link:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 420px) {
+            .john-chat-section {
+                right: 10px;
+                bottom: 10px;
+            }
+
+            #john-chat-box {
+                width: 200px;
+                height: 250px;
+            }
+
+            #john-chat-send {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 14px;
+            }
+        }
+
+        #john-chat-toggle-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999998;
+            background: var(--main-color);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.2s, opacity 0.3s;
+        }
+
+        #john-chat-toggle-button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #john-chat-toggle-button:active {
+            transform: scale(0.95);
+        }
+
+        .john-chat-section:not(.john-chat-hidden)+#john-chat-toggle-button {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.5);
+        }
+
+        @media (max-width: 420px) {
+            #john-chat-toggle-button {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body class="djon-page">
+
+    <section class="djon-page-about-djon">
+        <img src="../foto/djon.webp" alt="Аватар Джона" class="djon-page-avatar">
+        <h1 class="djon-page-h1">Привіт! Я — Джон </h1>
+        <p class="djon-page-p">Твій особистий гід та асистент у WebStart Studio.<br>
+            Я завжди готовий допомогти, порадити та провести тебе крізь всі питання і задачі.<br>
+            Пиши нам у Viber або Telegram чи у "Зворотній звязок" — завжди на зв’язку!</p>
+
+        <p class="djon-page-p">Моя головна мета — зробити твою роботу з нами легкою та приємною. Я допомагаю швидко
+            знаходити відповіді,
+            пояснюю складні моменти та підтримую, коли треба.<br>
+            Незалежно від того, чи ти новачок, чи досвідчений користувач — я завжди поруч.</p>
+
+        <p class="djon-page-p">Крім того, я слідкую за оновленнями і найкращими практиками WebStart Studio, тому можу
+            поділитися корисними
+            порадами та інсайтами, щоб ти завжди був на крок попереду.</p>
+
+        <p class="djon-page-fun-fact">До речі, я дуже люблю каву ☕ і завжди готовий підтримати веселу розмову! Якщо
+            хочеш —
+            розкажу кілька цікавих фактів або просто підтримую настрій.</p>
+
+        <a href="../index.html" class="djon-page-btn-home">Повернутися на головну</a>
+    </section>
+    <!-- Модельне вікно -->
+    <section class="john-chat-section" id="john-chat-box">
+        <h2 hidden>Чат Джона</h2>
+        <div id="john-chat-header">
+            <span>💬 Джон — гід та асистент</span>
+            <button id="john-chat-close">✖</button>
+        </div>
+        <div id="john-chat-content"></div>
+        <div id="john-chat-input-container">
+            <input type="text" id="john-chat-input" placeholder="Напиши своє питання...">
+            <button id="john-chat-send">➤</button>
+        </div>
+    </section>
+
+    <button id="john-chat-toggle-button">
+        💬
+    </button>
+    <script>
+        window.onload = function () {
+            const chatBox = document.getElementById('john-chat-box');
+            const closeBtn = document.getElementById('john-chat-close');
+            const toggleBtn = document.getElementById('john-chat-toggle-button');
+            const chatContent = document.getElementById('john-chat-content');
+            const sendBtn = document.getElementById('john-chat-send');
+            const userInput = document.getElementById('john-chat-input');
+
+            // НОВИЙ МАСИВ КОРИСНИХ ФАКТІВ ПРО ПОСЛУГИ (замість кавових)
+            const serviceFacts = [
+                'Цікавий факт про **Резюме/CV**: Якісне резюме підвищує твої шанси отримати співбесіду в 3 рази! Ми створюємо їх візуально привабливими, щоб рекрутер зупинився саме на тобі. 🎯',
+                'Цікавий факт про **Лендінг (Landing Page)**: Лендінг, сфокусований на одній цілі, має конверсію до 30%! Це набагато ефективніше за звичайний багатосторінковий сайт. Тобі потрібно чітко продати одну послугу? Тоді це твій вибір! 💡',
+                'Цікавий факт про **Портфоліо-сайт**: Якщо ти фрілансер або спеціаліст, наявність професійного портфоліо збільшує твій середній чек на 20-50%! Це твоя найкраща візитна картка. 🌟',
+                'Цікавий факт про **Швидкість замовлення**: Резюме ми можемо створити вже за 1-2 дні. Якщо тобі "горить", ми допоможемо оперативно стартувати! 🚀',
+            ];
+
+            // ПЕРЕКОНУЄМОСЯ, ЩО ЧАТ ПРИХОВАНИЙ ПРИ ЗАВАНТАЖЕННІ
+            if (chatBox) {
+                chatBox.classList.add('john-chat-hidden');
+            }
+
+
+            // --- ЛОГІКА ЗАКРИТТЯ (ЗГОРТАННЯ) ---
+            if (closeBtn && chatBox) {
+                closeBtn.addEventListener('click', () => {
+                    chatBox.classList.add('john-chat-hidden');
+                });
+            }
+
+            // --- ЛОГІКА ВІДКРИТТЯ (РОЗГОРТАННЯ) ---
+            if (toggleBtn && chatBox) {
+                toggleBtn.addEventListener('click', () => {
+                    chatBox.classList.remove('john-chat-hidden');
+                    // При відкритті фокусуємось на полі вводу
+                    if (userInput) userInput.focus();
+                });
+            }
+
+            // --- ЛОГІКА ОБРОБКИ ПОВІДОМЛЕНЬ ---
+            function addMessage(text, sender, isHTML = false) {
+                if (!chatContent) return;
+                const msg = document.createElement('div');
+                msg.className = sender === 'user' ? 'john-message-user' : 'john-message-bot';
+                if (isHTML) msg.innerHTML = text;
+                else msg.textContent = text;
+                chatContent.appendChild(msg);
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }
+
+            function addLink(text, href) {
+                const html = `<span>${text}</span> <a href="${href}" target="_blank" class="john-chat-link">Перейти</a>`;
+                addMessage(html, 'bot', true);
+            }
+
+            // Спеціальна функція для загального посилання на головну
+            function addFallbackLink(text) {
+                const html = `<span>${text}</span> <a href="index.html" class="john-chat-link">На головну сторінку</a>`;
+                addMessage(html, 'bot', true);
+            }
+
+            /**
+             * Обробляє введення користувача та генерує відповідь бота.
+             */
+            function handleUserInput() {
+                if (!userInput) return;
+                const raw = userInput.value.trim();
+                if (!raw) return;
+
+                addMessage(raw, 'user');
+                userInput.value = '';
+                const text = raw.toLowerCase();
+
+                setTimeout(() => {
+
+                    // ***** ОНОВЛЕНА ЛОГІКА: КАВА (ЧАЙОВІ) ТА ФАКТИ (ПОСЛУГИ) *****
+                    if (text.includes('кава') || text.includes('каву') || text.includes('чайові')) {
+                        addMessage(
+                            'О, це дуже приємно! 😊 Дякую за Ваш добрий жест! Якщо хочете віддячити, можете зв\'язатися з нами через контакти для обговорення деталей. Ваш позитив – наша найкраща мотивація!',
+                            'bot'
+                        );
+                    } else if (text.includes('факт') || text.includes('розкажи') || text.includes('цікаве') || text.includes('що виготовляєте')) {
+                        // Випадковий вибір корисного факту про послуги
+                        const factIndex = Math.floor(Math.random() * serviceFacts.length);
+                        addMessage(
+                            `Звісно! Я розповім тобі щось корисне, що допоможе визначитися: ${serviceFacts[factIndex]}`,
+                            'bot',
+                            true // дозволяємо HTML для жирного шрифту в фактах
+                        );
+                    }
+                    // ***** КІНЕЦЬ ОНОВЛЕНОЇ ЛОГІКИ *****
+
+                    // 1. СПЕЦІАЛЬНІ ВІДПОВІДІ (Дякую / Негатив)
+                    else if (text.includes('дякую') || text.includes('спасибі') || text.includes('спас')) {
+                        addMessage('Взаємність! Бажаю Вам гарного та мирного дня! Звертайтеся ще.', 'bot');
+                    } else if (text.includes('ні') || text.includes('негатив') || text.includes('погано') || text.includes('не хочу')) {
+                        addFallbackLink('Вибачте, що не зміг Вам допомогти. Натисніть, щоб перейти на головну сторінку і знайти потрібну інформацію.');
+                    } else if (text.includes('привіт') || text.includes('добридень') || text.includes('здравствуй')) {
+                        addMessage('Привіт! Я Джон, твій помічник у WebStart Studio. Чим я можу бути корисним?', 'bot');
+                    }
+
+                    // 2. КОНТАКТИ (ОНОВЛЕНО: додано "написати")
+                    else if (text.includes('контакт') || text.includes('зв\'язок') || text.includes('телефону') || text.includes('пошта') || text.includes('написати')) {
+                        addMessage(
+                            '📞 **+380 66 139 19 32**<br>✉️️ **webstartstudio978@gmail.com**',
+                            'bot',
+                            true
+                        );
+                    }
+
+                    // 3. ОБ'ЄДНАНА ЛОГІКА НАВІГАЦІЇ
+                    // СТВОРЮЄМО (#services)
+                    else if (
+                        text.includes('резюме') ||
+                        text.includes('лендінг') ||
+                        text.includes('land') ||
+                        text.includes('створюємо') ||
+                        text.includes('створюєте') ||
+                        text.includes('що ви')
+                    ) {
+                        addLink('Інформація про створення сайтів, резюме та лендінгів (Створюємо):', 'index.html#services');
+                    }
+
+                    // ПОРТФОЛІО (#portfolio)
+                    else if (text.includes('портфоліо') || text.includes('приклади') || text.includes('роботи')) {
+                        addLink('Приклади наших робіт (Портфоліо):', 'index.html#portfolio');
+                    }
+
+                    // ПАКЕТИ (#pricing)
+                    else if (text.includes('вартість') || text.includes('ціна') || text.includes('скільки') || text.includes('пакети')) {
+                        addLink('Наші тарифні пакети та вартість послуг:', 'index.html#pricing');
+                    }
+
+                    // АКЦІЇ (#promo)
+                    else if (text.includes('акції') || text.includes('знижки') || text.includes('можливо є')) {
+                        addLink('Перелік поточних акцій та спеціальних пропозицій (Акції):', 'index.html#promo');
+                    }
+
+                    // ДОДАТКОВЕ (#extras)
+                    else if (
+                        text.includes('реклама') ||
+                        text.includes('таргетована') ||
+                        text.includes('запуск') ||
+                        text.includes('запуст') ||
+                        text.includes('банер') ||
+                        text.includes('шаблон') ||
+                        text.includes('виготовлення') ||
+                        text.includes('pit-11') ||
+                        text.includes('податків')
+                    ) {
+                        addLink('Інформація про рекламу, шаблони та повернення податків (Додаткове):', 'index.html#extras');
+                    }
+
+                    // 4. ІНШЕ (За замовчуванням)
+                    else {
+                        addFallbackLink('Вибачте, я не зміг Вас зрозуміти. Спробуйте інше ключове слово або перейдіть на головну сторінку.');
+                    }
+                }, 300);
+            }
+
+            // ПРИВ'ЯЗКА ПОДІЙ
+            if (sendBtn) sendBtn.addEventListener('click', handleUserInput);
+            if (userInput) userInput.addEventListener('keypress', e => {
+                if (e.key === 'Enter') handleUserInput();
+            });
+        };
+    </script>
+</body>
+
+</html>

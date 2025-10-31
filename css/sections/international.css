@@ -1,0 +1,42 @@
+/* ========================================
+   ІНТЕРНАЦІОНАЛЬНИЙ РОЗДІЛ
+   ======================================== */
+
+#international {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.lang-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+.lang-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lang-slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+/* lang-card описана в components/cards.css */
+
+/* Адаптив */
+@media (max-width: 420px) {
+    .lang-card {
+        min-width: 80%;
+        max-width: 100%;
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .lang-card img {
+        width: 50px;
+    }
+}

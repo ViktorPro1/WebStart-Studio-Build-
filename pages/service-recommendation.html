@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Інтерактивна платформа</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Дізнайтеся про інтерактивну платформу WebStart Studio: як створювати ефективні онлайн-сервіси, навчальні та бізнес-платформи з інтерактивними функціями.">
+    <meta name="keywords"
+        content="інтерактивна платформа, онлайн-сервіс, веб-додаток, навчальна платформа, бізнес-платформа, веб-розробка">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/interactive-platform">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/service-recommendation.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Інтерактивна платформа">
+    <meta property="og:description"
+        content="Дізнайтеся про інтерактивну платформу WebStart Studio: як створювати ефективні онлайн-сервіси та бізнес-платформи з інтерактивними функціями.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/interactive-platform">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Інтерактивна платформа">
+    <meta name="twitter:description"
+        content="Дізнайтеся про інтерактивну платформу WebStart Studio: як створювати ефективні онлайн-сервіси та бізнес-платформи з інтерактивними функціями.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/service-recommendation.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Професійна вікторина</h1>
+            <p>Знайдіть ідеальне рішення для ваших ідей</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">Крок 0 з 5</div>
+
+        <div class="content">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen active" id="welcomeScreen">
+                <h2 style="color: #333; margin-bottom: 20px;">Вітаємо у WebStart Studio! 👋</h2>
+                <p style="color: #666; line-height: 1.8; margin-bottom: 20px;">
+                    Ми допоможемо вам знайти ідеальне веб-рішення для вашого бізнесу або особистого проєкту.
+                    Відповідайте на питання чесно, щоб отримати найточніші рекомендації.
+                </p>
+
+                <div class="guide-section">
+                    <img src="../foto/djon.webp" alt="Djon" class="guide-photo" onerror="this.style.display='none'">
+                    <div class="guide-info">
+                        <h3>Ваш особистий консультант</h3>
+                        <p>Djon допоможе вам знайти найкраще рішення</p>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="startQuiz()">Почати вікторину</button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div class="quiz-screen" id="quizScreen">
+                <div id="questionContainer"></div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()"
+                        style="display: none;">Назад</button>
+                    <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>Далі</button>
+                </div>
+            </div>
+
+            <!-- Result Screen -->
+            <div class="result-screen" id="resultScreen">
+                <div class="result-card">
+                    <h2>🎉 Ваші результати готові!</h2>
+                    <p class="result-type" id="resultType"></p>
+                </div>
+
+                <div class="recommendation-box">
+                    <h3>📋 Рекомендація</h3>
+                    <p id="recommendationText"></p>
+                    <ul class="features-list" id="featuresList"></ul>
+                    <div class="timeline-info" id="timelineInfo"></div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="restartQuiz()">Пройти знову</button>
+                    <button class="btn btn-primary" onclick="window.location.href='../index.html'">На головну</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                question: "Яка основна мета вашого проєкту?",
+                options: [
+                    { value: "business", label: "Просування бізнесу та залучення клієнтів", weight: { landing: 3, portfolio: 1, resume: 0 } },
+                    { value: "portfolio", label: "Демонстрація робіт та досягнень", weight: { landing: 0, portfolio: 3, resume: 1 } },
+                    { value: "career", label: "Пошук роботи та кар'єрне зростання", weight: { landing: 0, portfolio: 1, resume: 3 } },
+                    { value: "personal", label: "Особистий бренд та самопрезентація", weight: { landing: 1, portfolio: 2, resume: 2 } }
+                ]
+            },
+            {
+                id: 2,
+                question: "Який обсяг інформації ви плануєте розміщувати?",
+                options: [
+                    { value: "minimal", label: "Мінімум: контакти та основна інформація", weight: { landing: 3, portfolio: 0, resume: 2 } },
+                    { value: "medium", label: "Середній: кілька розділів з описами", weight: { landing: 2, portfolio: 2, resume: 3 } },
+                    { value: "large", label: "Великий: багато проєктів та деталей", weight: { landing: 0, portfolio: 3, resume: 1 } },
+                    { value: "variable", label: "Змінний: буду регулярно оновлювати", weight: { landing: 1, portfolio: 3, resume: 0 } }
+                ]
+            },
+            {
+                id: 3,
+                question: "Хто ваша цільова аудиторія?",
+                options: [
+                    { value: "clients", label: "Потенційні клієнти та партнери", weight: { landing: 3, portfolio: 1, resume: 0 } },
+                    { value: "employers", label: "Роботодавці та рекрутери", weight: { landing: 0, portfolio: 1, resume: 3 } },
+                    { value: "creative", label: "Креативні агенції та студії", weight: { landing: 1, portfolio: 3, resume: 1 } },
+                    { value: "mixed", label: "Змішана аудиторія", weight: { landing: 2, portfolio: 2, resume: 2 } }
+                ]
+            },
+            {
+                id: 4,
+                question: "Як швидко вам потрібен результат?",
+                options: [
+                    { value: "urgent", label: "Дуже терміново (до 1 тижня)", weight: { landing: 2, portfolio: 1, resume: 3 }, timeline: "urgent" },
+                    { value: "fast", label: "Швидко (1-2 тижні)", weight: { landing: 3, portfolio: 2, resume: 2 }, timeline: "fast" },
+                    { value: "normal", label: "Стандартно (2-4 тижні)", weight: { landing: 2, portfolio: 3, resume: 1 }, timeline: "normal" },
+                    { value: "flexible", label: "Гнучко (якість важливіша за швидкість)", weight: { landing: 1, portfolio: 3, resume: 1 }, timeline: "flexible" }
+                ]
+            },
+            {
+                id: 5,
+                question: "Який ваш бюджет на проєкт?",
+                options: [
+                    { value: "minimal", label: "Мінімальний (до 5000 грн)", weight: { landing: 2, portfolio: 1, resume: 3 }, budget: "minimal" },
+                    { value: "moderate", label: "Середній (5000-15000 грн)", weight: { landing: 3, portfolio: 2, resume: 1 }, budget: "moderate" },
+                    { value: "high", label: "Високий (15000-30000 грн)", weight: { landing: 2, portfolio: 3, resume: 0 }, budget: "high" },
+                    { value: "premium", label: "Преміум (30000+ грн)", weight: { landing: 1, portfolio: 3, resume: 0 }, budget: "premium" }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = {};
+        let scores = { landing: 0, portfolio: 0, resume: 0 };
+
+        function startQuiz() {
+            document.getElementById('welcomeScreen').classList.remove('active');
+            document.getElementById('quizScreen').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = questions[currentQuestion];
+            const container = document.getElementById('questionContainer');
+
+            let html = `
+                <div class="question-container">
+                    <h3 class="question-title">
+                        <span class="question-number">${currentQuestion + 1}</span>
+                        ${question.question}
+                    </h3>
+                    <div class="options">
+            `;
+
+            question.options.forEach((option, index) => {
+                const isChecked = answers[question.id] === option.value ? 'checked' : '';
+                const isSelected = answers[question.id] === option.value ? 'selected' : '';
+                html += `
+                    <div class="option ${isSelected}" onclick="selectOption(${question.id}, '${option.value}', ${index})">
+                        <input type="radio" 
+                               name="q${question.id}" 
+                               value="${option.value}" 
+                               id="q${question.id}_${index}"
+                               ${isChecked}
+                               onchange="handleOptionChange()">
+                        <label for="q${question.id}_${index}">${option.label}</label>
+                    </div>
+                `;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+
+            updateProgress();
+            updateButtons();
+        }
+
+        function selectOption(questionId, value, index) {
+            answers[questionId] = value;
+
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            options[index].classList.add('selected');
+
+            document.getElementById(`q${questionId}_${index}`).checked = true;
+            handleOptionChange();
+        }
+
+        function handleOptionChange() {
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                showQuestion();
+            } else {
+                calculateResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Крок ${currentQuestion + 1} з ${questions.length}`;
+        }
+
+        function updateButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            prevBtn.style.display = currentQuestion > 0 ? 'block' : 'none';
+            nextBtn.textContent = currentQuestion === questions.length - 1 ? 'Завершити' : 'Далі';
+            nextBtn.disabled = !answers[questions[currentQuestion].id];
+        }
+
+        function calculateResults() {
+            scores = { landing: 0, portfolio: 0, resume: 0 };
+            let timeline = '';
+            let budget = '';
+
+            questions.forEach(question => {
+                const answer = answers[question.id];
+                const option = question.options.find(opt => opt.value === answer);
+
+                if (option && option.weight) {
+                    scores.landing += option.weight.landing || 0;
+                    scores.portfolio += option.weight.portfolio || 0;
+                    scores.resume += option.weight.resume || 0;
+                }
+
+                if (option && option.timeline) timeline = option.timeline;
+                if (option && option.budget) budget = option.budget;
+            });
+
+            showResults(timeline, budget);
+        }
+
+        function showResults(timeline, budget) {
+            const maxScore = Math.max(scores.landing, scores.portfolio, scores.resume);
+            let resultType = '';
+            let recommendation = '';
+            let features = [];
+            let timelineText = '';
+
+            if (scores.landing === maxScore) {
+                resultType = 'Лендінг (Landing Page)';
+                recommendation = 'Ідеальний вибір для швидкого залучення клієнтів! Лендінг - це односторінковий сайт, який концентрує увагу відвідувачів на одній цільовій дії.';
+                features = [
+                    'Яскравий та привабливий дизайн',
+                    'Оптимізація для конверсій',
+                    'Швидке завантаження',
+                    'Адаптивність під всі пристрої',
+                    'Інтеграція з аналітикою',
+                    'Форми зворотного зв\'язку'
+                ];
+            } else if (scores.portfolio === maxScore) {
+                resultType = 'Портфоліо';
+                recommendation = 'Професійна демонстрація ваших робіт! Портфоліо допоможе вам показати свої найкращі проєкти та виділитися серед конкурентів.';
+                features = [
+                    'Галерея проєктів з детальними описами',
+                    'Категорії для різних типів робіт',
+                    'Можливість завантажувати зображення',
+                    'Розділ "Про мене" та досвід',
+                    'Контактна форма',
+                    'Інтеграція з соціальними мережами'
+                ];
+            } else {
+                resultType = 'Онлайн-резюме';
+                recommendation = 'Сучасне цифрове резюме для успішної кар\'єри! Виділіться серед інших кандидатів з професійним онлайн-резюме.';
+                features = [
+                    'Структурована інформація про досвід',
+                    'Секція навичок та компетенцій',
+                    'Освіта та сертифікати',
+                    'Можливість завантажити PDF',
+                    'Контактна інформація',
+                    'Посилання на соціальні мережі'
+                ];
+            }
+
+            // Timeline text
+            const timelineMap = {
+                urgent: '⏰ Термін виконання: 5-7 днів. Швидке виконання може потребувати додаткової оплати.',
+                fast: '⏰ Термін виконання: 7-14 днів. Оптимальний баланс швидкості та якості.',
+                normal: '⏰ Термін виконання: 14-28 днів. Достатньо часу для детального опрацювання.',
+                flexible: '⏰ Термін виконання: 28+ днів. Максимальна якість та увага до деталей.'
+            };
+            timelineText = timelineMap[timeline] || timelineMap.normal;
+
+            document.getElementById('resultType').textContent = resultType;
+            document.getElementById('recommendationText').textContent = recommendation;
+
+            const featuresList = document.getElementById('featuresList');
+            featuresList.innerHTML = features.map(f => `<li>${f}</li>`).join('');
+
+            document.getElementById('timelineInfo').innerHTML = `<strong>${timelineText}</strong>`;
+
+            document.getElementById('quizScreen').classList.remove('active');
+            document.getElementById('resultScreen').classList.add('active');
+            document.getElementById('progressBar').style.width = '100%';
+            document.getElementById('progressText').textContent = 'Завершено!';
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            answers = {};
+            scores = { landing: 0, portfolio: 0, resume: 0 };
+
+            document.getElementById('resultScreen').classList.remove('active');
+            document.getElementById('welcomeScreen').classList.add('active');
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('progressText').textContent = 'Крок 0 з 5';
+        }
+    </script>
+</body>
+
+</html>

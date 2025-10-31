@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Генератор структури резюме</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Онлайн-генератор структури резюме: швидко створюйте логічну та ефективну структуру CV для пошуку роботи та самопрезентації.">
+    <meta name="keywords"
+        content="генератор резюме, структура резюме, CV, створення резюме, пошук роботи, самопрезентація, онлайн інструмент">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/resume-generator">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/resume-structure-generator.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Генератор структури резюме">
+    <meta property="og:description"
+        content="Онлайн-генератор структури резюме: швидко створюйте логічну та ефективну структуру CV для пошуку роботи та самопрезентації.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/resume-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генератор структури резюме">
+    <meta name="twitter:description"
+        content="Онлайн-генератор структури резюме: швидко створюйте логічну та ефективну структуру CV для пошуку роботи та самопрезентації.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/resume-structure-generator.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body class="theme-resume-gen-body">
+
+    <h1 class="theme-resume-gen-h1">Генератор структури резюме</h1>
+    <p class="theme-resume-gen-p">Оберіть тип роботи або сферу діяльності, і отримайте готову структуру резюме з
+        порадами для кожного блоку.</p>
+
+    <div class="theme-resume-gen-form-container">
+        <select id="jobType" class="theme-resume-gen-control">
+            <option value="">Оберіть сферу роботи</option>
+            <option value="web">Веб-дизайн / Розробка</option>
+            <option value="marketing">Маркетинг / PR</option>
+            <option value="management">Менеджмент / Продажі</option>
+            <option value="other">Інше</option>
+        </select>
+        <button id="generateBtn" class="theme-resume-gen-control theme-resume-gen-button">Згенерувати структуру</button>
+    </div>
+    <a href="../index.html" class="theme-resume-gen-btn-home">На головну</a>
+    <div id="output" class="theme-resume-gen-output"></div>
+
+    <script>
+        const generateBtn = document.getElementById('generateBtn');
+        const output = document.getElementById('output');
+
+        generateBtn.addEventListener('click', () => {
+            const job = document.getElementById('jobType').value;
+            if (!job) {
+                // Клас тут не використовується, тому залишаємо інлайн-стиль для простоти
+                output.innerHTML = "<p style='color:red;'>Будь ласка, оберіть сферу роботи.</p>";
+                return;
+            }
+
+            let sections = [];
+
+            switch (job) {
+                case "web":
+                    sections = [
+                        { title: "Контактна інформація", desc: "Ваше ім’я, телефон, email, посилання на портфоліо." },
+                        { title: "Мета / Summary", desc: "Коротко про вашу спеціалізацію та ключові досягнення." },
+                        { title: "Досвід роботи", desc: "Описуйте проєкти, роль, технології та результати." },
+                        { title: "Освіта", desc: "Назва навчального закладу, спеціальність, рік закінчення." },
+                        { title: "Навички", desc: "Перелік ключових інструментів та технологій." }
+                    ];
+                    break;
+                case "marketing":
+                    sections = [
+                        { title: "Контактна інформація", desc: "Ім’я, телефон, email, соціальні мережі." },
+                        { title: "Мета / Summary", desc: "Коротко про вашу маркетингову експертизу та досягнення." },
+                        { title: "Досвід роботи", desc: "Опишіть кампанії, результати, KPIs." },
+                        { title: "Освіта", desc: "Заклади, курси, тренінги." },
+                        { title: "Навички", desc: "Аналітика, SMM, SEO, реклама, PR." }
+                    ];
+                    break;
+                case "management":
+                    sections = [
+                        { title: "Контактна інформація", desc: "Ім’я, телефон, email, LinkedIn." },
+                        { title: "Мета / Summary", desc: "Коротко про ваш управлінський досвід." },
+                        { title: "Досвід роботи", desc: "Опишіть команди, проєкти, досягнуті KPI." },
+                        { title: "Освіта", desc: "Заклади та курси." },
+                        { title: "Навички", desc: "Управління, переговори, планування, аналітика." }
+                    ];
+                    break;
+                case "other":
+                    sections = [
+                        { title: "Контактна інформація", desc: "Ім’я, телефон, email, соцмережі." },
+                        { title: "Мета / Summary", desc: "Стислий опис професійних цілей та сильних сторін." },
+                        { title: "Досвід роботи", desc: "Вкажіть попередні позиції та ключові результати." },
+                        { title: "Освіта", desc: "Заклади та курси." },
+                        { title: "Навички", desc: "Перелік основних професійних компетенцій." }
+                    ];
+                    break;
+            }
+
+            // Генеруємо HTML
+            let html = "";
+            sections.forEach(sec => {
+                // Використовуємо новий клас для стилізації
+                html += `<div class="theme-resume-gen-section-block">
+                            <strong>${sec.title}</strong>
+                            <p>${sec.desc}</p>
+                         </div>`;
+            });
+
+            output.innerHTML = html;
+        });
+    </script>
+
+</body>
+
+</html>

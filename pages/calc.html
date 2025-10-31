@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Розрахунок реклами</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Дізнайтеся, як правильно розраховувати рекламу для бізнесу. Поради, приклади та практичні методи оптимізації рекламних кампаній.">
+    <meta name="keywords"
+        content="реклама, розрахунок реклами, маркетинг, рекламні кампанії, таргетована реклама, ефективність реклами">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/calc.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Розрахунок реклами">
+    <meta property="og:description"
+        content="Дізнайтеся, як правильно розраховувати рекламу для бізнесу. Поради та приклади для ефективних рекламних кампаній.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Розрахунок реклами">
+    <meta name="twitter:description"
+        content="Дізнайтеся, як правильно розраховувати рекламу для бізнесу. Поради та приклади для ефективних рекламних кампаній.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <!-- Стилі та іконка -->
+    <link rel="stylesheet" href="../other_styles/calc.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PNL84GTKES"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PNL84GTKES');
+    </script>
+</head>
+
+<body class="theme-calc-body">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGMWZKLK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <h1 class="theme-calc-h1">Розрахунок вартості реклами <br>(нашими сторінками)</h1>
+
+    <div class="theme-calc-form-group">
+        <label for="days" class="theme-calc-label">Кількість днів реклами:</label>
+        <input type="number" id="days" value="5" min="1" class="theme-calc-input">
+    </div>
+
+    <div class="theme-calc-form-group">
+        <label for="ad-budget" class="theme-calc-label">Бюджет на рекламу (грн за день):</label>
+        <input type="number" id="ad-budget" value="100" min="0" class="theme-calc-input">
+        <div class="theme-calc-note">* Рекомендуємо від 100 грн на день</div>
+    </div>
+
+    <div class="theme-calc-form-group">
+        <label for="my-fee" class="theme-calc-label">Вартість за наші послуги (грн):</label>
+        <input type="text" id="my-fee" value="" disabled class="theme-calc-input">
+    </div>
+
+    <div class="theme-calc-form-group">
+        <label for="total" class="theme-calc-label">Загальна сума до сплати (грн):</label>
+        <input type="text" id="total" value="" disabled class="theme-calc-input">
+    </div>
+
+    <div style="text-align: center;">
+        <button type="button" onclick="calculate()" class="theme-calc-button">Розрахувати</button>
+        <button onclick="goBack()" class="theme-calc-button">Назад на головну</button>
+    </div>
+
+    <script src="../scripts/init.js" defer></script>
+</body>
+
+</html>

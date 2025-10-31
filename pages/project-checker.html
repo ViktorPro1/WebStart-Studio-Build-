@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Універсальна перевірка проектів</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Покрокова інструкція та поради щодо універсальної перевірки проектів: як оцінювати якість, ефективність та відповідність стандартам веб-розробки.">
+    <meta name="keywords"
+        content="перевірка проектів, аудит сайтів, веб-розробка, ефективність, стандарти, тестування проектів">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/project-audit">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/project-checker.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Універсальна перевірка проектів">
+    <meta property="og:description"
+        content="Покрокова інструкція та поради щодо універсальної перевірки проектів: як оцінювати якість, ефективність та відповідність стандартам.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/project-audit">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Універсальна перевірка проектів">
+    <meta name="twitter:description"
+        content="Покрокова інструкція та поради щодо універсальної перевірки проектів: як оцінювати якість, ефективність та відповідність стандартам.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/project-checker.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body class="theme-checker-body">
+
+    <h1 class="theme-checker-h1">Універсальна перевірка проектів</h1>
+    <p class="theme-checker-p">Вибери тип проєкту та введи URL або завантаж HTML-файл для перевірки.</p>
+
+    <div class="theme-checker-form-container">
+        <select id="projectType" class="theme-checker-control">
+            <option value="landing">Лендінг</option>
+            <option value="resume">Резюме</option>
+            <option value="portfolio">Портфоліо</option>
+        </select>
+
+        <input type="text" id="urlInput" placeholder="Введи URL або залиш поле порожнім" class="theme-checker-control">
+        <button id="checkBtn" class="theme-checker-control theme-checker-button">Оцінити</button>
+    </div>
+
+    <ul id="results" class="theme-checker-results"></ul>
+    <a href="../index.html" class="theme-checker-btn-home">На головну</a>
+    <script>
+        document.getElementById("checkBtn").addEventListener("click", function () {
+            const type = document.getElementById("projectType").value;
+            const url = document.getElementById("urlInput").value.trim();
+            const results = document.getElementById("results");
+            results.innerHTML = "";
+
+            if (!url) {
+                // Оновлено класи для генерації помилки
+                results.innerHTML = "<li class='theme-checker-results-item error'><div class='theme-checker-check-header'><strong>Помилка</strong></div><div class='theme-checker-check-desc'>Введіть URL або завантаж файл (демо)</div><div class='theme-checker-check-progress'><div class='theme-checker-progress-bar error' style='width:100%'></div></div></li>";
+                return;
+            }
+
+            let checks = [];
+
+            if (type === "landing") {
+                checks = [
+                    { name: "CTA присутній", status: "ok", desc: "Кнопка заклику до дії видна і привертає увагу. Має бути чітко помітною, у вас приблизно 60% від ідеалу." },
+                    { name: "Текст читається", status: "ok", desc: "Шрифт достатньо великий, контрастний. Має бути максимально 1000 символів на блок, у вас близько 600." },
+                    { name: "Контраст кольорів", status: "warning", desc: "Деякі кольори фон/текст погано контрастують. Має бути 100% видимості тексту, у вас близько 70%." },
+                    { name: "Заголовки H1/H2", status: "ok", desc: "Заголовки присутні, структура логічна. Має бути 3-5 блоків, у вас 3." },
+                    { name: "Мобільна адаптивність", status: "warning", desc: "Деякі блоки з’їжджають на мобільних. Має бути 100% адаптивності, у вас близько 60%." }
+                ];
+            } else if (type === "resume") {
+                checks = [
+                    { name: "Наявність секцій", status: "ok", desc: "Досвід, Освіта та Навички присутні. Має бути всі ключові секції, у вас 3 з 3." },
+                    { name: "Читаємість тексту", status: "ok", desc: "Шрифт достатньо великий та контрастний. Має бути 100%, у вас 90%." },
+                    { name: "Ключові слова", status: "warning", desc: "Деякі професійні слова відсутні. Має бути 100%, у вас близько 60%." },
+                    { name: "Структура логічна", status: "ok", desc: "Розділи розташовані правильно. Має бути ідеальна логіка, у вас 80%." }
+                ];
+            } else if (type === "portfolio") {
+                checks = [
+                    { name: "Наявність кейсів / робіт", status: "ok", desc: "Всі основні роботи показані. Має бути 5+, у вас 4." },
+                    { name: "Фото / зображення завантажені", status: "ok", desc: "Зображення присутні та якісні. Має бути 100%, у вас 95%." },
+                    { name: "Опис проектів зрозумілий", status: "ok", desc: "Опис простий і зрозумілий. Має бути коротко та ясно, у вас 80%." },
+                    { name: "Контактна інформація присутня", status: "warning", desc: "Контакти частково заповнені. Має бути 100%, у вас 50%." }
+                ];
+            }
+
+            // Відображаємо кожну перевірку
+            checks.forEach(c => {
+                const li = document.createElement("li");
+                // Додаємо новий структурний клас theme-checker-results-item та клас статусу
+                li.className = `theme-checker-results-item ${c.status}`;
+
+                li.innerHTML = `
+                    <div class="theme-checker-check-header"><strong>${c.name}</strong></div>
+                    <div class="theme-checker-check-desc">${c.desc}</div>
+                    <div class="theme-checker-check-progress">
+                        <div class="theme-checker-progress-bar ${c.status}" style="width: ${extractPercentage(c.desc)}%;"></div>
+                    </div>
+                `;
+                results.appendChild(li);
+            });
+
+            // Функція для автоматичного витягування відсотка з опису
+            function extractPercentage(desc) {
+                const match = desc.match(/(\d+)%/);
+                return match ? match[1] : 100;
+            }
+        });
+    </script>
+
+</body>
+
+</html>

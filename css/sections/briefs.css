@@ -1,0 +1,71 @@
+/* ========================================
+   ЗАМОВИТИ (БРИФИ)
+   ======================================== */
+
+.briefs {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.briefs-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.briefs h2,
+.briefs-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.briefs-description {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.briefs-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.brief-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color .3s;
+}
+
+.brief-resume {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.brief-resume:hover {
+    background-color: #0056b3;
+}
+
+.brief-portfolio {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.brief-portfolio:hover {
+    background-color: #1e7e34;
+}
+
+.brief-site {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.brief-site:hover {
+    background-color: #e0a800;
+}

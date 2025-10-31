@@ -1,0 +1,111 @@
+.theme-ads-body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.theme-ads-h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.theme-ads-ul {
+    margin-top: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.theme-ads-p {
+    max-width: 700px;
+    margin: 0 auto 20px;
+}
+
+.theme-ads-button {
+    display: inline-block;
+    margin: 15px 10px 0 0;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-ads-button:hover {
+    background-color: #0056b3;
+}
+
+.theme-ads-buttons {
+    margin-top: 30px;
+}
+
+.theme-ads-note {
+    background-color: #fff3cd;
+    border-left: 6px solid #ffeeba;
+    padding: 15px;
+    margin: 20px auto 0;
+    border-radius: 5px;
+    max-width: 700px;
+    text-align: left;
+}
+
+.theme-ads-note p {
+    margin: 0;
+}
+
+.theme-ads-quote {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    padding: 10px 15px;
+    margin-top: 25px;
+    border-radius: 4px;
+}
+
+.theme-ads-quote-author {
+    display: block;
+    margin-top: 8px;
+    text-align: right;
+    font-size: 0.85em;
+    color: #888;
+}
+
+@media (max-width: 600px) {
+    .theme-ads-body {
+        padding: 15px;
+    }
+
+    .theme-ads-h1 {
+        font-size: 1.4em;
+    }
+
+    .theme-ads-p,
+    .theme-ads-note,
+    .theme-ads-quote {
+        padding: 10px;
+        font-size: 1em;
+        max-width: 100%;
+    }
+
+    .theme-ads-ul {
+        padding-left: 15px;
+        font-size: 1em;
+    }
+
+    .theme-ads-button {
+        display: block;
+        width: 90%;
+        margin: 10px 0;
+        padding: 14px;
+        font-size: 1em;
+    }
+
+    .theme-ads-quote-author {
+        font-size: 0.8em;
+    }
+}

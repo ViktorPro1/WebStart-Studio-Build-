@@ -1,0 +1,21 @@
+{
+  "name": "webstart-studio-build",
+  "version": "1.0.0",
+  "description": "**WebStart Studio** — це високопродуктивний, сучасний промо-сайт (лендінг), розроблений для просування послуг зі створення **стильних портфоліо, професійних резюме та оптимізованих односторінкових сайтів**. Проєкт цілком побудований на **чистому HTML5, CSS3 та Vanilla JavaScript**, що забезпечує мінімальну залежність від сторонніх бібліотек та максимальну швидкість завантаження.",
+  "main": "concat-css.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "node concat-css.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViktorPro1/WebStart-Studio-Build-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViktorPro1/WebStart-Studio-Build-/issues"
+  },
+  "homepage": "https://github.com/ViktorPro1/WebStart-Studio-Build-#readme"
+}

@@ -1,0 +1,333 @@
+/* ========================================
+   КНОПКИ
+   ======================================== */
+
+.btn {
+    display: inline-block;
+    margin: 4px 0;
+    padding: 10px 15px;
+    background-color: #ff5050;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color .3s;
+    text-align: center;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #c00;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #3498db, 0 0 0 6px rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Кнопка CTA */
+a.cta-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+a.cta-button:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+}
+
+a.cta-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #3498db, 0 0 0 6px rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Кнопка калькулятор */
+.calc-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color .3s;
+    background-color: #ff5050;
+    border-radius: 8px;
+}
+
+.calc-button:hover {
+    background-color: #e04444;
+}
+
+.calc-button-1 {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color .3s;
+    background-color: #148a04;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.calc-button-1:hover {
+    background-color: #3cb118;
+}
+
+/* Viber кнопка */
+.viber-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color .3s;
+    background-color: #7360f2;
+    border: none;
+    border-radius: 5px;
+}
+
+.viber-button:hover {
+    background-color: #5a48d1;
+}
+
+/* Прайс кнопки */
+.price-btn,
+.price-btn-1 {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color .3s;
+}
+
+.price-btn {
+    background-color: #07c;
+}
+
+.price-btn:hover {
+    background-color: #005fa3;
+}
+
+.price-btn-1 {
+    background-color: #47a805;
+}
+
+.price-btn-1:hover {
+    background-color: #119905;
+}
+
+/* Діагностика ПК */
+.diag-button {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 15px;
+    background-color: #38bdf8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.diag-button:hover {
+    background-color: #0ea5e9;
+}
+
+/* Primary кнопка */
+.btn-primary {
+    background-color: #289fa7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    display: inline-block;
+    transition: background-color .3s;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Кнопки навичок */
+.btn-open-skills {
+    background: #18b190;
+}
+
+.btn-open-skills:hover {
+    background: #159276;
+}
+
+.btn-achievement {
+    background: #0c6e8b;
+}
+
+.btn-achievement:hover {
+    background: #0a5a6c;
+}
+
+/* UTM посилання */
+.utm-link-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s;
+    margin: 20px 0;
+}
+
+.utm-link-btn:hover {
+    background: #0056b3;
+}
+
+/* Кнопка міні-курсів */
+.mini-course-button,
+.mini-course-canva-button,
+.mini-course-pit-button {
+    display: inline-block;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: transform .2s, box-shadow .2s;
+    margin-top: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.mini-course-button {
+    background: linear-gradient(90deg, #6a5acd, #00bfff);
+    box-shadow: 0 3px 10px rgba(0, 191, 255, .4);
+}
+
+.mini-course-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 191, 255, .5);
+}
+
+.mini-course-canva-button {
+    background: linear-gradient(90deg, coral, #ff69b4);
+    box-shadow: 0 3px 10px rgba(255, 105, 180, .4);
+}
+
+.mini-course-canva-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, .5);
+}
+
+.mini-course-pit-button {
+    background: linear-gradient(90deg, #20b2aa, #008b8b);
+    box-shadow: 0 3px 10px rgba(0, 139, 139, .4);
+}
+
+.mini-course-pit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 139, 139, .5);
+}
+
+/* Service кнопка */
+.service-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #e63946;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.service-btn:hover {
+    background: #d62839;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+
+    .btn,
+    .extra-card p,
+    .project-card p,
+    .testimonial p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    a.cta-button {
+        padding: 10px 24px;
+        font-size: 14px;
+        border-radius: 25px;
+        width: 70%;
+    }
+
+    a.cta-button:hover {
+        transform: scale(1.03);
+    }
+
+    .btn-primary,
+    .gift-block {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .btn-primary {
+        display: block;
+        font-size: .95rem;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .utm-link-btn {
+        width: auto;
+        display: inline-block;
+        font-size: 14px;
+        padding: 10px 18px;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .text-center {
+        padding: 0;
+        text-align: center;
+    }
+
+    .btn {
+        display: inline-block;
+        width: auto !important;
+        max-width: none;
+        padding: 0.5rem 1rem;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 375px) {
+    .btn {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
+}

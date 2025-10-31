@@ -1,0 +1,23 @@
+/* ========================================
+   ПОРІВНЯЛЬНА ТАБЛИЦЯ ПЛАТФОРМ
+   ======================================== */
+
+#platform-comparison {
+    padding: 40px 20px;
+}
+
+/* Стилі таблиці вже описані в components/tables.css */
+
+/* Додаткові стилі для виділення */
+.highlight-start {
+    color: red;
+    font-weight: 700;
+}
+
+.centered-header,
+.centered-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}

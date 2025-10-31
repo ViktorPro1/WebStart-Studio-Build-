@@ -1,0 +1,146 @@
+.utm-container {
+    max-width: 900px;
+    margin: auto;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.utm-title {
+    color: #333;
+}
+
+.utm-tool {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.utm-form-group {
+    margin-bottom: 15px;
+}
+
+.utm-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.utm-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.utm-generate-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.utm-result {
+    margin-top: 25px;
+    padding: 15px;
+    border: 2px dashed #007bff;
+    background: #e9f5ff;
+    border-radius: 4px;
+    overflow-wrap: break-word;
+}
+
+.utm-result-title {
+    margin-bottom: 10px;
+}
+
+.utm-result-text {
+    word-break: break-all;
+}
+
+.required::after {
+    content: "*";
+    color: #cc0000;
+    margin-left: 5px;
+}
+
+.utm-back {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.utm-home-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #28a745;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.utm-home-btn:hover {
+    background: #218838;
+}
+
+.utm-copy-btn {
+    background: #596067;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.utm-copy-btn:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.utm-copy-btn:hover:enabled {
+    background: #5a6268;
+}
+
+.utm-copy-msg {
+    display: inline-block;
+    margin-left: 10px;
+    color: green;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.utm-copy-msg.show {
+    opacity: 1;
+}
+
+@media (max-width: 420px) {
+    .utm-container {
+        padding: 10px;
+    }
+
+    .utm-tool {
+        padding: 15px;
+    }
+
+    .utm-input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .utm-generate-btn,
+    .utm-home-btn,
+    .utm-copy-btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+}

@@ -1,0 +1,193 @@
+/* ========================================
+   ВІКТОРИНА
+   ======================================== */
+.cta-section {
+    padding: 60px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    transition: transform .3s, box-shadow .3s;
+    border: 2px solid #e0e0e0
+}
+
+.cta-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .1)
+}
+
+.cta-section h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color .3s
+}
+
+.cta-section h2:hover {
+    color: #3498db
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+    color: #777;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: .85
+}
+
+a.cta-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s
+}
+
+a.cta-button:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .2)
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@media (max-width:420px) {
+
+    .btn-primary,
+    .gift-block {
+        width: 100%;
+        box-sizing: border-box
+    }
+
+    .gift-block {
+        max-width: 100%;
+        padding: 16px;
+        margin: 0
+    }
+
+    .gift-block h3 {
+        font-size: 1rem
+    }
+
+    .gift-block p {
+        font-size: .9rem
+    }
+
+    .btn-primary {
+        display: block;
+        font-size: .95rem;
+        padding: 10px;
+        text-align: center
+    }
+
+    .share-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px
+    }
+
+    .share-btn {
+        width: 90px;
+        height: 75px
+    }
+
+    #scrollTopBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        padding: 0;
+        bottom: 12px;
+        left: 12px;
+        line-height: 30px;
+        text-align: center
+    }
+
+    .faq-section {
+        padding: 1.5rem 1rem;
+        margin: 2rem 1rem
+    }
+
+    .faq-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 2rem
+    }
+
+    .faq-section details {
+        padding: .8rem 1rem;
+        margin-bottom: 1rem
+    }
+
+    .faq-section summary {
+        font-size: 1rem;
+        padding-left: 2.4rem
+    }
+
+    .faq-section summary::before {
+        font-size: 1.3rem;
+        left: .3rem
+    }
+
+    .faq-section p {
+        font-size: .9rem;
+        line-height: 1.4
+    }
+
+    .cta-section {
+        width: 90%;
+        padding: 30px 15px;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .1);
+        box-sizing: border-box
+    }
+
+    .cta-section h2 {
+        font-size: 22px;
+        letter-spacing: 1px;
+        margin-bottom: 15px
+    }
+
+    .cta-section p {
+        font-size: 14px;
+        line-height: 1.5;
+        opacity: 1;
+        margin-bottom: 20px;
+        max-width: 100%
+    }
+
+    a.cta-button {
+        padding: 10px 24px;
+        font-size: 14px;
+        border-radius: 25px;
+        width: 70%
+    }
+
+    a.cta-button:hover {
+        transform: scale(1.03)
+    }
+}

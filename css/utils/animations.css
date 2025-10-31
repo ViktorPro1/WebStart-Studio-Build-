@@ -1,0 +1,146 @@
+/* ========================================
+   АНІМАЦІЇ
+   ======================================== */
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Pulse */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: rotate(10deg) scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: rotate(10deg) scale(1.05);
+    }
+}
+
+/* Glow */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    }
+
+    50% {
+        box-shadow: 0 0 12px #ffffff, 0 0 24px #ffffff, 0 0 36px #ffffff;
+    }
+
+    100% {
+        box-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff, 0 0 24px #ffffff;
+    }
+}
+
+/* Float */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Scroll Left (Marquee) */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Highlight */
+@keyframes highlight {
+    0% {
+        background-color: #fffa90;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Flag Wave */
+@keyframes flag-wave {
+
+    0%,
+    50%,
+    100% {
+        transform: rotate(0) skewY(0);
+    }
+
+    25% {
+        transform: rotate(2deg) skewY(2deg);
+    }
+
+    75% {
+        transform: rotate(-2deg) skewY(-2deg);
+    }
+}
+
+/* Run (для highlight-propose) */
+@keyframes run {
+    /* Визначте за потреби */
+}
+
+/* Highlight Text */
+@keyframes highlight-text {
+    /* Визначте за потреби */
+}

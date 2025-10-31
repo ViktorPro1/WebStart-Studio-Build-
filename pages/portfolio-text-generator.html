@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Генератор заголовків та описів</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Онлайн-генератор заголовків та описів для сайтів, блогів та рекламних матеріалів. Створюйте ефективні тексти швидко та просто.">
+    <meta name="keywords"
+        content="генератор заголовків, генератор описів, SEO, тексти для сайтів, створення контенту, блог, реклама">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/title-description-generator">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/portfolio-text-generator.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Генератор заголовків та описів">
+    <meta property="og:description"
+        content="Онлайн-генератор заголовків та описів для сайтів, блогів та рекламних матеріалів. Створюйте ефективні тексти швидко та просто.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/title-description-generator">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генератор заголовків та описів">
+    <meta name="twitter:description"
+        content="Онлайн-генератор заголовків та описів для сайтів, блогів та рекламних матеріалів. Створюйте ефективні тексти швидко та просто.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/portfolio-text-generator.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body class="theme-generator-body">
+
+    <h1 class="theme-generator-h1">Генератор заголовків та описів</h1>
+    <p class="theme-generator-p">Введи сферу діяльності та твої досягнення. Отримай готові тексти для резюме або
+        портфоліо.</p>
+
+    <div class="theme-generator-form-container">
+        <input type="text" id="fieldInput" placeholder="Сфера діяльності (наприклад: веб-дизайн)"
+            class="theme-generator-input">
+        <input type="text" id="achievementsInput" placeholder="Досягнення або ключові навички"
+            class="theme-generator-input">
+        <button id="generateBtn" class="theme-generator-button">Згенерувати текст</button>
+    </div>
+    <a href="../index.html" class="theme-generator-btn-home">На головну</a>
+    <div id="output" class="theme-generator-output"></div>
+
+    <script>
+        // Скрипт залишено тут, як Ви просили
+        const generateBtn = document.getElementById('generateBtn');
+        const output = document.getElementById('output');
+
+        // Перевірка наявності елементів для надійності
+        if (generateBtn && output) {
+            generateBtn.addEventListener('click', () => {
+                const field = document.getElementById('fieldInput').value.trim();
+                const achievements = document.getElementById('achievementsInput').value.trim();
+
+                if (!field || !achievements) {
+                    output.innerHTML = "<p style='color:red;'>Будь ласка, заповніть обидва поля.</p>";
+                    return;
+                }
+
+                // Масив шаблонів тексту
+                const templates = [
+                    `Фахівець у сфері <strong>${field}</strong>, який досяг <strong>${achievements}</strong>.`,
+                    `Маю досвід у <strong>${field}</strong> та реалізував(ла) <strong>${achievements}</strong>.`,
+                    `Професіонал у <strong>${field}</strong> з досягненнями: <strong>${achievements}</strong>.`,
+                    `Експерт у <strong>${field}</strong> з практичними результатами: <strong>${achievements}</strong>.`
+                ];
+
+                // Вибираємо два випадкових варіанти
+                const firstIndex = Math.floor(Math.random() * templates.length);
+                let secondIndex;
+                do {
+                    secondIndex = Math.floor(Math.random() * templates.length);
+                } while (secondIndex === firstIndex);
+
+                // Використовуємо клас .theme-generator-suggestion
+                output.innerHTML = `
+                    <p><strong>Варіант 1:</strong> ${templates[firstIndex]}</p>
+                    <p><strong>Варіант 2:</strong> ${templates[secondIndex]}</p>
+                    <div class="theme-generator-suggestion">
+                        <strong>Порада:</strong> додайте конкретні цифри, результати або кількість проєктів, щоб зробити текст більш переконливим і наочним.
+                    </div>
+                `;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

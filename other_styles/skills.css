@@ -1,0 +1,281 @@
+.theme-skills-body,
+.theme-skills-body html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    background: #0d0d2b;
+    color: #eee;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.theme-skills-body * {
+    box-sizing: border-box;
+}
+
+canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #0d0d2b;
+}
+
+.theme-skills-main {
+    position: relative;
+    z-index: 10;
+    max-width: 960px;
+    margin: 2rem auto 4rem;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.theme-skills-h1 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #7f8fff;
+}
+
+.theme-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.theme-skills-skill {
+    background: linear-gradient(135deg, #3949ab, #1a237e);
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    cursor: pointer;
+    width: 140px;
+    box-shadow: 0 0 12px #2c3eaa88;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+    transition: background 0.4s ease, transform 0.3s ease,
+        box-shadow 0.3s ease;
+    outline: none;
+    position: relative;
+}
+
+.theme-skills-skill:focus,
+.theme-skills-skill:hover {
+    background: linear-gradient(135deg, #6e8eff, #3a59ff);
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #6e8eff;
+    z-index: 2;
+}
+
+.theme-skills-skill .theme-skills-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0.5rem;
+}
+
+.theme-skills-skill .theme-skills-text {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    user-select: none;
+}
+
+.theme-skills-skill .theme-skills-time {
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    color: #b0c7ff;
+}
+
+#description {
+    margin-top: 2rem;
+    min-height: 3rem;
+    font-size: 1.1rem;
+    color: #a9b6ff;
+    font-style: italic;
+    transition: opacity 0.3s ease;
+}
+
+.theme-skills-quote {
+    margin-top: 3rem;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6b7bc9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 5px #4a59a8;
+}
+
+.theme-skills-home-button {
+    margin-top: 2rem;
+    padding: 0.6rem 1.2rem;
+    background: #3949ab;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.theme-skills-home-button:hover {
+    background: #303d98;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 43, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    z-index: 9999;
+}
+
+#modal.active {
+    display: flex;
+}
+
+#modalContent {
+    background: #1a1a40;
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    max-width: 450px;
+    color: #c8d0ff;
+    box-shadow: 0 0 30px #4e5effcc;
+    position: relative;
+    text-align: center;
+}
+
+#modalContent h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #7fa1ff;
+}
+
+#modalContent p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+#closeModal {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #7fa1ff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#closeModal:hover {
+    color: #a4c1ff;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .theme-skills-container {
+        gap: 1rem;
+    }
+
+    .theme-skills-skill {
+        width: 120px;
+        padding: 0.8rem 1rem;
+    }
+
+    .theme-skills-main {
+        margin: 1rem auto 3rem;
+    }
+
+    .theme-skills-h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .theme-skills-container {
+        gap: 0.8rem;
+    }
+
+    .theme-skills-skill {
+        width: 100px;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .theme-skills-skill .theme-skills-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0.3rem;
+    }
+
+    .theme-skills-skill .theme-skills-text {
+        font-size: 1rem;
+    }
+
+    .theme-skills-skill .theme-skills-time {
+        font-size: 0.75rem;
+    }
+
+    .theme-skills-main {
+        padding: 0 0.5rem;
+        margin: 0.8rem auto 2rem;
+    }
+
+    .theme-skills-h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.2rem;
+    }
+
+    #description {
+        font-size: 1rem;
+        min-height: 2rem;
+    }
+
+    .theme-skills-quote {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    #modalContent {
+        padding: 1.5rem 1.2rem;
+    }
+
+    #modalContent h2 {
+        font-size: 1.5rem;
+    }
+
+    #modalContent p {
+        font-size: 0.9rem;
+    }
+
+    #closeModal {
+        font-size: 1.6rem;
+        top: 0.3rem;
+        right: 0.5rem;
+    }
+}

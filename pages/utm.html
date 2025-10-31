@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Генератор UTM-міток | [Назва Платформи]</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Простий інструмент для створення UTM-параметрів для відстеження рекламних кампаній у Google Analytics. Легко генеруйте посилання для Facebook, Instagram, Google Ads та інших платформ.">
+    <meta name="keywords"
+        content="UTM, генератор UTM, відстеження кампаній, Google Analytics, маркетинг, рекламні посилання">
+    <meta name="robots" content="index, follow">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/utm.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Генератор UTM-міток | [Назва Платформи]">
+    <meta property="og:description"
+        content="Створюйте UTM-посилання для ефективного відстеження рекламних кампаній у Google Analytics. Інструмент простий та швидкий у використанні.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/utm.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генератор UTM-міток | [Назва Платформи]">
+    <meta name="twitter:description"
+        content="Створюйте UTM-посилання для ефективного відстеження рекламних кампаній у Google Analytics. Простий та швидкий інструмент.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/utm.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+
+<body>
+    <div class="utm-container">
+        <h1 class="utm-title">Генератор UTM-міток (UTM Tag Generator)</h1>
+
+        <div class="utm-tool">
+            <p>Використовуйте цей інструмент, щоб додати параметри відстеження до URL-адреси ваших лендінгів.</p>
+
+            <div class="utm-form-group">
+                <label for="url" class="utm-label required">URL вебсайту (адреса лендінгу)</label>
+                <input type="text" id="url" class="utm-input" placeholder="https://example.com/offer">
+            </div>
+
+            <h2 class="utm-subtitle">Параметри Кампанії</h2>
+
+            <div class="utm-form-group">
+                <label for="source" class="utm-label required">Source (Джерело) - utm_source</label>
+                <input type="text" id="source" class="utm-input" placeholder="facebook, google, telegram">
+            </div>
+
+            <div class="utm-form-group">
+                <label for="medium" class="utm-label required">Medium (Тип) - utm_medium</label>
+                <input type="text" id="medium" class="utm-input" placeholder="cpc, banner, email, social">
+            </div>
+
+            <div class="utm-form-group">
+                <label for="campaign" class="utm-label required">Campaign (Кампанія) - utm_campaign</label>
+                <input type="text" id="campaign" class="utm-input" placeholder="summer_sale_2025">
+            </div>
+
+            <div class="utm-form-group">
+                <label for="term" class="utm-label">Term (Ключове слово) - utm_term (Необов'язково)</label>
+                <input type="text" id="term" class="utm-input" placeholder="купити резюме онлайн">
+            </div>
+
+            <div class="utm-form-group">
+                <label for="content" class="utm-label">Content (Контент) - utm_content (Необов'язково)</label>
+                <input type="text" id="content" class="utm-input" placeholder="blue_banner, text_ad_v2">
+            </div>
+
+            <button class="utm-generate-btn" onclick="generateUtmUrl()">Згенерувати URL</button>
+
+            <div class="utm-result">
+                <h3 class="utm-result-title">Згенерована URL-адреса:</h3>
+                <p id="generatedUrl" class="utm-result-text">...</p>
+                <button id="utm-copy-btn" class="utm-copy-btn" onclick="copyUtmUrl()" disabled>Скопіювати</button>
+                <span id="utm-copy-msg" class="utm-copy-msg">Скопійовано!</span>
+            </div>
+        </div>
+
+        <div class="utm-back">
+            <a href="../index.html" class="utm-home-btn">На головну</a>
+        </div>
+    </div>
+
+    <script src="../scripts/init.js"></script>
+</body>
+
+</html>

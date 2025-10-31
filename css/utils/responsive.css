@@ -1,0 +1,38 @@
+/* ========================================
+   RESPONSIVE (ЗАГАЛЬНІ АДАПТИВНІ СТИЛІ)
+   ======================================== */
+
+/* Більшість адаптивних стилів вже розподілені по відповідних файлах.
+   Цей файл для загальних глобальних змін */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 13px;
+    }
+}

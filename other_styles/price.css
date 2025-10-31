@@ -1,0 +1,59 @@
+.theme-price-body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.theme-price-container {
+    max-width: 800px;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-price-h1 {
+    text-align: center;
+    color: #333;
+}
+
+.theme-price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.theme-price-table th,
+.theme-price-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.theme-price-table th {
+    background-color: #0077cc;
+    color: #fff;
+}
+
+.theme-price-table tr:hover {
+    background-color: #f0f0f0;
+}
+
+.theme-price-back-link {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.theme-price-back-link:hover {
+    background-color: #005fa3;
+}

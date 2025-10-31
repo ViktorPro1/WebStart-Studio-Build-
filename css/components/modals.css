@@ -1,0 +1,129 @@
+/* ========================================
+   МОДАЛЬНІ ВІКНА
+   ======================================== */
+
+/* Привітальне вікно */
+#welcome-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: transparent;
+    z-index: 1000;
+    padding: 5px 0;
+}
+
+.modal-content {
+    background-color: rgba(255, 255, 255, .9);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: .9em;
+    width: auto;
+    max-width: 480px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    line-height: 1.2em;
+}
+
+.modal-content h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.modal-content p {
+    margin: 0;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 10px;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: red;
+}
+
+@media (max-width: 420px) {
+    .modal-content {
+        font-size: 0.85em;
+        padding: 6px 8px;
+        max-width: 90%;
+    }
+
+    .modal-content h2 {
+        font-size: 1em;
+    }
+
+    .close-btn {
+        font-size: 9px;
+        top: 3px;
+        right: 3px;
+    }
+}
+
+/* Вікно допомоги */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .1);
+    display: none;
+    z-index: 1000;
+    width: 250px;
+    max-width: 90vw;
+    max-height: 300px;
+    background: #fff;
+    color: #000;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.popup a {
+    color: #007bff;
+}
+
+.popup a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+    .popup {
+        width: 90%;
+        max-width: 240px;
+        padding: 12px 12px;
+        bottom: 1.5cm;
+        right: 10px;
+        left: auto;
+        max-height: 220px;
+        font-size: 13px;
+        overflow-y: hidden;
+    }
+}
+
+@media (max-width: 420px) {
+    .popup {
+        width: 75%;
+        max-width: 180px;
+        max-height: 200px;
+        padding: 10px 10px;
+        font-size: 12px;
+        bottom: 1.2cm;
+        right: 8px;
+        overflow-y: hidden;
+    }
+}

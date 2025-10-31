@@ -1,0 +1,43 @@
+/* ========================================
+   РОЗМІЩЕННЯ ТА ДОПОМОГА
+   ======================================== */
+
+.info-section {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    color: #333;
+    text-align: center;
+}
+
+.info-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.info-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+.info-section a {
+    color: #07c;
+}
+
+.info-section a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .info-section {
+        padding: 30px 15px;
+    }
+
+    .info-section p {
+        font-size: 16px;
+    }
+}

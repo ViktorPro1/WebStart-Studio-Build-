@@ -1,0 +1,88 @@
+/* ========================================
+   РУХОМИЙ РЯДОК (MARQUEE)
+   ======================================== */
+
+.marquee-container {
+    background: #fff;
+    color: #333;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: 35s linear infinite scroll-left;
+    font-size: 16px;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Виділення елементів */
+.highlight-propose {
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+    animation: 2s ease-in-out infinite run;
+}
+
+.highlight-additional {
+    color: #000;
+    font-weight: 700;
+    display: inline-block;
+    animation: 1.5s infinite alternate highlight-text;
+    margin-left: 45px;
+}
+
+.highlight-landing {
+    color: #034b5e;
+    font-weight: 600;
+}
+
+.highlight-resume {
+    margin-right: 5px;
+    color: #09c;
+    font-weight: 600;
+}
+
+.highlight-banners {
+    color: #e6007a;
+    font-weight: 600;
+}
+
+.highlight-target {
+    color: #066606;
+    font-weight: 600;
+}
+
+.highlight-tax {
+    color: #380568;
+    font-weight: 600;
+}
+
+.highlight-portfolio {
+    color: #6d2e03;
+    font-weight: 600;
+}
+
+@keyframes run {
+    /* Визначте анімацію за потреби */
+}
+
+@keyframes highlight-text {
+    /* Визначте анімацію за потреби */
+}

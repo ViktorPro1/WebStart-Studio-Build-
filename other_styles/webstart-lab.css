@@ -1,0 +1,145 @@
+.theme-lab-body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.theme-lab-our-projects {
+    padding: 40px 20px 60px;
+    text-align: center;
+}
+
+.theme-lab-our-projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.theme-lab-our-projects p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.theme-lab-our-projects ul {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.theme-lab-our-projects li {
+    margin-bottom: 20px;
+}
+
+.theme-lab-our-projects-a {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0077cc;
+    display: inline-block;
+}
+
+.theme-lab-our-projects-a:hover {
+    text-decoration: underline;
+}
+
+.theme-lab-our-projects-span {
+    display: block;
+    margin-top: 4px;
+    color: #555;
+}
+
+.theme-lab-marquee {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 1em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.theme-lab-marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.theme-lab-home-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #32cd32, #228b22);
+    color: #fff;
+    padding: 12px 28px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.theme-lab-home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.theme-lab-idea-button {
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    padding: 12px 28px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-lab-idea-button:hover {
+    background-color: #005fa3;
+}
+
+.theme-lab-text-center {
+    text-align: center;
+}
+
+.theme-lab-margin-bottom-40 {
+    margin-bottom: 40px;
+}
+
+.theme-lab-margin-top-20 {
+    margin-top: 20px;
+}
+
+@media (max-width: 420px) {
+    .theme-lab-our-projects h2 {
+        font-size: 1.5em;
+    }
+
+    .theme-lab-our-projects p,
+    .theme-lab-our-projects-span,
+    .theme-lab-our-projects-a {
+        font-size: 1em;
+    }
+
+    .theme-lab-marquee {
+        font-size: 0.9em;
+        padding: 6px 0;
+    }
+}

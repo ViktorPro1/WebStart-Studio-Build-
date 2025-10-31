@@ -1,0 +1,44 @@
+/* ========================================
+   КНОПКА "ВГОРУ"
+   ======================================== */
+
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 10px;
+    z-index: 50;
+    background-color: #2dc039;
+    color: #fff;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
+    transition: opacity .3s;
+    cursor: pointer;
+}
+
+#scrollTopBtn:hover {
+    background-color: #28a08a;
+}
+
+#scrollTopBtn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px #3498db, 0 0 0 6px rgba(255, 255, 255, 0.9);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+    #scrollTopBtn {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        padding: 0;
+        bottom: 12px;
+        left: 12px;
+        line-height: 30px;
+        text-align: center;
+    }
+}

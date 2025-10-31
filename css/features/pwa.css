@@ -1,0 +1,35 @@
+/* ========================================
+   PWA PREVIEW
+   ======================================== */
+
+.pwa-preview-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.pwa-preview {
+    background-color: #f0f0f0;
+    white-space: nowrap;
+    padding: .5em 1em;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pwa-preview__text {
+    display: inline-block;
+    animation: 25s linear infinite scroll-left;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

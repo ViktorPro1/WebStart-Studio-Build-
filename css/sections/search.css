@@ -1,0 +1,30 @@
+/* ========================================
+   ПОШУК ПО СЕКЦІЯМ
+   ======================================== */
+
+/* Форма пошуку описана в components/forms.css */
+
+/* Feedback повідомлення */
+.search-feedback {
+    text-align: center;
+    color: #ff5733;
+    font-size: 0.95em;
+    margin-top: 5px;
+    min-height: 18px;
+    transition: opacity 0.3s ease;
+}
+
+/* Виділення знайденої секції */
+.highlight-search {
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #fffa90;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}

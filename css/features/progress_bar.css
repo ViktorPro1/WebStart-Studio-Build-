@@ -1,0 +1,14 @@
+/* ========================================
+   PROGRESS BAR (ІНДИКАТОР ПРОГРЕСУ)
+   ======================================== */
+
+#progressBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #4CAF50;
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.2s ease-out;
+}

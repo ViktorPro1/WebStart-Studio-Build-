@@ -1,0 +1,21 @@
+/* ========================================
+   WEBSTART LAB
+   ======================================== */
+
+.lab-strip {
+    background-color: #07c;
+    padding: 6px 0;
+    font-size: .95em;
+    text-align: center;
+    overflow: hidden;
+}
+
+.lab-strip a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.lab-strip a:hover {
+    text-decoration: underline;
+}

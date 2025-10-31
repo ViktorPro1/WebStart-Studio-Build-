@@ -1,0 +1,163 @@
+/* ========================================
+   КОНТАКТИ
+   ======================================== */
+
+#contact-gift-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #fefefe;
+}
+
+.contact-block,
+.gift-block {
+    flex: 1 1 300px;
+    max-width: 48%;
+    background-color: #f9f9f9;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+    text-align: center;
+}
+
+.contact-block a,
+.gift-block a {
+    color: #0a0a0a;
+    text-decoration: none;
+}
+
+.contact-block a:hover,
+.gift-block a:hover {
+    text-decoration: underline;
+}
+
+.gift-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fdfdfd;
+}
+
+.gift-block {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #e9f7ef;
+    padding: 24px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+    animation: .8s ease-in-out fadeIn;
+}
+
+.gift-block h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #1e5631;
+}
+
+.gift-block p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    #contact-gift-wrapper {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 0;
+    }
+
+    .contact-block,
+    .gift-block {
+        max-width: 100%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .gift-block h3 {
+        font-size: 18px;
+    }
+
+    .gift-block p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact-gift-wrapper {
+        padding: 15px 10px;
+        gap: 15px;
+    }
+
+    #contact-gift-wrapper h2 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .contact-block,
+    .gift-block {
+        max-width: 100%;
+        flex: 1 1 100%;
+        padding: 16px;
+        margin: 0 auto;
+    }
+
+    .gift-block h3 {
+        font-size: 16px;
+    }
+
+    .gift-block p {
+        font-size: 14px;
+    }
+
+    .viber-button {
+        display: inline-block;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    p>.viber-button {
+        display: block;
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .gift-block {
+        max-width: 100%;
+        padding: 16px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gift-block h3 {
+        font-size: 1rem;
+    }
+
+    .gift-block p {
+        font-size: .9rem;
+    }
+}

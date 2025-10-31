@@ -1,0 +1,116 @@
+/* ========================================
+   AI ПРОМПТИНГ ТА AI СЕРВІСИ
+   ======================================== */
+
+#ai-prompting-dynamic {
+    padding: 40px 20px;
+    background-color: #f7f9fc;
+}
+
+.ai-prompting-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.ai-dynamic-card {
+    flex: 1;
+    max-width: 500px;
+    background: #e5faf5;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ai-dynamic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ai-prompting-image {
+    max-width: 180px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 0 4px #e6f0ff, 0 0 10px rgba(74, 144, 226, 0.5);
+    transition: all 0.3s;
+}
+
+.ai-dynamic-card:hover .ai-prompting-image {
+    box-shadow: 0 0 0 6px #f5e6ff, 0 0 20px rgba(144, 19, 254, 0.7);
+}
+
+.ai-prompting-title {
+    font-size: 1.8rem;
+    color: #4a90e2;
+    margin: 0 0 10px;
+}
+
+.ai-prompting-text {
+    font-size: 1rem;
+    color: #141414;
+    margin-bottom: 25px;
+    padding: 0 20px;
+    max-width: 700px;
+}
+
+.ai-prompting-btn.ai-dynamic-btn {
+    padding: 12px 30px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    background: linear-gradient(90deg, #4a90e2, #9013fe);
+    box-shadow: 0 4px 15px rgba(144, 19, 254, 0.4);
+    transition: all 0.3s ease;
+}
+
+.ai-prompting-btn.ai-dynamic-btn:hover {
+    background: linear-gradient(90deg, #3a7bd5, #7d0fd9);
+    box-shadow: 0 6px 20px rgba(144, 19, 254, 0.6);
+    transform: scale(1.03);
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+    .ai-prompting-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ai-dynamic-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .ai-prompting-image {
+        max-width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .ai-prompting-title {
+        font-size: 1.5rem;
+    }
+
+    .ai-prompting-text {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .ai-prompting-btn.ai-dynamic-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+}

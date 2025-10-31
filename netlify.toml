@@ -1,0 +1,11 @@
+[build]
+  command = "pip install -r requirements.txt"
+  publish = "."
+
+[build.environment]
+  AIOHTTP_NO_EXTENSIONS = "1"   
+
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

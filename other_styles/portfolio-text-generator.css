@@ -1,0 +1,114 @@
+.theme-generator-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f5f7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.theme-generator-h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #1d1d1d;
+}
+
+.theme-generator-p {
+    max-width: 700px;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.theme-generator-form-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.theme-generator-input,
+.theme-generator-button {
+    padding: 12px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.theme-generator-input:focus {
+    border-color: #e63946;
+    box-shadow: 0 0 5px rgba(230, 57, 70, 0.3);
+}
+
+.theme-generator-button {
+    background-color: #e63946;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.theme-generator-button:hover {
+    background-color: #d62839;
+    transform: translateY(-2px);
+}
+
+.theme-generator-output {
+    margin-top: 20px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    width: 100%;
+}
+
+.theme-generator-suggestion {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.theme-generator-btn-home {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #1d3557;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.theme-generator-btn-home:hover {
+    background-color: #457b9d;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 420px) {
+    .theme-generator-h1 {
+        font-size: 1.5rem;
+    }
+
+    .theme-generator-p {
+        font-size: 0.95rem;
+    }
+
+    .theme-generator-input,
+    .theme-generator-button {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+}

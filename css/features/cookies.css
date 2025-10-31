@@ -1,0 +1,77 @@
+/* ========================================
+   COOKIE BANNER
+   ======================================== */
+
+#cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    max-width: 400px;
+    margin: auto;
+    z-index: 9999;
+    background: #fff;
+    color: #333;
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    font-family: sans-serif;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#cookie-banner.visible {
+    display: flex;
+}
+
+.cookie-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.cookie-btn-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    line-height: 1;
+}
+
+.cookie-btn-accept {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.cookie-btn-accept:hover {
+    background-color: #43a047;
+}
+
+#cookie-banner a {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Темна тема */
+.dark-mode #cookie-banner {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .cookie-btn-close {
+    color: #aaa;
+}
+
+.dark-mode #cookie-banner a {
+    color: #8fd6e7;
+}

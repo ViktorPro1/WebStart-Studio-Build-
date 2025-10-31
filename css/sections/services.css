@@ -1,0 +1,102 @@
+/* ========================================
+   НАШІ ПОСЛУГИ
+   ======================================== */
+
+#services {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+}
+
+#services h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Services grid */
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.services-note {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    border: 2px dashed #f4a261;
+    border-radius: 12px;
+    background-color: #fffaf3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+    text-align: center;
+}
+
+/* Full services блок */
+.services-full {
+    flex: 1 1 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 1.5rem 0 2rem;
+}
+
+.services-full h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.services-full h2 span {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}
+
+.services-full p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.services-grid-large {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+
+    .services-grid,
+    .services-grid-large {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #services {
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .services-full {
+        padding: 1rem;
+        margin: 1rem 0;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}

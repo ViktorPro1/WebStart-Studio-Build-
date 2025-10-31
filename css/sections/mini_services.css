@@ -1,0 +1,42 @@
+/* ========================================
+   МІНІ-СЕРВІСИ
+   ======================================== */
+
+#mini-services {
+    padding: 40px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+#mini-services h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#mini-services p {
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* service-card описаний в components/cards.css */
+/* service-btn описаний в components/buttons.css */
+
+/* Адаптив */
+@media (max-width: 700px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 80%;
+    }
+}

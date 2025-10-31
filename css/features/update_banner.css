@@ -1,0 +1,75 @@
+/* ========================================
+   UPDATE BANNER
+   ======================================== */
+
+.update-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    font-family: sans-serif;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.update-banner button {
+    padding: 6px 12px;
+    background: white;
+    color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.update-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: 50px;
+    background: #0b74da;
+    color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.update-message.visible {
+    transform: translateY(0);
+}
+
+/* Темна тема */
+.dark-mode .update-message {
+    background: #4a90e2;
+    color: #1e1e1e;
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+    .update-banner {
+        flex-direction: column;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .update-banner button {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+}

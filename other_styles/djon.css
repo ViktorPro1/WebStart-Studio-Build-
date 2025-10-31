@@ -1,0 +1,110 @@
+.djon-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.djon-page-about-djon {
+    background: white;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.djon-page-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    border: 3px solid #0078d7;
+    box-shadow: 0 0 10px #0078d7;
+}
+
+.djon-page-h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #0078d7;
+}
+
+.djon-page-p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.djon-page-fun-fact {
+    font-style: italic;
+    color: #555;
+}
+
+.djon-page-btn-home {
+    display: inline-block;
+    padding: 12px 25px;
+    margin-top: 25px;
+    background: linear-gradient(45deg, #0078d7, #00bfff);
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0, 120, 215, 0.4);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.djon-page-btn-home:hover {
+    background: linear-gradient(45deg, #005a9e, #009acd);
+    box-shadow: 0 8px 20px rgba(0, 90, 158, 0.6);
+    transform: translateY(-3px);
+}
+
+.djon-page-btn-home:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 90, 158, 0.4);
+}
+
+@media (max-width: 420px) {
+    .djon-page {
+        padding: 20px 10px;
+    }
+
+    .djon-page-about-djon {
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .djon-page-avatar {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 15px;
+        border-width: 2px;
+        box-shadow: 0 0 6px #0078d7;
+    }
+
+    .djon-page-h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .djon-page-p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .djon-page-btn-home {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 25px;
+        box-shadow: 0 4px 12px rgba(0, 120, 215, 0.3);
+    }
+}

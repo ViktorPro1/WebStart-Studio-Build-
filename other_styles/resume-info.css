@@ -1,0 +1,59 @@
+.theme-resume-body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    color: #2c3e50;
+}
+
+.theme-resume-container {
+    max-width: 800px;
+    margin: auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-resume-h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.theme-resume-h3 {
+    margin-top: 1.5rem;
+    color: #34495e;
+}
+
+.theme-resume-ul {
+    padding-left: 1.2rem;
+}
+
+.theme-resume-ul li {
+    margin-bottom: 0.5rem;
+}
+
+.theme-resume-p {
+    line-height: 1.6;
+}
+
+.theme-resume-button-container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.theme-resume-home-button {
+    background-color: #3498db;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.theme-resume-home-button:hover {
+    background-color: #2980b9;
+}

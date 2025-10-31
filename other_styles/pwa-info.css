@@ -1,0 +1,108 @@
+.theme-pwa-body {
+    font-family: "Arial", sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.theme-pwa-container {
+    background: white;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.theme-pwa-container h2 {
+    margin-top: 0;
+    color: #222;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.theme-pwa-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.theme-pwa-container ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.theme-pwa-container ol li {
+    margin-bottom: 12px;
+}
+
+.theme-pwa-container ol li:last-child {
+    margin-bottom: 0;
+}
+
+.theme-pwa-container ul {
+    padding-left: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.theme-pwa-container ul li {
+    margin-bottom: 12px;
+}
+
+.theme-pwa-back-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.theme-pwa-back-button:hover {
+    background-color: #357abd;
+}
+
+@media (max-width: 480px) {
+    .theme-pwa-container {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .theme-pwa-container h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .theme-pwa-container p,
+    .theme-pwa-container ol,
+    .theme-pwa-container ul {
+        font-size: 14px;
+    }
+
+    .theme-pwa-back-button {
+        width: 100%;
+        text-align: center;
+    }
+}

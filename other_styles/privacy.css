@@ -1,0 +1,116 @@
+.theme-policy-body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-primary);
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.theme-policy-main {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2.5rem 2rem;
+    background-color: var(--main-bg);
+    border: 1px solid var(--border-color);
+}
+
+.theme-policy-h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: center;
+    border-bottom: 3px double var(--accent);
+    padding-bottom: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.theme-policy-h2 {
+    font-family: var(--font-primary);
+    margin-top: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.theme-policy-p {
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.theme-policy-a {
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.theme-policy-a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.theme-policy-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.theme-policy-date-left {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #555555;
+    text-align: left;
+    text-indent: 0;
+}
+
+.theme-policy-back-right {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 420px) {
+    .theme-policy-body {
+        font-size: 15px;
+    }
+
+    .theme-policy-h1 {
+        font-size: 1.4rem;
+    }
+
+    .theme-policy-h2 {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+    }
+
+    .theme-policy-main {
+        padding: 1rem 0.8rem;
+        max-width: 100%;
+        margin: 1rem 0;
+        border: none;
+    }
+
+    .theme-policy-p {
+        text-indent: 0;
+    }
+
+    .theme-policy-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+
+    .theme-policy-date-left {
+        margin-bottom: 0.5rem;
+    }
+}

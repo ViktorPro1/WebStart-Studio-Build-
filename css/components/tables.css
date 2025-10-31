@@ -1,0 +1,125 @@
+/* ========================================
+   ТАБЛИЦІ
+   ======================================== */
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+td,
+th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+}
+
+/* Порівняльна таблиця */
+.comparison-table {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #0d1b2a;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-collapse: collapse;
+}
+
+.comparison-table td,
+.comparison-table th {
+    border: 1px solid #3a6186;
+    padding: 12px 15px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.comparison-table th {
+    background-color: #1e3a8a;
+    color: #fff;
+    font-weight: 600;
+}
+
+.comparison-table tr:nth-child(2n) {
+    background-color: #e0e7ff;
+}
+
+.comparison-table tr:hover {
+    background-color: #bdd7ff;
+}
+
+/* Таблиця цін */
+#pricingTable {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#pricingTable td,
+#pricingTable th {
+    border: 1px solid #dee2e6;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+#pricingTable th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .comparison-table {
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .comparison-table td,
+    .comparison-table th {
+        padding: 8px 10px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    td,
+    th {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 420px) {
+    .comparison-table {
+        font-size: 10px;
+        padding: 0 10px;
+        width: 100%;
+    }
+
+    .comparison-table td,
+    .comparison-table th {
+        padding: 6px 8px;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 375px) {
+
+    td,
+    th {
+        padding: 6px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}

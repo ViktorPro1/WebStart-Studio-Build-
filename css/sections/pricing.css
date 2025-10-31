@@ -1,0 +1,106 @@
+/* ========================================
+   ВАРТІСТЬ (ПАКЕТИ)
+   ======================================== */
+
+#pricing {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 60px 20px;
+    text-align: center;
+    background: #cff3f3;
+    border: 2px solid rgba(68, 67, 67, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+#pricing h2 {
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#pricing h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #007BFF;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#pricing p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#togglePricing {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin: 25px auto 0;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#togglePricing:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.pricing-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: bounce 1.5s infinite;
+}
+
+#linkWrapper {
+    display: none;
+    margin-top: 15px;
+}
+
+.btn-link {
+    text-decoration: underline;
+    color: #007BFF;
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+    #pricing {
+        padding: 40px 15px;
+    }
+
+    #pricing h2 {
+        font-size: 2rem;
+    }
+
+    #pricing p {
+        font-size: 1rem;
+    }
+
+    #togglePricing {
+        width: 90%;
+        padding: 12px 0;
+        font-size: 0.95rem;
+    }
+
+    .pricing-emoji {
+        font-size: 2.5rem;
+    }
+}

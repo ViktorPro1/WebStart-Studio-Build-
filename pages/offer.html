@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ми пропонуємо — ви обираєте</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Ознайомтеся з послугами WebStart Studio: створення сайтів, дизайн, маркетинг та таргетована реклама. Вибирайте те, що підходить саме вам.">
+    <meta name="keywords"
+        content="послуги, WebStart Studio, створення сайтів, дизайн, маркетинг, таргетована реклама, вибір послуг">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/services">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/offer.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Ми пропонуємо — ви обираєте">
+    <meta property="og:description"
+        content="Ознайомтеся з послугами WebStart Studio: створення сайтів, дизайн, маркетинг та таргетована реклама. Вибирайте те, що підходить саме вам.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/services">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ми пропонуємо — ви обираєте">
+    <meta name="twitter:description"
+        content="Ознайомтеся з послугами WebStart Studio: створення сайтів, дизайн, маркетинг та таргетована реклама. Вибирайте те, що підходить саме вам.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/offer.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body class="offer-page">
+    <h1 class="offer-page-h1">Ми пропонуємо — ви обираєте</h1>
+
+    <!-- Калькулятор вартості -->
+    <section class="offer-page-section" id="calculator">
+        <h2 class="offer-page-h2">Калькулятор вартості</h2>
+
+        <div class="calculator-container">
+            <div class="calculator-group">
+                <label for="service-type">Оберіть тип послуги:</label>
+                <select id="service-type" class="calculator-select">
+                    <option value="">-- Оберіть послугу --</option>
+                    <option value="portfolio">Портфоліо</option>
+                    <option value="resume">Резюме</option>
+                    <option value="sites">Сайти</option>
+                    <option value="adaptive">Адаптація для смартфонів</option>
+                </select>
+            </div>
+
+            <div class="calculator-group" id="service-options" style="display: none;">
+                <label for="service-option">Оберіть варіант:</label>
+                <select id="service-option" class="calculator-select">
+                    <option value="">-- Оберіть варіант --</option>
+                </select>
+            </div>
+
+            <div class="calculator-group" id="additional-options" style="display: none;">
+                <label>Додаткові опції:</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="option-seo" value="200">
+                        SEO оптимізація (+200 грн)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="option-support" value="150">
+                        Технічна підтримка 1 місяць (+150 грн)
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="option-forms" value="100">
+                        Інтеграція форм (+100 грн)
+                    </label>
+                </div>
+            </div>
+
+            <div class="calculator-result" id="result" style="display: none;">
+                <div class="result-label">Загальна вартість:</div>
+                <div class="result-price" id="total-price">0 грн</div>
+            </div>
+
+            <button id="reset-calculator" class="calculator-btn" style="display: none;">Очистити</button>
+        </div>
+    </section>
+
+    <section class="offer-page-section" id="portfolio">
+        <h2 class="offer-page-h2">Портфоліо</h2>
+
+        <div class="offer-page-service-item">
+            <strong>500 грн</strong><br>
+            Ви отримуєте простий сайт із 5 сторінок: головна, про вас, приклади ваших робіт, відгуки клієнтів та
+            контакти.
+            Ідеально, щоб показати себе онлайн.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>600 грн</strong><br>
+            До стандартного варіанту додаємо гарний індивідуальний дизайн для кожної сторінки та зручність перегляду на
+            телефоні чи планшеті.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>700 грн</strong><br>
+            Ще краще: додаємо плавні анімації, сайт швидше знаходиться в Google (SEO), і ви отримуєте технічну підтримку
+            після запуску.
+        </div>
+    </section>
+
+
+    <section class="offer-page-section" id="resume">
+        <h2 class="offer-page-h2">Резюме</h2>
+
+        <div class="offer-page-service-item">
+            <strong>Classic — 300 грн</strong><br>
+            Стандартне резюме у діловому стилі. Ідеально підходить для роботи в офіційних компаніях, держустановах чи
+            банках.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Creative — 400 грн</strong><br>
+            Яскраве, стильне резюме з візуальними елементами. Гарний вибір для дизайнерів, фотографів чи маркетологів.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Minimal — 450 грн</strong><br>
+            Просте, лаконічне резюме з чітким текстом і зручною структурою. Підійде для більшості вакансій.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Premium — 550 грн</strong><br>
+            Все включено: унікальний дизайн, правильне оформлення для систем пошуку резюме (ATS), різні формати (PDF,
+            DOCX),
+            а також персональна порада щодо змісту.
+        </div>
+    </section>
+
+
+    <section class="offer-page-section" id="sites">
+        <h2 class="offer-page-h2">Сайти</h2>
+
+        <div class="offer-page-service-item">
+            <strong>Landing page — від 800 грн</strong><br>
+            Односторінковий сайт, який коротко і чітко розповідає про вас або ваш продукт. Підійде для реклами послуги,
+            товару чи особистого бренду.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Сайт для рекрутера — від 1200 грн</strong><br>
+            Ідеально для HR-спеціаліста або рекрутера. Містить розділи з вакансіями, контактами, портфоліо кандидатів.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Instagram "Taplink" — від 500 грн</strong><br>
+            Міні-сайт, який відкривається по посиланню з Instagram. Містить кнопки на всі ваші соцмережі, месенджери,
+            послуги чи прайси.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Сайт для мікрокредитування — від 1000 грн</strong><br>
+            Простий сайт із формою заявки, калькулятором та короткою інформацією для залучення клієнтів. Підходить для
+            невеликих фінансових послуг.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Сайт перевезень ЄС — від 1500 грн</strong><br>
+            Сайт для компаній, що займаються пасажирськими перевезеннями Європою. Інформація про маршрути, ціни,
+            бронювання
+            та інтерактивна карта.
+        </div>
+    </section>
+
+
+    <section class="offer-page-section" id="adaptive">
+        <h2 class="offer-page-h2">Адаптація сайту для смартфонів</h2>
+
+        <div class="offer-page-service-item">
+            <strong>Базова — від 300 грн</strong><br>
+            Ваш сайт коректно відображатиметься на телефонах і планшетах. Підходить, якщо дизайн уже готовий.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Розширена — від 450 грн</strong><br>
+            Додатково підлаштуємо кнопки, меню, форми — щоб користуватись сайтом було зручно на будь-якому екрані.
+        </div>
+
+        <div class="offer-page-service-item">
+            <strong>Преміум — від 600 грн</strong><br>
+            Повна адаптація з урахуванням швидкості завантаження, зручності для користувача та пошукової оптимізації.
+        </div>
+    </section>
+
+
+    <div style="margin-top: 30px; text-align: center;">
+        <a href="../index.html" class="offer-page-btn-link return-home">Повернутись на головну</a>
+    </div>
+
+    <script src="../scripts/calculator.js"></script>
+</body>
+
+</html>

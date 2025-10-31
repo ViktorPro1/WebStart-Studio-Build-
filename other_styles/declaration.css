@@ -1,0 +1,88 @@
+.theme-pit-body * {
+    box-sizing: border-box;
+}
+
+.theme-pit-body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+.theme-pit-container {
+    max-width: 800px;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-pit-h1,
+.theme-pit-h2 {
+    color: #0077cc;
+    text-align: center;
+}
+
+.theme-pit-ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+.theme-pit-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.theme-pit-telegram-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.theme-pit-back-button {
+    background-color: #007bff;
+    color: white;
+    margin-left: 10px;
+}
+
+.theme-pit-highlight {
+    background: #fff3cd;
+    padding: 10px;
+    border-left: 4px solid #ffa500;
+    margin: 10px 0;
+}
+
+.theme-pit-price-box {
+    background: #e3fbe3;
+    padding: 10px;
+    border-left: 4px solid #28a745;
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    .theme-pit-body {
+        padding: 10px;
+    }
+
+    .theme-pit-container {
+        padding: 15px;
+    }
+
+    .theme-pit-button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .theme-pit-back-button {
+        margin-left: 0;
+    }
+}

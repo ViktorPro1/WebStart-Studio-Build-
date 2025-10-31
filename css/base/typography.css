@@ -1,0 +1,74 @@
+/* ========================================
+   ТИПОГРАФІКА
+   ======================================== */
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.logo-header {
+    color: #ff5050;
+}
+
+.logo-footer {
+    color: #a70404;
+}
+
+.highlight {
+    color: #ff4e00;
+    font-weight: 700;
+}
+
+.highlight-start {
+    color: red;
+    font-weight: 700;
+}
+
+/* Centered text */
+.centered {
+    text-align: center;
+}
+
+.centered-header,
+.centered-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+/* Прихований заголовок (для доступності) */
+.hidden-heading {
+    display: none;
+}
+
+/* Адаптивна типографіка */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #portfolio h2,
+    #testimonials h2,
+    .extras-section h2,
+    .info-section h2,
+    section h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 38px !important;
+        margin-bottom: 8px !important;
+    }
+}
+
+@media (max-width: 375px) {
+    h1 {
+        font-size: 20px;
+    }
+}

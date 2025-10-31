@@ -1,0 +1,107 @@
+/* ========================================
+   ТЕХНІЧНІ МОЖЛИВОСТІ
+   ======================================== */
+
+#technical-features {
+    background-color: #f0f7ff;
+    border: 1px solid #a3c0ff;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #004080;
+    box-shadow: 0 2px 8px rgba(0, 64, 128, .2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 25px 20px;
+    text-align: center;
+}
+
+#technical-features h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+#technical-features p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #036;
+    max-width: 90%;
+    text-align: center;
+}
+
+#technical-features .btn {
+    background-color: #0056b3;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgba(0, 86, 179, .4);
+    text-align: center;
+    white-space: nowrap;
+    min-width: 140px;
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+#technical-features .btn:focus,
+#technical-features .btn:hover {
+    background-color: #003f80;
+    box-shadow: 0 4px 8px rgba(0, 63, 128, .6);
+    outline: 0;
+}
+
+#technical-features::before {
+    content: "🛠️";
+    font-size: 3.5rem;
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    text-align: center;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Адаптив */
+@media (max-width: 420px) {
+    #technical-features {
+        max-width: 95%;
+        padding: 20px 15px;
+    }
+
+    #technical-features h2 {
+        font-size: 1.5rem;
+    }
+
+    #technical-features p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    #technical-features .btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+        min-width: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

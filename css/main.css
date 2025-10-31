@@ -1,0 +1,64 @@
+/* ========================================
+   MAIN.CSS - ГОЛОВНИЙ ФАЙЛ ІМПОРТУ
+   WebStart Studio
+   ======================================== */
+
+/* ===== BASE ===== */
+@import url('base/reset.css');
+@import url('base/typography.css');
+
+/* ===== LAYOUT ===== */
+@import url('layout/header.css');
+@import url('layout/navigation.css');
+@import url('layout/footer.css');
+
+/* ===== COMPONENTS ===== */
+@import url('components/buttons.css');
+@import url('components/cards.css');
+@import url('components/modals.css');
+@import url('components/forms.css');
+@import url('components/tables.css');
+
+/* ===== SECTIONS ===== */
+@import url('sections/webstart_lab.css');
+@import url('sections/marquee.css');
+@import url('sections/gallery.css');
+@import url('sections/search.css');
+@import url('sections/about_us.css');
+@import url('sections/services.css');
+@import url('sections/portfolio.css');
+@import url('sections/technical.css');
+@import url('sections/advantages.css');
+@import url('sections/comparison.css');
+@import url('sections/pricing.css');
+@import url('sections/promo.css');
+@import url('sections/quiz-section.css');
+@import url('sections/briefs.css');
+@import url('sections/mini_services.css');
+@import url('sections/ai_services.css');
+@import url('sections/extras.css');
+@import url('sections/certificate.css');
+@import url('sections/testimonials.css');
+@import url('sections/faq.css');
+@import url('sections/hosting.css');
+@import url('sections/international.css');
+@import url('sections/blog.css');
+@import url('sections/contact.css');
+@import url('sections/socials.css');
+
+/* ===== FEATURES ===== */
+@import url('features/pwa.css');
+@import url('features/cookies.css');
+@import url('features/breadcrumbs.css');
+@import url('features/progress_bar.css');
+@import url('features/scroll_top.css');
+@import url('features/social_proof.css');
+@import url('features/exit_intent.css');
+@import url('features/update_banner.css');
+
+/* ===== THEMES ===== */
+@import url('themes/dark_mode.css');
+
+/* ===== UTILS ===== */
+@import url('utils/animations.css');
+@import url('utils/responsive.css');

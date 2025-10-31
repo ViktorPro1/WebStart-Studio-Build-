@@ -1,0 +1,90 @@
+.theme-calc-body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #333;
+}
+
+.theme-calc-h1 {
+    text-align: center;
+    color: #2a7ae2;
+}
+
+.theme-calc-form-group {
+    margin-bottom: 15px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.theme-calc-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.theme-calc-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.theme-calc-input[disabled] {
+    background-color: #eee;
+}
+
+.theme-calc-button {
+    margin: 10px 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme-calc-button[type="button"] {
+    background-color: #2a7ae2;
+    color: white;
+}
+
+.theme-calc-button:hover {
+    background-color: #1a5bc4;
+}
+
+.theme-calc-note {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 360px) {
+    .theme-calc-body {
+        padding: 10px;
+    }
+
+    .theme-calc-h1 {
+        font-size: 1.2rem;
+    }
+
+    .theme-calc-label {
+        font-size: 0.95rem;
+    }
+
+    .theme-calc-input,
+    .theme-calc-button {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+
+    .theme-calc-button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .theme-calc-form-group {
+        margin-bottom: 12px;
+    }
+}
