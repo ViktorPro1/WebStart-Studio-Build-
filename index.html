@@ -23,7 +23,10 @@
     <link rel="stylesheet" href="css/main.css">-->
 
     <!-- Продакшен: -->
-    <link rel="stylesheet" href="dist/styles.css">
+    <link rel="preload" href="dist/styles.css" as="style" onload="this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="dist/styles.css">
+    </noscript>
 
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" as="style"
         onload="this.rel='stylesheet'" crossorigin="anonymous">
