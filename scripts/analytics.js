@@ -43,7 +43,7 @@
             // --- Web Vitals після GTM
             if (!window.webVitalsLoaded) {
                 const vitalsScript = document.createElement('script');
-                vitalsScript.src = "https://unpkg.com/web-vitals@2.1.4/dist/web-vitals.iife.js";
+                vitalsScript.src = "vendor/web-vitals.iife.js";
                 vitalsScript.onload = runVitals;
                 document.head.appendChild(vitalsScript);
                 window.webVitalsLoaded = true;
