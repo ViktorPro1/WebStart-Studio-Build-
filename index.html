@@ -7,16 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebStart Studio</title>
 
-    <!-- 🔹 Секція 2: Політика безпеки (CSP) -->
-    <meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.onrender.com https://cdnjs.cloudflare.com https://script.google.com https://script.googleusercontent.com;
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://unpkg.com https://www.clarity.ms https://cdnjs.cloudflare.com;
-  font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
-  img-src 'self' data: blob: https:;
-  style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com;
-  ">
-
     <!-- 🔹 Секція 2: Критичні стилі та оптимізація завантаження CSS (preload, async Font Awesome) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -27,17 +17,10 @@
     <!-- Продакшен: -->
     <link rel="stylesheet" href="dist/styles.css">
 
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" as="style"
-        onload="this.rel='stylesheet'" crossorigin="anonymous">
-
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" as="style"
-        onload="this.rel='stylesheet'" crossorigin="anonymous">
+    <link rel="preload" href="fonts/fontawesome/css/all.min.css" as="style" onload="this.rel='stylesheet'">
 
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css"
-            crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css"
-            crossorigin="anonymous">
+        <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css">
     </noscript>
 
     <!-- 🔹 Preload для LCP-зображення -->
@@ -74,7 +57,7 @@
         href="https://scintillating-sunshine-94e986.netlify.app/sitemap.xml">
 
     <!-- 🔹 Інші скрипти (defer тільки для зовнішніх) -->
-    <script src="https://unpkg.com/web-vitals@2.1.4/dist/web-vitals.iife.js" defer></script>
+    <script src="scripts/vendor/web-vitals.iife.js" defer></script>
 
     <!-- 🔹 Preload для скрипту -->
     <link rel="preload" href="scripts/script.js" as="script">
