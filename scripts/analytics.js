@@ -43,20 +43,54 @@
             // --- Web Vitals після GTM
             if (!window.webVitalsLoaded) {
                 const vitalsScript = document.createElement('script');
-                vitalsScript.src = "vendor/web-vitals.iife.js";
+                vitalsScript.src = "scripts/vendor/web-vitals.iife.js";
                 vitalsScript.onload = runVitals;
+                vitalsScript.onerror = () => {
+                    console.warn('⚠️ Web Vitals не завантажено');
+                };
                 document.head.appendChild(vitalsScript);
                 window.webVitalsLoaded = true;
             }
         };
+        gtmScript.onerror = () => {
+            console.warn('⚠️ Google Tag Manager недоступний');
+        };
         document.head.appendChild(gtmScript);
 
-        // --- Microsoft Clarity
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = document.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = document.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "slktbp5ngx");
+        // --- Microsoft Clarity з резервним CDN
+        try {
+            (function (c, l, a, r, i, t, y) {
+                c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+                t = document.createElement(r);
+                t.async = 1;
+                t.src = "https://www.clarity.ms/tag/" + i;
+
+                // Якщо основне джерело недоступне → підключаємо CDN
+                t.onerror = function () {
+                    console.warn('⚠️ Clarity основний сервер недоступний. Завантаження з CDN...');
+
+                    const fallback = document.createElement(r);
+                    fallback.async = 1;
+                    fallback.src = "https://cdn.jsdelivr.net/gh/microsoft/clarity@latest/clarity.js";
+                    fallback.onerror = function () {
+                        console.warn('❌ Clarity CDN також недоступний (ad blocker)');
+                    };
+                    fallback.onload = function () {
+                        console.log('✅ Clarity завантажено з резервного CDN');
+                    };
+                    document.head.appendChild(fallback);
+                };
+
+                t.onload = function () {
+                    console.log('✅ Clarity завантажено успішно');
+                };
+
+                y = document.getElementsByTagName(r)[0];
+                y.parentNode.insertBefore(t, y);
+            })(window, document, "clarity", "script", "slktbp5ngx");
+        } catch (e) {
+            console.warn('❌ Clarity не вдалося завантажити:', e);
+        }
 
     }
 
