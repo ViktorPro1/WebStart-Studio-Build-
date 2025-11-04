@@ -224,7 +224,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeGallery = document.getElementById('galleryClose');
     const slider = document.querySelector('.gallery-marquee-slider');
     const wrapper = document.querySelector('.gallery-marquee-wrapper');
+
     if (wrapper) wrapper.style.display = 'block';
+
     if (track && modal && modalImg && closeGallery) {
         track.querySelectorAll('.gallery-marquee-image').forEach(img => {
             img.addEventListener('click', () => {
@@ -233,11 +235,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.add('modal-open');
             });
         });
+
         closeGallery.addEventListener('click', () => {
             modal.classList.add('hidden');
             document.body.classList.remove('modal-open');
         });
+
         let startX = 0, lastMove = 0;
+
+        // пасивні події для оптимізації
         track.addEventListener('touchstart', e => {
             startX = e.touches[0].clientX;
         }, { passive: true });
@@ -247,7 +253,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (now - lastMove < 16) return;
             lastMove = now;
             const diff = startX - e.touches[0].clientX;
-            track.scrollLeft += diff;
+            requestAnimationFrame(() => {
+                track.scrollLeft += diff;
+            });
             startX = e.touches[0].clientX;
         }, { passive: true });
 
