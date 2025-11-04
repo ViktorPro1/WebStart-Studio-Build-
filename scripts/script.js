@@ -238,7 +238,10 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('modal-open');
         });
         let startX = 0, lastMove = 0;
-        track.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+        track.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
         track.addEventListener('touchmove', e => {
             const now = Date.now();
             if (now - lastMove < 16) return;
@@ -246,7 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const diff = startX - e.touches[0].clientX;
             track.scrollLeft += diff;
             startX = e.touches[0].clientX;
-        });
+        }, { passive: true });
+
         if (slider) slider.addEventListener('input', () => {
             track.scrollLeft = (slider.value / 100) * (track.scrollWidth - track.clientWidth);
         });
