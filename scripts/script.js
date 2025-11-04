@@ -243,10 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let startX = 0, lastMove = 0;
 
-        // пасивні події для оптимізації
         track.addEventListener('touchstart', e => {
             startX = e.touches[0].clientX;
-        }, { passive: true });
+        });
 
         track.addEventListener('touchmove', e => {
             const now = Date.now();
@@ -257,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 track.scrollLeft += diff;
             });
             startX = e.touches[0].clientX;
-        }, { passive: true });
+        });
 
         if (slider) slider.addEventListener('input', () => {
             track.scrollLeft = (slider.value / 100) * (track.scrollWidth - track.clientWidth);
