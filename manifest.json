@@ -2,7 +2,7 @@
   "name": "WebStart Studio",
   "short_name": "WebStart Studio",
   "start_url": "/index.html",
-  "display": "minimal-ui",
+  "display": "standalone",
   "background_color": "#121212",
   "theme_color": "#1f1f1f",
   "orientation": "portrait",
