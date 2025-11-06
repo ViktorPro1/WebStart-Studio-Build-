@@ -16,6 +16,8 @@ const urlsToCache = [
     "/scripts/structured-data.js",
     "/scripts/exit-intent.js",
     "/scripts/footer-year.js",
+    "/scripts/pwa-refresh-blocker.js",
+    "/scripts/pwa-update-notification.js",
     "/icons/icon-192x192.webp",
     "/icons/icon-512x512.webp",
 
