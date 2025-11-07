@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- === SEO === -->
+    <title>Кабінет клієнта — WebStart Studio</title>
+    <meta name="description"
+        content="Особистий кабінет клієнта: вибір ZIP-папки або розміщення на Netlify. Прогрес, інструкції, зв'язок у Viber.">
+    <meta name="keywords"
+        content="кабінет клієнта, webstart studio, лендінг, портфоліо, резюме, netlify, zip, розміщення сайту">
+    <meta name="robots" content="noindex, nofollow"> <!-- бо це персональна сторінка -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/cabinet.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Кабінет клієнта — WebStart Studio">
+    <meta property="og:description" content="Обери, як отримати свій сайт: ZIP або розміщення від студії.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/cabinet.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Кабінет клієнта — WebStart Studio">
+    <meta name="twitter:description" content="Обери, як отримати свій сайт: ZIP або розміщення від студії.">
+    <meta name="twitter:image" content="https://scintill.org/branding/banner.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+
+    <!-- Стилі -->
+    <link rel="stylesheet" href="../other_styles/cabinet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Твій кабінет</h1>
+
+        <div class="info-card">
+            <p><strong>Ім'я:</strong> <span id="name">—</span></p>
+            <p><strong>Шаблон:</strong> <span id="template">—</span></p>
+            <p><strong>Статус:</strong> <span id="status">Бриф отримано</span></p>
+        </div>
+
+        <!-- Крок 1: Вибір після брифа -->
+        <div id="step1" class="step">
+            <h3>Обери варіант отримання сайту:</h3>
+            <button onclick="chooseOption(2)" class="btn btn-green">
+                Хочу ZIP-папку (сам розгорну)
+            </button>
+            <button onclick="chooseOption(3)" class="btn btn-blue">
+                Розмісти від нашої платформи <br>(за певну оплату)
+            </button>
+        </div>
+
+        <!-- Крок 2: ZIP -->
+        <div id="step2" class="step" style="display:none;">
+            <h3>Отримай ZIP</h3>
+            <a href="#" id="zip-link" class="btn btn-green">Скачати ZIP</a>
+            <div class="instructions">
+                <p><strong>Як розгорнути:</strong></p>
+                <ol>
+                    <li>Розпакуй ZIP</li>
+                    <li>Зайди на <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a></li>
+                    <li>Перетягни папку — отримай посилання</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Крок 3: Розміщення від тебе -->
+        <div id="step3" class="step" style="display:none;">
+            <h3>Розміщу на Netlify</h3>
+            <p>Я розгорну від свого акаунта. Оплата: <strong>500 грн</strong></p>
+            <button onclick="sendViber(3)" class="btn btn-blue">Оплатити та розмістити</button>
+        </div>
+
+        <!-- Готово -->
+        <div id="done" class="progress-card" style="display:none;">
+            <h3>Готово!</h3>
+            <a id="live-link" href="#" target="_blank" class="live-link">Переглянути сайт</a>
+        </div>
+
+        <!-- Кнопка на головну -->
+        <div style="text-align:center; margin-top:30px;">
+            <a href="../index.html" class="btn btn-outline">На головну</a>
+        </div>
+    </div>
+
+    <script src="../scripts/cabinet.js" defer></script>
+</body>
+
+</html>

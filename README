@@ -369,3 +369,18 @@ css/
 5. Запуск:
    npm run build:css
 6. В HTML підключайте styles/main.css для розробки, а перед публікацією — dist/styles.css.
+
+
+## Додано: (07.11.2025)
+- **Кабінет клієнта** (`cabinet.html`)  
+- **3 кроки**: ZIP / розміщення / готово  
+- **Viber-повідомлення** при виборі  
+- **Адаптив до 420px**  
+- **SEO + кнопка "На головну"**
+
+**Файли**:  
+- `other_styles/cabinet.css`  
+- `scripts/cabinet.js`
+
+**Надсилай**:  
+`cabinet.html?name=Ім'я&template=Шаблон&step=1`

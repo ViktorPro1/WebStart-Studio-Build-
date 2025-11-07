@@ -16,6 +16,7 @@ const urlsToCache = [
     "/scripts/structured-data.js",
     "/scripts/exit-intent.js",
     "/scripts/footer-year.js",
+    "/scripts/cabinet.js",
     "/icons/icon-192x192.webp",
     "/icons/icon-512x512.webp",
 
@@ -66,7 +67,8 @@ const urlsToCache = [
     "/other_styles/terms.css", "/pages/terms.html",
     "/other_styles/utm.css", "/pages/utm.html",
     "/other_styles/webapp-info.css", "/pages/webapp-info.html",
-    "/other_styles/ai-automatization.css", "/pages/ai-automatization.html"
+    "/other_styles/ai-automatization.css", "/pages/ai-automatization.html",
+    "/other_styles/cabinet.css", "/pages/cabinet.html"
 ];
 
 // Встановлення SW - автоматично оновлює кеш
