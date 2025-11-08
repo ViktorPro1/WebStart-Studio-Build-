@@ -11,7 +11,7 @@
         content="Особистий кабінет клієнта: вибір ZIP-папки або розміщення на Netlify. Прогрес, інструкції, зв'язок у Viber.">
     <meta name="keywords"
         content="кабінет клієнта, webstart studio, лендінг, портфоліо, резюме, netlify, zip, розміщення сайту">
-    <meta name="robots" content="noindex, nofollow"> <!-- бо це персональна сторінка -->
+    <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/cabinet.html">
 
     <!-- Open Graph -->
@@ -42,53 +42,87 @@
     <div class="container">
         <h1>Твій кабінет</h1>
 
+        <!-- Прогрес-трекер -->
+        <div class="progress-tracker">
+            <div class="progress-steps">
+                <div class="progress-line">
+                    <div class="progress-line-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-step" id="progress-step-1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Бриф</span>
+                </div>
+                <div class="progress-step" id="progress-step-2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Вибір</span>
+                </div>
+                <div class="progress-step" id="progress-step-3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Готово</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Інфо картка -->
         <div class="info-card">
             <p><strong>Ім'я:</strong> <span id="name">—</span></p>
             <p><strong>Шаблон:</strong> <span id="template">—</span></p>
-            <p><strong>Статус:</strong> <span id="status">Бриф отримано</span></p>
+            <p><strong>Статус:</strong> <span id="status" class="status-badge status-waiting">Бриф отримано</span></p>
         </div>
 
         <!-- Крок 1: Вибір після брифа -->
         <div id="step1" class="step">
             <h3>Обери варіант отримання сайту:</h3>
             <button onclick="chooseOption(2)" class="btn btn-green">
-                Хочу ZIP-папку (сам розгорну)
+                📦 Хочу ZIP-папку (сам розгорну)
             </button>
             <button onclick="chooseOption(3)" class="btn btn-blue">
-                Розмісти від нашої платформи <br>(за певну оплату)
+                🚀 Розмісти від нашої платформи<br><small>(за певну оплату)</small>
             </button>
         </div>
 
         <!-- Крок 2: ZIP -->
         <div id="step2" class="step" style="display:none;">
-            <h3>Отримай ZIP</h3>
-            <a href="#" id="zip-link" class="btn btn-green">Скачати ZIP</a>
+            <h3>📦 Отримай ZIP</h3>
+            <a href="#" id="zip-link" class="btn btn-green">Скачати ZIP-архів</a>
             <div class="instructions">
-                <p><strong>Як розгорнути:</strong></p>
+                <strong>Як розгорнути самостійно:</strong>
                 <ol>
-                    <li>Розпакуй ZIP</li>
+                    <li>Розпакуй завантажений ZIP-архів</li>
                     <li>Зайди на <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a></li>
-                    <li>Перетягни папку — отримай посилання</li>
+                    <li>Перетягни розпаковану папку у вікно браузера</li>
+                    <li>Отримай посилання на свій сайт миттєво!</li>
                 </ol>
             </div>
         </div>
 
         <!-- Крок 3: Розміщення від тебе -->
         <div id="step3" class="step" style="display:none;">
-            <h3>Розміщу на Netlify</h3>
-            <p>Я розгорну від свого акаунта. Оплата: <strong>500 грн</strong></p>
-            <button onclick="sendViber(3)" class="btn btn-blue">Оплатити та розмістити</button>
+            <h3>🚀 Розміщу на Netlify</h3>
+            <p>Я розгорну сайт від свого акаунта та налаштую все за тебе.</p>
+            <p><strong>Вартість послуги:</strong> <span style="color: #667eea; font-size: 1.2em;">500 грн</span></p>
+            <button onclick="sendViber(3)" class="btn btn-blue">💳 Оплатити та розмістити</button>
+            <div class="instructions">
+                <strong>Що входить:</strong>
+                <ol>
+                    <li>Розміщення на Netlify</li>
+                    <li>Налаштування домену (якщо є)</li>
+                    <li>SSL-сертифікат (безпечне з'єднання)</li>
+                    <li>Технічна підтримка 30 днів</li>
+                </ol>
+            </div>
         </div>
 
         <!-- Готово -->
         <div id="done" class="progress-card" style="display:none;">
-            <h3>Готово!</h3>
-            <a id="live-link" href="#" target="_blank" class="live-link">Переглянути сайт</a>
+            <h3>🎉 Вітаємо! Твій сайт готовий!</h3>
+            <p>Сайт успішно розміщено та доступний онлайн</p>
+            <a id="live-link" href="#" target="_blank" class="btn btn-green">🌐 Переглянути сайт</a>
         </div>
 
         <!-- Кнопка на головну -->
         <div style="text-align:center; margin-top:30px;">
-            <a href="../index.html" class="btn btn-outline">На головну</a>
+            <a href="../index.html" class="btn btn-outline">← На головну</a>
         </div>
     </div>
 
