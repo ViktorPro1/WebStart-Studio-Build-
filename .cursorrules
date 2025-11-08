@@ -1,0 +1,220 @@
+# WebStart Studio - Cursor AI Rules
+
+## Про проєкт
+WebStart Studio - це статична платформа для створення портфоліо, резюме та лендінгів.
+Побудована на чистому HTML5, CSS3 та Vanilla JavaScript без фреймворків.
+
+## Технічний стек
+- HTML5 (семантична розмітка)
+- CSS3 (модульна архітектура в css/)
+- Vanilla JavaScript (без jQuery, React, Vue)
+- PWA (Service Worker в sw.js)
+- WebP для зображень
+- Netlify для хостингу
+
+## Архітектура проєкту
+
+### Структура CSS (модульна)
+css/
+├── main.css (імпорти всіх модулів)
+├── base/ (reset, typography)
+├── layout/ (header, nav, footer)
+├── components/ (buttons, cards, modals, forms, tables)
+├── sections/ (всі секції головної сторінки)
+├── features/ (pwa, cookies, breadcrumbs, progress)
+├── themes/ (dark mode)
+└── utils/ (animations, responsive)
+
+### Структура JavaScript
+scripts/
+├── main.js (головна логіка)
+├── init.js (ініціалізація)
+├── analytics.js (Google Analytics, Clarity)
+├── pwa-loader.js (PWA функціонал)
+├── ui-scroll.js (scroll анімації)
+├── cabinet.js (кабінет клієнта)
+└── інші модулі...
+
+## Правила кодування
+
+### HTML
+- Використовуй семантичні теги: <section>, <article>, <nav>, <header>, <footer>
+- Додавай aria-label для accessibility
+- Всі зображення повинні мати alt атрибути
+- Використовуй <picture> для responsive images з WebP
+- Indent: 4 пробіли
+
+### CSS
+- Mobile-first підхід (спочатку стилі для мобільних)
+- BEM-нотація для класів де можливо
+- Використовуй CSS змінні для кольорів та розмірів
+- Групуй властивості: позиціювання → блокова модель → візуальні → типографіка
+- Уникай !important (тільки для utilities)
+- Темна тема через .dark-mode клас на body
+
+Приклад:
+.service-card {
+    /* Позиціювання */
+    position: relative;
+    
+    /* Блокова модель */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    /* Візуальні властивості */
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+    /* Типографіка */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+### JavaScript
+- Використовуй const за замовчуванням, let тільки якщо потрібно
+- Не використовуй var
+- Іменування: camelCase для змінних/функцій, UPPER_SNAKE_CASE для констант
+- Додавай JSDoc коментарі для складних функцій
+- Уникай вбудованих обробників подій (onclick в HTML)
+- Використовуй addEventListener
+- localStorage для збереження налаштувань (theme, прогрес)
+- НІКОЛИ не використовуй jQuery або інші бібліотеки
+- Vanilla JS only!
+
+Приклад:
+/**
+ * Ініціалізує темну тему на основі збережених налаштувань
+ * @returns {void}
+ */
+function initDarkMode() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+}
+
+// Event listener
+const toggleBtn = document.getElementById('darkModeToggle');
+toggleBtn?.addEventListener('change', (e) => {
+    const isDark = e.target.checked;
+    document.body.classList.toggle('dark-mode', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+
+## Спеціальні вимоги
+
+### PWA
+- Service Worker (sw.js) використовує cache-first стратегію
+- manifest.json містить всі необхідні поля
+- Іконки тільки у форматі WebP
+
+### Оптимізація
+- Всі зображення у WebP з PNG fallback
+- Lazy loading для зображень: loading="lazy"
+- Preload для критичних ресурсів
+- Defer для скриптів
+- Мінімізація CSS/JS перед продакшеном (dist/)
+
+### Безпека
+- Content Security Policy в meta теги
+- Немає inline scripts (виняток: Google Analytics)
+- HTTPS only
+- Валідація всіх форм на клієнті
+
+### Accessibility
+- WCAG AA стандарт
+- Всі інтерактивні елементи мають :focus стилі
+- Keyboard navigation підтримується
+- Aria-labels де потрібно
+- Контраст кольорів мінімум 4.5:1
+
+## Коли створюєш новий код
+
+### Для нової секції сайту:
+1. Додай HTML в index.html з семантичними тегами
+2. Створи окремий CSS файл в css/sections/
+3. Додай імпорт в css/main.css
+4. Якщо потрібен JS - додай в scripts/ та підключи в index.html
+5. Перевір responsive на 320px, 768px, 1024px, 1920px
+6. Перевір dark mode
+7. Перевір accessibility
+
+### Для нової сторінки:
+1. Створи HTML файл в pages/
+2. Підключи dist/styles.css (або main.css для розробки)
+3. Додай посилання в навігацію
+4. Перевір всі шляхи (відносні шляхи!)
+5. Додай meta теги (title, description, og:tags)
+
+### Для нового компонента:
+1. Створи CSS в css/components/
+2. Додай в css/main.css імпорт
+3. Використовуй BEM або semantic класи
+4. Зроби responsive та dark mode варіанти
+
+## Що НЕ робити
+
+❌ НЕ використовуй jQuery
+❌ НЕ використовуй React, Vue, Angular
+❌ НЕ використовуй Bootstrap або інші CSS фреймворки
+❌ НЕ додавай npm залежності без обговорення
+❌ НЕ використовуй inline стилі (виняток: dynamic JS стилі)
+❌ НЕ використовуй !important без вагомої причини
+❌ НЕ забувай про темну тему
+❌ НЕ забувай про мобільні пристрої
+❌ НЕ ігноруй accessibility
+
+## Файли які НЕ треба редагувати
+
+- sw.js (Service Worker) - тільки якщо знаєш що робиш
+- dist/ (build файли) - генеруються автоматично
+- .git/
+- node_modules/ (якщо є)
+
+## Пріоритети при рефакторингу
+
+1. Продуктивність (Core Web Vitals)
+2. Accessibility
+3. Mobile-first
+4. Dark mode підтримка
+5. SEO
+6. Читабельність коду
+7. DRY принцип
+
+## Тестування
+
+Перед комітом перевір:
+- [ ] Desktop Chrome
+- [ ] Desktop Firefox
+- [ ] Mobile Safari (iOS)
+- [ ] Mobile Chrome (Android)
+- [ ] Dark mode
+- [ ] Консоль без помилок
+- [ ] Lighthouse score > 90
+- [ ] Accessibility перевірка
+
+## Комітування
+
+Використовуй Conventional Commits:
+- feat: нова функція
+- fix: виправлення бага
+- docs: зміни в документації
+- style: форматування
+- refactor: рефакторинг
+- perf: покращення продуктивності
+- test: тести
+- chore: інше
+
+Приклад: feat(ai-service): додано генератор промптів
+
+## Підказки для AI
+
+- Завжди пиши чистий, коментований код
+- Дотримуйся існуючої архітектури
+- Пропонуй покращення якщо бачиш можливість
+- Питай якщо щось незрозуміло
+- Надавай альтернативні рішення
+- Думай про масштабованість
