@@ -1,3 +1,129 @@
+<div align="center">
+
+# 💻 WebStart Studio
+
+### Детальна Технічна Документація Проекту
+
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/ViktorPro1/WebStart-Studio-Build-/releases/tag/v2.0.0)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg)](https://github.com/ViktorPro1/WebStart-Studio-Build-/graphs/commit-activity)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/code%20of%20conduct-contributor%20covenant-purple.svg)](CODE_OF_CONDUCT.md)
+
+[![Website](https://img.shields.io/website?down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fscintillating-sunshine-94e986.netlify.app%2F)](https://scintillating-sunshine-94e986.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR-BADGE-ID/deploy-status)](https://app.netlify.com/sites/scintillating-sunshine-94e986/deploys)
+[![GitHub stars](https://img.shields.io/github/stars/ViktorPro1/WebStart-Studio-Build-?style=social)](https://github.com/ViktorPro1/WebStart-Studio-Build-/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ViktorPro1/WebStart-Studio-Build-?style=social)](https://github.com/ViktorPro1/WebStart-Studio-Build-/network/members)
+
+---
+
+[🌐 Live Demo](https://scintillating-sunshine-94e986.netlify.app/) • 
+[📚 Документація](https://github.com/ViktorPro1/WebStart-Studio-Build-/wiki) • 
+[🐛 Баг-репорт](https://github.com/ViktorPro1/WebStart-Studio-Build-/issues/new?template=bug_report.md) • 
+[💡 Фіча-запит](https://github.com/ViktorPro1/WebStart-Studio-Build-/issues/new?template=feature_request.md) •
+[💬 Discussions](https://github.com/ViktorPro1/WebStart-Studio-Build-/discussions)
+
+---
+
+### 🎯 Високопродуктивний промо-сайт для створення портфоліо, резюме та лендінгів
+
+**WebStart Studio** — це сучасна платформа на чистому **HTML5/CSS3/JS** з підтримкою **PWA**, **темної теми**, **міжнародних версій** та **AI-сервісів**.
+
+</div>
+
+---
+
+## 📋 Зміст
+
+- [🚀 Огляд Проєкту](#-огляд-проєкту)
+- [✨ Ключові Особливості](#-ключові-особливості)
+- [🛠️ Технологічний Стек](#️-технологічний-стек)
+- [⚡ Швидкий Старт](#-швидкий-старт)
+- [📊 Показники Продуктивності](#-показники-продуктивності)
+- [🤝 Як Долучитися](#-як-долучитися)
+- [📚 Документація](#-документація)
+- [📞 Підтримка](#-підтримка)
+- [📜 Ліцензія](#-ліцензія)
+
+---
+
+## 🎨 Скріншоти
+
+<div align="center">
+
+| Desktop | Mobile |
+|---------|--------|
+| ![Desktop](path/to/desktop-screenshot.png) | ![Mobile](path/to/mobile-screenshot.png) |
+
+</div>
+
+---
+
+## ⚡ Швидкий Старт
+
+```bash
+# Клонувати репозиторій
+git clone https://github.com/ViktorPro1/WebStart-Studio-Build-.git
+
+# Перейти до папки
+cd WebStart-Studio-Build-
+
+# Відкрити в браузері
+# Просто відкрийте index.html
+
+# АБО запустити локальний сервер (для PWA)
+npx http-server
+# або
+python -m http.server 8000
+```
+
+🌐 **Відкрийте:** `http://localhost:8000`
+
+---
+
+## 🌟 Ключові Можливості
+
+- ✅ **Progressive Web App (PWA)** — офлайн-режим і встановлення
+- 🎨 **Темна тема** — збереження в localStorage
+- 🌍 **6 мов** — EN, UK, PL, DE, FR, CZ, SE
+- 🤖 **AI Сервіси** — промптинг, автоматизація
+- 📱 **100% адаптивний** — від 320px до 4K
+- ⚡ **Оптимізація:** WebP, lazy loading, Service Worker
+- 🔒 **Безпека:** CSP, HTTPS, Security Headers
+- 📊 **Аналітика:** Google Analytics, Microsoft Clarity
+- 🎯 **SEO:** Schema.org, OG tags, Sitemap
+- 🎁 **Міні-курси** з сертифікатами
+
+---
+
+## 🛠️ Технології
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=for-the-badge&logo=pwa&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+
+**Без фреймворків** • **Без залежностей** • **Чистий код**
+
+---
+
+## 📈 Метрики
+
+| Показник | Значення |
+|----------|----------|
+| 🚀 **Performance** | 91 (mobile) / 100 (desktop) |
+| ♿ **Accessibility** | 95 (mobile) / 98 (desktop) |
+| 🔍 **SEO** | 100 |
+| 💚 **Best Practices** | 100 |
+| 📊 **Core Web Vitals** | Passed ✅ |
+| 🔐 **Security** | A+ (SSL Labs) |
+| ⚡ **LCP** | < 1s |
+| 📦 **Size** | ~4.4 MB (WebP оптимізація) |
+
+[Детальні звіти аудитів →](#-показники-продуктивності-та-безпеки)
+
+
 # 💻 WebStart Studio: Детальна Технічна Документація Проекту (ОНОВЛЕНО)
 
 ## 🚀 Огляд Проекту
@@ -384,6 +510,61 @@ css/
 
 **Надсилай**:  
 `cabinet.html?name=Ім'я&template=Шаблон&step=1`
+
+
+
+## 📚 Документація
+
+- 📖 [Як долучитися](CONTRIBUTING.md) - інструкції для контриб'юторів
+- 📝 [Історія змін](CHANGELOG.md) - що нового в кожній версії
+- 🤝 [Кодекс поведінки](CODE_OF_CONDUCT.md) - правила спільноти
+- 🔒 [Політика безпеки](SECURITY.md) - як повідомити про вразливість
+
+## 🤝 Як долучитися
+
+Ми раді будь-якому внеску! 
+
+1. 🍴 Форкніть репозиторій
+2. 🌿 Створіть гілку: `git checkout -b feature/amazing-feature`
+3. 💾 Закомітьте: `git commit -m "feat: додано нову фічу"`
+4. 📤 Запушіть: `git push origin feature/amazing-feature`
+5. 🎉 Відкрийте Pull Request
+
+Детальніше в [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## 🐛 Знайшли баг?
+
+- Перевірте [Issues](https://github.com/ViktorPro1/WebStart-Studio-Build-/issues)
+- Створіть [новий Issue](https://github.com/ViktorPro1/WebStart-Studio-Build-/issues/new)
+- **Вразливість безпеки?** → [SECURITY.md](SECURITY.md)
+
+## 🔒 Безпека
+
+Виявили вразливість? Повідомте приватно на: webstartstudio978@gmail.com  
+Детальніше: [SECURITY.md](SECURITY.md)
+
+## 📊 Статистика
+
+![GitHub stars](https://img.shields.io/github/stars/ViktorPro1/WebStart-Studio-Build-?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ViktorPro1/WebStart-Studio-Build-?style=social)
+![GitHub issues](https://img.shields.io/github/issues/ViktorPro1/WebStart-Studio-Build-)
+![GitHub last commit](https://img.shields.io/github/last-commit/ViktorPro1/WebStart-Studio-Build-)
+
+## 🙏 Подяки
+
+- [Contributor Covenant](https://www.contributor-covenant.org) за Кодекс поведінки
+- [Keep a Changelog](https://keepachangelog.com) за формат Changelog
+- Всім [контриб'юторам](https://github.com/ViktorPro1/WebStart-Studio-Build-/graphs/contributors)!
+
+---
+
+<div align="center">
+
+**Створено з ❤️ командою WebStart Studio**
+
+[⬆ Повернутися до початку](#-webstart-studio-детальна-технічна-документація-проекту-оновлено)
+
+</div>
 
 
 
