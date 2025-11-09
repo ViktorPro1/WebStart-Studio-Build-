@@ -1,0 +1,39 @@
+/* TEAM */
+Developer: Viktor & Dima Sviy
+Contact: webstartstudio978@gmail.com
+Telegram: @Viktor_freelancer_recruiting_pit
+Viber: +38(066) 139 19 32
+Location: Ukraine
+
+/* THANKS */
+Contributors: https://github.com/ViktorPro1/WebStart-Studio-Build-/graphs/contributors
+AI Assistant: Djon
+Community: WebStart Studio Users
+Claude AI: For development assistance
+
+/* SITE */
+Last update: 2025/11/09
+Standards: HTML5, CSS3, JavaScript ES6
+Components: PWA, Service Worker, Dark Mode, Multi-language (6 languages)
+Software: VS Code, Cursor AI, Claude
+Hosting: Netlify
+Performance: Lighthouse Score 91+ (mobile), 100 (desktop)
+Repository: https://github.com/ViktorPro1/WebStart-Studio-Build-
+
+/* FEATURES */
+Languages: Ukrainian, English, Polish, German, French, Czech, Swedish
+AI Services: Prompting, Automation, Content Generation
+Services: Portfolio, Resume, Landing Pages
+PWA: Offline mode, Installable app
+Security: CSP Enabled, HTTPS Ready
+
+/* SPECIAL THANKS */
+Contributor Covenant - for Code of Conduct
+Keep a Changelog - for Changelog format
+Netlify - for hosting platform
+Font Awesome - for icons
+All open-source community
+
+---
+Made with ❤️ in Ukraine 🇺🇦
+WebStart Studio © 2024-2025
