@@ -44,6 +44,7 @@ const cssFiles = [
     'css/sections/international.css',
     'css/sections/blog.css',
     'css/sections/contact.css',
+    'css/sections/simple-security.css',
     'css/sections/socials.css',
 
     // ===== FEATURES =====

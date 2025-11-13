@@ -1,0 +1,149 @@
+/* Безпека від фішингу */
+.simple-sec {
+    padding: 90px 20px;
+    background: #cff3f3;
+    color: #0f2e1c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.simple-sec .box {
+    max-width: 720px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 44px 36px;
+    border-radius: 28px;
+    border: 1px solid rgba(0, 150, 100, 0.18);
+    box-shadow: 0 14px 36px rgba(0, 120, 80, 0.1);
+    transition: all 0.35s ease;
+    backdrop-filter: blur(8px);
+}
+
+.simple-sec .box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 22px 50px rgba(0, 120, 80, 0.16);
+}
+
+/* Заголовок */
+.simple-sec h2 {
+    font-size: 2.1rem;
+    color: #5863f8;
+    margin: 0 0 16px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Текст */
+.simple-sec p {
+    color: #0f2e1c;
+    margin: 14px 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* Приклади */
+.examples {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 32px 0;
+    text-align: left;
+}
+
+.ex {
+    display: flex;
+    gap: 16px;
+    background: rgba(0, 140, 90, 0.08);
+    padding: 18px;
+    border-radius: 18px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border-left: 4px solid #00a877;
+}
+
+.ex:hover {
+    background: rgba(0, 140, 90, 0.15);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(0, 140, 90, 0.12);
+}
+
+.ex .emoji {
+    font-size: 1.9rem;
+    min-width: 36px;
+}
+
+.ex strong {
+    color: #006644;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.ex small {
+    color: #d63a3a;
+    font-style: italic;
+    font-size: 0.92rem;
+}
+
+/* Що робимо */
+.what-we-do {
+    margin: 28px 0;
+    padding: 20px;
+    background: rgba(0, 180, 120, 0.07);
+    border-radius: 16px;
+    border: 1px dashed rgba(0, 150, 100, 0.25);
+}
+
+.what-we-do p:last-child {
+    color: #006644;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Кнопка */
+.btn-simple {
+    display: inline-block;
+    background: linear-gradient(90deg, #0078d4, #00a0ff);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.4px;
+    box-shadow: 0 7px 22px rgba(0, 120, 255, 0.28);
+    transition: all 0.35s ease;
+    margin-top: 10px;
+}
+
+.btn-simple:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(0, 120, 255, 0.4);
+}
+
+/* Мобільна адаптація */
+@media (max-width: 480px) {
+    .simple-sec {
+        padding: 60px 16px;
+    }
+
+    .simple-sec h2 {
+        font-size: 1.7rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .ex {
+        font-size: 0.95rem;
+        padding: 14px;
+    }
+
+    .btn-simple {
+        padding: 14px 32px;
+        font-size: 1.05rem;
+    }
+}

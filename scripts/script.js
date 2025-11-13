@@ -280,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'розміщення': 'hosting-help', 'хостинг': 'hosting-help', 'international': 'international',
             'блог': 'blog', 'новини': 'blog', 'контакти': 'contact-gift-wrapper', 'зв\'язок': 'contact-gift-wrapper',
             'бонус': 'guide-bonus', 'путівник': 'guide-bonus', 'соцмережі': 'social',
-            'сертифікат': 'certificate-gift', 'сувенір': 'certificate-gift'
+            'сертифікат': 'certificate-gift', 'сувенір': 'certificate-gift',
+            'безпека': 'simple-security', 'фішинг': 'simple-security', 'захист': 'simple-security'
         };
 
 

@@ -20,7 +20,8 @@ const sectionNames = {
     'international': 'International',
     'contact-gift-wrapper': 'Контакти',
     'guide-bonus': 'Бонус+',
-    'social': 'Соцмережі'
+    'social': 'Соцмережі',
+    'simple-security': 'Безпека'
 };
 
 const sections = document.querySelectorAll('section[id]');
