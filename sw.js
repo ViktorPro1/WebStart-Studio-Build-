@@ -3,20 +3,51 @@ const CACHE_NAME = `webstart-cache-${self.registration.scope}`;
 const urlsToCache = [
     "/",
     "/index.html",
-    '/css/main.css',
-    "/scripts/main.js",
-    "/scripts/ui-scroll.js",
-    "/scripts/analytics.js",
-    "/scripts/instruction.js",
-    "/scripts/init.js",
-    "/scripts/calculator.js",
-    "/scripts/pwa-loader.js",
-    "/scripts/social-proof.js",
-    "/scripts/script.js",
-    "/scripts/structured-data.js",
-    "/scripts/exit-intent.js",
-    "/scripts/footer-year.js",
+    "/css/main.css",
     "/scripts/cabinet.js",
+    "/scripts/calculator-days.js",
+    "/scripts/exit-intent.js",
+
+    // Для сучасних браузерів (модулі)
+    "/scripts/init/app.js",
+    // Core scripts
+    "/scripts/core/theme.js",
+    "/scripts/core/countdown.js",
+    "/scripts/core/scroll-reveal.js",
+    "/scripts/core/search.js",
+    "/scripts/core/ui-scroll.js",
+    // UI scripts
+    "/scripts/ui/burger-menu.js",
+    "/scripts/ui/scroll-to-top.js",
+    "/scripts/ui/video-toggle.js",
+    "/scripts/ui/modals.js",
+    // Features
+    "/scripts/features/testimonials.js",
+    "/scripts/features/gallery.js",
+    "/scripts/features/pricing-toggle.js",
+    "/scripts/features/share.js",
+    "/scripts/features/pull-to-refresh.js",
+    "/scripts/features/toggle-sections.js",
+    "/scripts/features/cookie.js",
+    "/scripts/features/utm.js",
+    "/scripts/features/achievements.js",
+    "/scripts/features/pricing-table-toggle.js",
+    // Init modules
+    "/scripts/init-modules/analytics.js",
+    "/scripts/init-modules/calculator.js",
+
+    "/scripts/init-modules/footer-year.js",
+    "/scripts/init-modules/tabs.js",
+    "/scripts/init-modules/pwa-loader.js",
+    "/scripts/init-modules/social-proof.js",
+    "/scripts/init-modules/json-ld-schema.js",
+    // PWA service worker
+    "/scripts/pwa/service-worker-handler.js",
+
+    // Для старих браузерів
+    "/scripts/dist/bundle.js",
+
+    // Іконки
     "/icons/icon-192x192.webp",
     "/icons/icon-512x512.webp",
 

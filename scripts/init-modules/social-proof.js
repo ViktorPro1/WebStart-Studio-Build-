@@ -1,4 +1,59 @@
-const messages = [
+// ==========================================
+// Social Proof Manager (Модульна версія)
+// ==========================================
+export class SocialProofManager {
+    constructor(messages, boxId = "social-proof", textId = "proof-text") {
+        this.messages = messages || [];
+        this.box = document.getElementById(boxId);
+        this.text = document.getElementById(textId);
+        this.lastIndex = -1;
+        this.showDuration = 5000; // показ повідомлення, мс
+        this.initialDelay = 120000; // перший показ через 2 хв
+        this.intervalDelay = 720000; // наступні кожні 12 хв
+        this.intervalId = null;
+    }
+
+    init() {
+        if (!this.box || !this.text || !this.messages.length) return;
+        setTimeout(() => {
+            this.showRandomMessage();
+            this.intervalId = setInterval(() => this.showRandomMessage(), this.intervalDelay);
+        }, this.initialDelay);
+    }
+
+    showRandomMessage() {
+        if (!this.messages.length) return;
+
+        let index;
+        do {
+            index = Math.floor(Math.random() * this.messages.length);
+        } while (index === this.lastIndex);
+        this.lastIndex = index;
+
+        this.text.innerHTML = this.messages[index];
+        this.box.classList.remove("hidden");
+
+        setTimeout(() => this.box.classList.add("hidden"), this.showDuration);
+    }
+
+    stop() {
+        if (this.intervalId) clearInterval(this.intervalId);
+    }
+}
+
+// ==========================================
+// Ініціалізація через функцію
+// ==========================================
+export function initSocialProof(messages, boxId, textId) {
+    const manager = new SocialProofManager(messages, boxId, textId);
+    manager.init();
+    return manager;
+}
+
+// ==========================================
+// Повідомлення Social Proof
+// ==========================================
+export const socialProofMessages = [
     "🤖 Djon<br>- Марія скористалась створенням резюме 📄",
     "🤖 Djon<br>- Олег отримав лендінг 🌐",
     "🤖 Djon<br>- Анна має персональне портфоліо 🎨",
@@ -51,28 +106,3 @@ const messages = [
     "🤖 Djon<br>- Марія перевірила лендінг для мобільної версії 📱",
     "🤖 Djon<br>- Андрій має готовий шаблон для соцмереж 🖼️"
 ];
-
-const box = document.getElementById("social-proof");
-const text = document.getElementById("proof-text");
-
-let lastIndex = -1;
-
-function showRandomMessage() {
-    let index;
-    do {
-        index = Math.floor(Math.random() * messages.length);
-    } while (index === lastIndex);
-    lastIndex = index;
-
-    text.innerHTML = messages[index]; // innerHTML для <br>
-    box.classList.remove("hidden");
-
-    setTimeout(() => box.classList.add("hidden"), 5000); // ховаємо через 5 секунд
-}
-
-// Перший показ через 2 хвилини (120000 мс)
-setTimeout(() => {
-    showRandomMessage();
-    // Наступні повідомлення кожні 12 хвилин (720000 мс)
-    setInterval(showRandomMessage, 720000);
-}, 120000);

@@ -57,10 +57,6 @@
     <!-- 🔹 Інші скрипти (defer тільки для зовнішніх) -->
     <script src="scripts/vendor/web-vitals.iife.js" defer></script>
 
-    <!-- 🔹 Preload для скрипту -->
-    <link rel="preload" href="scripts/script.js" as="script">
-    <link rel="preload" href="scripts/main.js" as="script">
-
     <!-- 🔹 Критичні стилі -->
     <style>
         body {
@@ -785,14 +781,18 @@
     <!-- Акція -->
     <section class="promo" id="promo">
         <div class="promo-container">
-            <h2>🎯 Твій профіль — твоя реклама!</h2>
-            <p>
-                Обери резюме або портфоліо — отримай <strong>соцбанер для Instagram/Facebook</strong> у подарунок!
-                <br>З QR-кодом, стилем і меседжем, що зачепить.
-                <br>Ідеально для сторіс, постів і реклами.
+            <h2>🔥 Чорна П’ятниця: <br>час оновити себе і свій бренд</h2>
+            <p><strong>14.11 — 30.11</strong></p>
+            <p>💸 Знижки до –50% на ключові пропозиції, які працюють на вас:</p>
+            <p>📄 <strong>Резюме та CV</strong> — сильна структура, сучасний вигляд.
+                <br>📁 <strong>Портфоліо</strong> — професійна подача вашого досвіду.
+                <br>🌐 <strong>Лендінги</strong> — дизайн + текст, що продає.
             </p>
+            <p>🎁 Подарунок кожному <strong>учаснику, який звернеться до нас</strong>:<br>
+                ✨ Соцбанер із QR-кодом у бренд-стилі — для постів, сторіс і реклами.</p>
             <div id="countdown" class="countdown"></div>
-            <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank" class="promo-btn">Отримати зараз</a>
+            <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank" class="promo-btn">Скористатися
+                пропозицією</a>
         </div>
     </section>
     <!-- Замовити -->
@@ -1401,16 +1401,12 @@
         <span id="proof-text"></span>
     </div>
 
-    <!-- Скрипти -->
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/init.js" defer></script>
-    <script src="scripts/analytics.js" defer></script>
-    <script src="scripts/ui-scroll.js" defer></script>
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/pwa-loader.js" defer></script>
-    <script src="scripts/structured-data.js" defer></script>
-    <script src="scripts/social-proof.js" defer></script>
-    <script src="scripts/footer-year.js" defer></script>
+
+    <!-- Сучасні браузери -->
+    <script type="module" src="scripts/init/app.js"></script>
+
+    <!-- Старі браузери -->
+    <script nomodule src="scripts/dist/bundle.js"></script>
 
     <!-- Exit Intent Popup -->
     <script src="scripts/exit-intent.js" defer></script>

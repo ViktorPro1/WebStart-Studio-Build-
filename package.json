@@ -5,7 +5,9 @@
   "main": "concat-css.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "node concat-css.js"
+    "build:css": "node concat-css.js",
+    "build:js": "node build.js",
+    "build": "npm run build:css && npm run build:js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ViktorPro1/WebStart-Studio-Build-/issues"
   },
-  "homepage": "https://github.com/ViktorPro1/WebStart-Studio-Build-#readme"
+  "homepage": "https://github.com/ViktorPro1/WebStart-Studio-Build-#readme",
+  "devDependencies": {
+    "esbuild": "^0.27.0"
+  }
 }

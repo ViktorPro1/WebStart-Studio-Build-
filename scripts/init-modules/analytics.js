@@ -1,5 +1,5 @@
 // 🔹 Відкладена аналітика: GTM (GA4), Clarity, Web Vitals
-(function () {
+export function initAnalytics() {
 
     // 🔹 Ініціалізація GTM
     function initGTM() {
@@ -100,5 +100,4 @@
     } else {
         loadScripts();
     }
-
-})();
+}
