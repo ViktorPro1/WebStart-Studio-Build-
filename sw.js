@@ -7,6 +7,7 @@ const urlsToCache = [
     "/scripts/cabinet.js",
     "/scripts/calculator-days.js",
     "/scripts/exit-intent.js",
+    "/scripts/security.js",
 
     // Для сучасних браузерів (модулі)
     "/scripts/init/app.js",
@@ -99,7 +100,8 @@ const urlsToCache = [
     "/other_styles/utm.css", "/pages/utm.html",
     "/other_styles/webapp-info.css", "/pages/webapp-info.html",
     "/other_styles/ai-automatization.css", "/pages/ai-automatization.html",
-    "/other_styles/cabinet.css", "/pages/cabinet.html"
+    "/other_styles/cabinet.css", "/pages/cabinet.html",
+    "/other_styles/security.css", "/pages/security-tips.html"
 ];
 
 // Встановлення SW - автоматично оновлює кеш
