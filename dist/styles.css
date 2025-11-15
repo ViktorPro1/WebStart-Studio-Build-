@@ -1396,6 +1396,31 @@ a.cta-button:focus {
     text-decoration: underline;
 }
 
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgb(1, 50, 116), rgb(50, 120, 200));
+    color: white;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.help-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
 
 @media (max-width: 480px) {
     .popup {
@@ -1422,7 +1447,16 @@ a.cta-button:focus {
         right: 8px;
         overflow-y: hidden;
     }
+
+    .help-button {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
+
 
 /* ========================================
    css/components/forms.css

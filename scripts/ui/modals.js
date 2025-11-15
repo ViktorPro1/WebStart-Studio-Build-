@@ -46,3 +46,19 @@ function initHelpPopup() {
         }
     });
 }
+
+const popup = document.getElementById('popup');
+const closePopupBtn = document.getElementById('close-popup');
+const helpButton = document.getElementById('help-button');
+
+// Закриття popup і показ кнопки
+closePopupBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+    helpButton.style.display = 'block';
+});
+
+// Відкриття popup при кліку на кнопку
+helpButton.addEventListener('click', () => {
+    popup.style.display = 'flex';
+    helpButton.style.display = 'none';
+});
