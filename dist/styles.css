@@ -332,11 +332,12 @@ header nav {
     }
 }
 
-/* Альбомна орієнтація */
+/* Альбомна орієнтація для всіх екранів */
+
 @media (orientation: landscape) {
     header {
-        background-size: auto 100%;
-        /* висота 100%, ширина підлаштовується */
+        min-height: clamp(260px, 50vh, 420px);
+        background-size: cover;
     }
 }
 
