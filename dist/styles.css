@@ -137,7 +137,7 @@ header {
     padding: 100px 20px;
     position: relative;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header::after {
@@ -331,6 +331,7 @@ header nav {
         order: 2;
     }
 }
+
 
 /* ========================================
    css/layout/navigation.css
