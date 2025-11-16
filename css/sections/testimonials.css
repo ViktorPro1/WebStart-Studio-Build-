@@ -1,18 +1,20 @@
 /* ========================================
-   ВІДГУКИ
+   ВІДГУКИ - СУЧАСНИЙ ДИЗАЙН
    ======================================== */
 
 #testimonials {
-    background-color: #f9f9f9;
+    background: transparent;
     padding: 60px 20px;
     text-align: center;
     overflow: hidden;
+    position: relative;
 }
 
 #testimonials h2 {
     font-size: 32px;
     margin-bottom: 40px;
-    color: #333;
+    color: #2d3748;
+    font-weight: 700;
 }
 
 .testimonials-container {
@@ -23,49 +25,95 @@
 }
 
 .testimonial {
-    background-color: #fff;
-    padding: 20px 25px;
-    max-width: 300px;
-    border-radius: 10px;
-    transition: transform .3s;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    max-width: 320px;
+    border-radius: 20px;
+    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     align-items: center;
-    gap: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+    gap: 25px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s ease;
+}
+
+.testimonial:hover::before {
+    transform: scaleX(1);
 }
 
 .testimonial:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, .25);
 }
 
 .testimonial p {
     font-style: italic;
     margin-bottom: 10px;
-    color: #555;
+    color: #4a5568;
     font-size: 14px;
+    line-height: 1.6;
 }
 
 .testimonial cite {
-    color: #777;
+    color: #667eea;
     font-weight: 700;
+    font-style: normal;
 }
 
+/* СУЧАСНЕ ОФОРМЛЕННЯ ФОТО */
 .testimonial-photo {
-    width: 120px;
-    /* зробити квадрат */
-    height: 120px;
-    /* рівно width */
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
-    /* коло */
     object-fit: cover;
     opacity: 0;
-    transform: scale(.8);
-    transition: opacity .5s, transform .5s;
+    transform: scale(.8) rotate(-5deg);
+    transition: all .6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    flex-shrink: 0;
+
+    /* Градієнтна рамка */
+    padding: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, .4),
+        0 5px 15px rgba(0, 0, 0, .07);
+}
+
+/* Внутрішній білий круг для зображення */
+.testimonial-photo::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: white;
+    z-index: -1;
 }
 
 .testimonial-photo.visible {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
+}
+
+.testimonial:hover .testimonial-photo {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, .5),
+        0 10px 25px rgba(118, 75, 162, .3);
 }
 
 .testimonial-content {
@@ -73,10 +121,23 @@
     text-align: left;
 }
 
+/* Додаємо цитату іконку */
+.testimonial-content::before {
+    content: '"';
+    font-size: 60px;
+    line-height: 0;
+    color: #667eea;
+    opacity: 0.15;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: Georgia, serif;
+}
+
 /* Адаптив */
 @media (max-width: 768px) {
     #testimonials {
-        padding: 30px 15px;
+        padding: 40px 15px;
     }
 
     .testimonials-container {
@@ -92,20 +153,28 @@
         width: 100%;
         max-width: none;
         box-sizing: border-box;
+        padding: 25px;
     }
 
     .testimonial-photo {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .testimonial-content {
         text-align: center;
+        max-width: 100%;
+    }
+
+    .testimonial-content::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 90px;
     }
 }
 
 @media (max-width: 420px) {
     #testimonials {
-        padding: 25px 10px;
+        padding: 30px 10px;
     }
 
     .testimonials-container {
@@ -120,26 +189,32 @@
         text-align: center;
         width: 100%;
         max-width: none;
-        padding: 15px;
+        padding: 20px;
         gap: 15px;
         box-sizing: border-box;
+        border-radius: 15px;
     }
 
     .testimonial-photo {
-        width: 80px;
-        /* збільшуємо трохи для чіткості */
-        height: 80px;
+        width: 90px;
+        height: 90px;
         margin-bottom: 10px;
         opacity: 1;
         transform: none;
-        /* прибираємо масштабування */
         object-fit: cover;
+        padding: 3px;
+        box-shadow: 0 10px 25px rgba(102, 126, 234, .3);
     }
 
     .testimonial-content {
         max-width: 100%;
         text-align: center;
         font-size: 14px;
+    }
+
+    .testimonial-content::before {
+        font-size: 50px;
+        top: 75px;
     }
 
     .testimonial p {
@@ -151,29 +226,34 @@
     }
 }
 
-
 @media (max-width: 320px) {
     .testimonial {
         padding: 15px;
-        gap: 15px;
+        gap: 12px;
     }
 
     .testimonial-photo {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
         margin-bottom: 8px;
+        padding: 3px;
     }
 
     .testimonial-content {
         max-width: 100%;
-        font-size: 14px;
+        font-size: 13px;
+    }
+
+    .testimonial-content::before {
+        font-size: 40px;
+        top: 60px;
     }
 
     .testimonial p {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .testimonial cite {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
