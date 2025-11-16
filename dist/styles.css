@@ -138,6 +138,9 @@ header {
     position: relative;
     text-align: center;
     /* overflow: hidden; */
+    height: 50vh;
+    min-height: 220px;
+    max-height: 420px;
 }
 
 header::after {
@@ -329,6 +332,16 @@ header nav {
         margin-top: 12px;
         padding-left: 0;
         order: 2;
+    }
+}
+
+
+/* Альбомна орієнтація для всіх екранів */
+@media (orientation: landscape) {
+    header {
+        height: 50vh;
+        min-height: 220px;
+        max-height: 420px;
     }
 }
 
