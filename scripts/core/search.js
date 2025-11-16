@@ -45,9 +45,10 @@ export function initSearch() {
         'соцмережі': 'social',
         'сертифікат': 'certificate-gift',
         'сувенір': 'certificate-gift',
-        'безпека': 'simple-security',
-        'фішинг': 'simple-security',
-        'захист': 'simple-security'
+        'кібербезпека': 'security',
+        'security': 'security',
+        'захист': 'security',
+        'шахрайство': 'security'
     };
 
     searchForm.addEventListener('submit', (e) => {
