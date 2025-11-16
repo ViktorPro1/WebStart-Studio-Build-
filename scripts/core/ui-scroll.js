@@ -20,7 +20,7 @@ export function initScroll() {
         'contact-gift-wrapper': 'Контакти',
         'guide-bonus': 'Бонус+',
         'social': 'Соцмережі',
-        'simple-security': 'Безпека'
+        'security': 'Кібербезпека'
     };
 
     const sections = document.querySelectorAll('section[id]');
