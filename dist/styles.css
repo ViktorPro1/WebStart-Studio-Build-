@@ -3618,9 +3618,12 @@ a.cta-button:hover {
 }
 
 .testimonial-photo {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    /* зробити квадрат */
+    height: 120px;
+    /* рівно width */
     border-radius: 50%;
+    /* коло */
     object-fit: cover;
     opacity: 0;
     transform: scale(.8);
@@ -3667,6 +3670,55 @@ a.cta-button:hover {
     }
 }
 
+@media (max-width: 420px) {
+    #testimonials {
+        padding: 25px 10px;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .testimonial {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        max-width: none;
+        padding: 15px;
+        gap: 15px;
+        box-sizing: border-box;
+    }
+
+    .testimonial-photo {
+        width: 80px;
+        /* збільшуємо трохи для чіткості */
+        height: 80px;
+        margin-bottom: 10px;
+        opacity: 1;
+        transform: none;
+        /* прибираємо масштабування */
+        object-fit: cover;
+    }
+
+    .testimonial-content {
+        max-width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .testimonial p {
+        font-size: 14px;
+    }
+
+    .testimonial cite {
+        font-size: 13px;
+    }
+}
+
+
 @media (max-width: 320px) {
     .testimonial {
         padding: 15px;
@@ -3692,6 +3744,7 @@ a.cta-button:hover {
         font-size: 13px;
     }
 }
+
 
 /* ========================================
    css/sections/faq.css
