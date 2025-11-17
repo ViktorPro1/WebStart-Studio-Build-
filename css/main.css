@@ -46,6 +46,9 @@
 @import url('sections/contact.css');
 @import url('sections/simple-security.css');
 @import url('sections/socials.css');
+@import url('sections/mistakes.css');
+@import url('sections/audience.css');
+@import url('sections/diy-comparison.css');
 
 /* ===== FEATURES ===== */
 @import url('features/pwa.css');

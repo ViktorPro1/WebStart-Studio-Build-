@@ -409,6 +409,163 @@ function addDarkModeStyles() {
             color: #d0d0d0;
         }
 
+        /* ======❌ Часті помилки====== */
+        body.dark-mode .mistakes-section {
+            background: #1a1a1a;
+        }
+
+        body.dark-mode .mistakes-section h2 {
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .mistakes-list {
+            background: transparent;
+        }
+
+        body.dark-mode .mistake-item {
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .mistake-item:hover {
+            background: #353535;
+            border-color: #505050;
+        }
+
+        body.dark-mode .mistake-icon {
+            filter: brightness(1.2);
+        }
+
+        body.dark-mode .mistake-item h3 {
+            color: #ffffff;
+        }
+
+        body.dark-mode .mistake-item p {
+            color: #d0d0d0;
+        }
+
+        body.dark-mode .mistakes-section .btn-primary {
+            background: #c41e3a;
+            color: #ffffff;
+        }
+
+        body.dark-mode .mistakes-section .btn-primary:hover {
+            background: #a01729;
+        }
+
+
+        body.dark-mode .mistakes-intro {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .mistake-item summary {
+            color: #ffffff;
+        }
+
+        body.dark-mode .mistake-item summary::after {
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .mistake-content {
+            border-top-color: #404040;
+        }
+
+        body.dark-mode .mistake-content p {
+            color: #d0d0d0;
+        }
+
+        body.dark-mode .mistake-content strong {
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .mistake-content a {
+            color: #ff6b6b;
+        }
+
+        body.dark-mode .mistake-content a:hover {
+            color: #ff9090;
+        }
+
+        /* ======👥 Для кого ми====== */
+        body.dark-mode .audience-section {
+            background: #1a1a1a;
+        }
+
+        body.dark-mode .audience-section h2 {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .audience-grid {
+            background: transparent;
+        }
+
+        body.dark-mode .audience-card {
+            background: #2a2a2a;
+            border: 1px solid #404040;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .audience-card:hover {
+            background: #353535;
+            border-color: #505050;
+        }
+
+        body.dark-mode .audience-emoji {
+            filter: brightness(1.2);
+        }
+
+        body.dark-mode .audience-card h3 {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .audience-card p {
+            color: #d0d0d0;
+        }
+
+        /* ======🆚 DIY vs З нами====== */
+        body.dark-mode .comparison-table-section {
+            background: #1a1a1a;
+        }
+
+        body.dark-mode .comparison-table-section h2 {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .vs-table {
+            background: #2a2a2a;
+            border: 1px solid #404040;
+        }
+
+        body.dark-mode .vs-table thead {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563a8 100%);
+        }
+
+        body.dark-mode .vs-table th {
+            color: #ffffff;
+            border-bottom: 1px solid #404040;
+        }
+
+        body.dark-mode .vs-table tbody tr {
+            border-bottom: 1px solid #404040;
+        }
+
+        body.dark-mode .vs-table tbody tr:hover {
+            background: #353535;
+        }
+
+        body.dark-mode .vs-table td {
+            color: #d0d0d0;
+        }
+
+        body.dark-mode .vs-table td:first-child {
+            color: #64b5f6;
+        }
+
+        body.dark-mode .vs-cta {
+            color: #64b5f6;
+        }
+
         /* Плавний перехід */
         body,
         section,
