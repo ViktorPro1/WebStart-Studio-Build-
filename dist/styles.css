@@ -4705,6 +4705,439 @@ a.cta-button:hover {
 }
 
 /* ========================================
+   css/sections/mistakes.css
+   ======================================== */
+
+/* ======❌ Часті помилки====== */
+.mistakes-section {
+    padding: 60px 20px;
+}
+
+.mistakes-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #c41e3a;
+}
+
+.mistakes-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mistake-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mistake-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(196, 30, 58, 0.2);
+}
+
+.mistake-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.mistake-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.mistake-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+.mistakes-section .btn-primary {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    padding: 15px 40px;
+    background: #c41e3a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.mistakes-section .btn-primary:hover {
+    background: #a01729;
+}
+
+@media (max-width: 768px) {
+    .mistakes-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mistake-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .mistake-icon {
+        font-size: 2rem;
+    }
+
+    .mistake-item h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Intro текст */
+.mistakes-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Details як mistake-item */
+.mistake-item {
+    display: block;
+    padding: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.mistake-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(196, 30, 58, 0.2);
+}
+
+/* Summary (заголовок) */
+.mistake-item summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    list-style: none;
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Прибрати стандартний маркер */
+.mistake-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.mistake-item summary::marker {
+    display: none;
+}
+
+/* Іконка */
+.mistake-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+/* Заголовок */
+.mistake-title {
+    flex: 1;
+}
+
+/* Індикатор розгортання */
+.mistake-item summary::after {
+    content: '▼';
+    font-size: 1.2rem;
+    color: #c41e3a;
+    transition: transform 0.3s;
+}
+
+.mistake-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+/* Контент (розгорнутий текст) */
+.mistake-content {
+    padding: 0 25px 25px 25px;
+    border-top: 1px solid #f0f0f0;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mistake-content p {
+    margin: 15px 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+.mistake-content p:first-child {
+    margin-top: 20px;
+}
+
+.mistake-content strong {
+    color: #c41e3a;
+    font-weight: 600;
+}
+
+.mistake-content a {
+    color: #c41e3a;
+    text-decoration: underline;
+}
+
+.mistake-content a:hover {
+    color: #a01729;
+}
+
+/* Мобільна версія */
+@media (max-width: 768px) {
+    .mistakes-intro {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .mistake-item summary {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .mistake-icon {
+        font-size: 2rem;
+    }
+
+    .mistake-title {
+        font-size: 1.1rem;
+    }
+
+    .mistake-item summary::after {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .mistake-item[open] summary::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .mistake-content {
+        padding: 0 15px 20px 15px;
+    }
+}
+
+/* ========================================
+   css/sections/audience.css
+   ======================================== */
+
+/* ======👥 Для кого ми====== */
+.audience-section {
+    padding: 60px 20px;
+}
+
+.audience-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #0066cc;
+}
+
+.audience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.audience-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 102, 204, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.audience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 25px rgba(0, 102, 204, 0.2);
+}
+
+.audience-emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.audience-card h3 {
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    color: #0066cc;
+}
+
+.audience-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .audience-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-emoji {
+        font-size: 2.5rem;
+    }
+
+    .audience-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ========================================
+   css/sections/diy-comparison.css
+   ======================================== */
+
+/* ======🆚 DIY vs З нами====== */
+.comparison-table-section {
+    padding: 60px 20px;
+}
+
+.comparison-table-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #1e40af;
+}
+
+.vs-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.1);
+}
+
+.vs-table thead {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+}
+
+.vs-table th {
+    padding: 20px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.vs-table th:first-child {
+    width: 25%;
+}
+
+.vs-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+    transition: background 0.2s;
+}
+
+.vs-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.vs-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.vs-table td {
+    padding: 18px 20px;
+    color: #374151;
+    line-height: 1.6;
+}
+
+.vs-table td:first-child {
+    font-weight: 600;
+    color: #1e40af;
+}
+
+.vs-cta {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .comparison-table-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .vs-table {
+        font-size: 0.9rem;
+    }
+
+    .vs-table th,
+    .vs-table td {
+        padding: 12px 10px;
+    }
+
+    .vs-table th {
+        font-size: 1rem;
+    }
+
+    .vs-cta {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .vs-table {
+        font-size: 0.8rem;
+    }
+
+    .vs-table th,
+    .vs-table td {
+        padding: 10px 8px;
+    }
+
+    .vs-table th {
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
    css/features/pwa.css
    ======================================== */
 
