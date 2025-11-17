@@ -1,5 +1,165 @@
 # ✨ Ключові Функції WebStart Studio
 
+## 🌍 Міжнародність (Hreflang)
+
+### 7.1. Підтримувані Мови
+
+- 🇬🇧 English (EN)
+- 🇺🇦 Українська (UK) - основна
+- 🇵🇱 Polski (PL)
+- 🇩🇪 Deutsch (DE)
+- 🇫🇷 Français (FR)
+- 🇨🇿 Čeština (CZ)
+- 🇸🇪 Svenska (SE)
+
+### 7.2. Hreflang Імплементація
+
+**Для Кожної Сторінки:**
+
+```html
+<link rel="alternate" hreflang="uk" href="https://webstart.studio/" />
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://webstart.studio/international/en.html"
+/>
+<link
+  rel="alternate"
+  hreflang="pl"
+  href="https://webstart.studio/international/pl.html"
+/>
+<link
+  rel="alternate"
+  hreflang="de"
+  href="https://webstart.studio/international/de.html"
+/>
+<link
+  rel="alternate"
+  hreflang="fr"
+  href="https://webstart.studio/international/fr.html"
+/>
+<link
+  rel="alternate"
+  hreflang="cs"
+  href="https://webstart.studio/international/cz.html"
+/>
+<link
+  rel="alternate"
+  hreflang="sv"
+  href="https://webstart.studio/international/se.html"
+/>
+<link rel="alternate" hreflang="x-default" href="https://webstart.studio/" />
+```
+
+**Canonical URL:**
+
+```html
+<!-- Українська версія -->
+<link rel="canonical" href="https://webstart.studio/" />
+
+<!-- Англійська версія -->
+<link rel="canonical" href="https://webstart.studio/international/en.html" />
+```
+
+### 7.3. Open Graph Локалізація
+
+Кожна мовна версія має правильний `og:locale`:
+
+```html
+<!-- Українська -->
+<meta property="og:locale" content="uk_UA" />
+
+<!-- Англійська -->
+<meta property="og:locale" content="en_US" />
+
+<!-- Польська -->
+<meta property="og:locale" content="pl_PL" />
+```
+
+### 7.4. Переваги
+
+✅ **SEO:**
+
+- Google показує правильну мову користувачу
+- Краще ранжування в локальних пошуках
+- Відсутність дублікатів контенту
+
+✅ **UX:**
+
+- Користувач бачить сайт своєю мовою
+- Автоматичне визначення локалі браузера
+- Швидке перемикання між мовами
+
+---
+
+## 🎨 Нові Секції
+
+### 8.1. Часті Помилки
+
+**Концепція:**
+Інтерактивна секція з топ-5 помилок при створенні резюме/портфоліо.
+
+**Технічна Реалізація:**
+
+```html
+<details class="mistake-item">
+  <summary>
+    <span class="mistake-icon">🚫</span>
+    <span class="mistake-title">Занадто багато тексту</span>
+  </summary>
+  <div class="mistake-content">
+    <p>Детальне пояснення...</p>
+  </div>
+</details>
+```
+
+**Переваги `<details>`:**
+
+- ✅ Контент на сторінці (SEO)
+- ✅ Користувач сам вибирає що читати
+- ✅ Нативна підтримка браузерами
+- ✅ Доступність (keyboard navigation)
+
+### 8.2. Для Кого Ми
+
+**Структура:**
+Grid з 6 карток для різних типів користувачів:
+
+```css
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+```
+
+**Картки:**
+
+- Фрілансери
+- Випускники
+- Стартапи
+- Малий бізнес
+- Креативники
+- Майстри
+
+### 8.3. Самому vs З Нами
+
+**Порівняльна Таблиця:**
+
+| Критерій        | Самому       | З Нами        |
+| --------------- | ------------ | ------------- |
+| Час             | ❌ 2-4 тижні | ✅ 1-3 дні    |
+| Дизайн          | ❌ Шаблонний | ✅ Унікальний |
+| Технічні знання | ❌ Потрібні  | ✅ Не треба   |
+
+**Градієнтний Header:**
+
+```css
+.vs-table thead {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}
+```
+
 ## 📱 Progressive Web App (PWA)
 
 ### 1.1. Концепція PWA
