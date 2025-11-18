@@ -22,18 +22,18 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Розробка:-->
-    <!-- <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/features/exit_intent.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/features/exit_intent.css">
 
     <!-- Продакшен: -->
-    <link rel="stylesheet" href="dist/styles.css">
+    <!-- <link rel="stylesheet" href="dist/styles.css">
     <link rel="preload" href="fonts/fontawesome/css/all.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css">
-    </noscript>
+    </noscript> -->
 
     <!-- 🔹 Preload для LCP-зображення -->
-    <link rel="preload" as="image" href="branding/header-photo.webp">
+    <link rel="preload" as="image" href="branding/header-photo.webp" fetchpriority="high">
     <link rel="icon" type="image/webp" href="branding/favicon-32x32.webp">
     <link rel="alternate icon" type="image/png" href="branding/favicon-32x32.png">
 
@@ -383,8 +383,8 @@
     </div>
     <!-- Пошук по секціям -->
     <form id="simple-search-form" class="search-form">
-        <input type="text" id="search-input" placeholder="Пошук (Наприклад: 'Контакти')" aria-label="Пошук по секціям"
-            class="search-input">
+        <label for="search-input" class="visually-hidden">Пошук по секціям</label>
+        <input type="text" id="search-input" placeholder="Пошук..." aria-label="Пошук по секціям" class="search-input">
         <button type="submit" aria-label="Знайти" class="search-btn">
             🔍
         </button>

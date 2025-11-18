@@ -9,11 +9,14 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: #ffffff;
+    /* Було #fff — зміни на повний білий */
     margin: 0 15px;
     text-decoration: none;
     font-weight: 700;
     transition: color .3s;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    /* Додай тінь для кращого контрасту */
 }
 
 nav a:hover {
