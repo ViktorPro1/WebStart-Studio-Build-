@@ -363,8 +363,6 @@ nav a {
     text-decoration: none;
     font-weight: 700;
     transition: color .3s;
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
-    /* Додай тінь для кращого контрасту */
 }
 
 nav a:hover {
@@ -5069,7 +5067,7 @@ a.cta-button:hover {
 
 .vs-table thead {
     background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-    color: white;
+    color: #0f172a;
 }
 
 .vs-table th {
