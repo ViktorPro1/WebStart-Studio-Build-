@@ -1,54 +1,101 @@
-.theme-lab-body {
-    font-family: sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    box-sizing: border-box;
+}
+
+.theme-lab-body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+    padding-bottom: 80px;
 }
 
 .theme-lab-our-projects {
-    padding: 40px 20px 60px;
-    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
 .theme-lab-our-projects h2 {
-    font-size: 2em;
+    font-size: 3em;
+    text-align: center;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.theme-lab-our-projects p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-.theme-lab-our-projects ul {
-    list-style: none;
-    padding: 0;
-    max-width: 900px;
-    margin: 0 auto;
+.theme-lab-our-projects>p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.6;
     text-align: center;
 }
 
-.theme-lab-our-projects li {
-    margin-bottom: 20px;
+.theme-lab-our-projects-ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.theme-lab-our-projects-li {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 4px solid #667eea;
+    position: relative;
+    overflow: hidden;
+}
+
+.theme-lab-our-projects-li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.theme-lab-our-projects-li:hover::before {
+    transform: scaleX(1);
+}
+
+.theme-lab-our-projects-li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .theme-lab-our-projects-a {
-    font-size: 1.2em;
-    font-weight: bold;
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #2c3e50;
     text-decoration: none;
-    color: #0077cc;
-    display: inline-block;
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
 }
 
-.theme-lab-our-projects-a:hover {
-    text-decoration: underline;
+.theme-lab-our-projects-li:hover .theme-lab-our-projects-a {
+    color: #667eea;
 }
 
 .theme-lab-our-projects-span {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95em;
     display: block;
-    margin-top: 4px;
-    color: #555;
 }
 
 .theme-lab-marquee {
@@ -86,33 +133,36 @@
     display: inline-block;
     background: linear-gradient(90deg, #32cd32, #228b22);
     color: #fff;
-    padding: 12px 28px;
+    padding: 14px 32px;
     font-weight: bold;
     font-size: 1.1em;
     text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(50, 205, 50, 0.3);
+    transition: all 0.3s ease;
 }
 
 .theme-lab-home-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(50, 205, 50, 0.4);
 }
 
 .theme-lab-idea-button {
     display: inline-block;
-    background-color: #0077cc;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 12px 28px;
+    padding: 14px 32px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+    border-radius: 12px;
+    font-size: 1.1em;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
 }
 
 .theme-lab-idea-button:hover {
-    background-color: #005fa3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
 .theme-lab-text-center {
@@ -127,19 +177,49 @@
     margin-top: 20px;
 }
 
+/* Адаптивність */
+@media (max-width: 1200px) {
+    .theme-lab-our-projects-ul {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .theme-lab-our-projects-ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .theme-lab-our-projects h2 {
+        font-size: 2em;
+    }
+
+    .theme-lab-our-projects>p {
+        font-size: 1em;
+    }
+}
+
 @media (max-width: 420px) {
     .theme-lab-our-projects h2 {
         font-size: 1.5em;
     }
 
-    .theme-lab-our-projects p,
-    .theme-lab-our-projects-span,
+    .theme-lab-our-projects>p,
+    .theme-lab-our-projects-span {
+        font-size: 0.9em;
+    }
+
     .theme-lab-our-projects-a {
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     .theme-lab-marquee {
         font-size: 0.9em;
         padding: 6px 0;
+    }
+
+    .theme-lab-our-projects-li {
+        padding: 20px;
     }
 }
