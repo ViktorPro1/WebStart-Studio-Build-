@@ -78,6 +78,34 @@
     transform: scale(1.03);
 }
 
+#ai-services-title {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #4a90e2, #9013fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#ai-services-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #9013fe);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+#ai-services-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 4px 20px rgba(144, 19, 254, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 420px) {
     .ai-prompting-row {

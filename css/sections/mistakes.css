@@ -5,7 +5,7 @@
 
 .mistakes-section h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 40px;
     color: #c41e3a;
 }
@@ -66,26 +66,6 @@
 
 .mistakes-section .btn-primary:hover {
     background: #a01729;
-}
-
-@media (max-width: 768px) {
-    .mistakes-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .mistake-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .mistake-icon {
-        font-size: 2rem;
-    }
-
-    .mistake-item h3 {
-        font-size: 1.1rem;
-    }
 }
 
 /* Intro текст */
@@ -201,6 +181,27 @@
 
 .mistake-content a:hover {
     color: #a01729;
+}
+
+
+@media (max-width: 768px) {
+    .mistakes-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mistake-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .mistake-icon {
+        font-size: 2rem;
+    }
+
+    .mistake-item h3 {
+        font-size: 1.1rem;
+    }
 }
 
 /* Мобільна версія */

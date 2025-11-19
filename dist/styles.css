@@ -2256,6 +2256,34 @@ body.modal-open .help-window {
     margin-bottom: 1.5rem;
 }
 
+#what-we-create {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #db9358, #e43804);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#what-we-create::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f4a261, #e76f51);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#what-we-create:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(240, 64, 20, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 420px) {
 
@@ -2358,6 +2386,34 @@ details[open] summary::after {
     padding: 15px;
     background-color: #fafafa;
     border-top: 1px solid #ccc;
+}
+
+#portfolio-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#portfolio-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#portfolio-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(46, 204, 113, 0.5);
 }
 
 /* Адаптив */
@@ -3041,6 +3097,34 @@ a.cta-button:hover {
     margin-top: 20px;
 }
 
+#mini-services-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #ff9a76, #ff6a88);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#mini-services-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff9a76, #ff6a88);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+#mini-services-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(255, 106, 136, 0.5);
+}
+
 /* service-card описаний в components/cards.css */
 /* service-btn описаний в components/buttons.css */
 
@@ -3140,6 +3224,34 @@ a.cta-button:hover {
     transform: scale(1.03);
 }
 
+#ai-services-title {
+    text-align: center;
+    font-size: 2.0rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #4a90e2, #9013fe);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#ai-services-title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #9013fe);
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+#ai-services-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 4px 20px rgba(144, 19, 254, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 420px) {
     .ai-prompting-row {
@@ -3205,9 +3317,6 @@ a.cta-button:hover {
     align-items: flex-start;
 }
 
-/* extra-card описаний в components/cards.css */
-
-/* Результати кампаній та креативів */
 .result-section {
     margin-top: 20px;
 }
@@ -3255,6 +3364,34 @@ a.cta-button:hover {
 .slider-item img {
     width: 100%;
     display: block;
+}
+
+#extras-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #2ebf91, #1abc9c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#extras-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #2ebf91, #1abc9c);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#extras-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(106, 90, 249, 0.5);
 }
 
 /* Адаптив */
@@ -3693,6 +3830,34 @@ a.cta-button:hover {
     display: none;
 }
 
+#testimonials-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#testimonials-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#testimonials-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(118, 75, 162, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 768px) {
     #testimonials {
@@ -3923,6 +4088,35 @@ a.cta-button:hover {
     opacity: 1;
 }
 
+#faq-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #2dc0a8, #1a8c7a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2.5rem;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#faq-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #2dc0a8, #1a8c7a);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#faq-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(29, 140, 122, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 420px) {
     .faq-section {
@@ -3991,6 +4185,36 @@ a.cta-button:hover {
 .info-section a:hover {
     color: red;
     text-decoration: underline;
+}
+
+#info-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #07c, #1eb8ff);
+    /* градієнт від #07c до світлішого відтінку */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#info-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #07c, #1eb8ff);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+#info-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(0, 124, 255, 0.5);
+    /* тінь у відтінку основного синього */
 }
 
 /* Адаптив */
@@ -4729,7 +4953,7 @@ a.cta-button:hover {
 
 .mistakes-section h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 40px;
     color: #c41e3a;
 }
@@ -4790,26 +5014,6 @@ a.cta-button:hover {
 
 .mistakes-section .btn-primary:hover {
     background: #a01729;
-}
-
-@media (max-width: 768px) {
-    .mistakes-section h2 {
-        font-size: 1.5rem;
-    }
-
-    .mistake-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .mistake-icon {
-        font-size: 2rem;
-    }
-
-    .mistake-item h3 {
-        font-size: 1.1rem;
-    }
 }
 
 /* Intro текст */
@@ -4927,6 +5131,27 @@ a.cta-button:hover {
     color: #a01729;
 }
 
+
+@media (max-width: 768px) {
+    .mistakes-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .mistake-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .mistake-icon {
+        font-size: 2rem;
+    }
+
+    .mistake-item h3 {
+        font-size: 1.1rem;
+    }
+}
+
 /* Мобільна версія */
 @media (max-width: 768px) {
     .mistakes-intro {
@@ -4976,7 +5201,7 @@ a.cta-button:hover {
 
 .audience-section h2 {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 40px;
     color: #0066cc;
 }

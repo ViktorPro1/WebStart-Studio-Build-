@@ -68,6 +68,34 @@ details[open] summary::after {
     border-top: 1px solid #ccc;
 }
 
+#portfolio-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 40px;
+    position: relative;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+#portfolio-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+#portfolio-title:hover {
+    transform: scale(1.03);
+    text-shadow: 0 3px 15px rgba(46, 204, 113, 0.5);
+}
+
 /* Адаптив */
 @media (max-width: 768px) {
     #portfolio {
