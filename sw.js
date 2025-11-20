@@ -101,7 +101,8 @@ const urlsToCache = [
     "/other_styles/webapp-info.css", "/pages/webapp-info.html",
     "/other_styles/ai-automatization.css", "/pages/ai-automatization.html",
     "/other_styles/cabinet.css", "/pages/cabinet.html",
-    "/other_styles/security.css", "/pages/security-tips.html"
+    "/other_styles/security.css", "/pages/security-tips.html",
+    "/other_styles/edit-guide.css", "/pages/edit-instruction.html"
 ];
 
 // Встановлення SW - автоматично оновлює кеш
