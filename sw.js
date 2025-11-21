@@ -8,6 +8,8 @@ const urlsToCache = [
     "/scripts/calculator-days.js",
     "/scripts/exit-intent.js",
     "/scripts/security.js",
+    "/scripts/achievement-page.js",
+    "/scripts/utm-page.js",
 
     // Для сучасних браузерів (модулі)
     "/scripts/init/app.js",
@@ -30,8 +32,6 @@ const urlsToCache = [
     "/scripts/features/pull-to-refresh.js",
     "/scripts/features/toggle-sections.js",
     "/scripts/features/cookie.js",
-    "/scripts/features/utm.js",
-    "/scripts/features/achievements.js",
     "/scripts/features/pricing-table-toggle.js",
     // Init modules
     "/scripts/init-modules/analytics.js",

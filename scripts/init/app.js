@@ -19,8 +19,6 @@ import { initSocialShare } from '../features/share.js';          // ← ОДИН
 import { initPricingToggle } from '../features/pricing-toggle.js'; // ← Додаємо імпорт
 import { initPullToRefresh } from '../features/pull-to-refresh.js';
 import { initCookieBanner } from '../features/cookie.js';
-import { initUtmGenerator } from '../features/utm.js';
-import { initAchievementCounters } from '../features/achievements.js';
 import { initToggleSections } from '../features/toggle-sections.js';
 import { initPricingTableToggle } from '../features/pricing-table-toggle.js';
 
@@ -59,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSocialShare();     // ← Коректний виклик
     initPullToRefresh();
     initCookieBanner();
-    initUtmGenerator();
-    initAchievementCounters();
     initToggleSections();
     initPricingTableToggle()
 
