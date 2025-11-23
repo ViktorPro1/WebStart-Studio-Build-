@@ -3808,11 +3808,11 @@ a.cta-button:hover {
    ======================================== */
 
 /* ========================================
-   ВІДГУКИ - СУЧАСНИЙ ДИЗАЙН
+   ВІДГУКИ - СТИЛЬ МЕСЕНДЖЕРІВ
    ======================================== */
 
 #testimonials {
-    background: transparent;
+    background: #f5f7fa;
     padding: 60px 20px;
     text-align: center;
     overflow: hidden;
@@ -3831,95 +3831,138 @@ a.cta-button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Контейнер як скриншот месенджера */
 .testimonial {
-    background: transparent;
-    padding: 30px;
-    max-width: 320px;
-    border-radius: 20px;
-    transition: all .4s cubic-bezier(0.4, 0, 0.2, 1);
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    box-shadow: none;
-    border: none;
-    position: relative;
+    background: #ffffff;
+    padding: 0;
+    max-width: 340px;
+    width: 100%;
+    border-radius: 12px;
+    transition: all .3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08),
+        0 1px 3px rgba(0, 0, 0, .06);
+    border: 1px solid #e2e8f0;
     overflow: hidden;
-}
-
-.testimonial::before {
-    display: none;
+    position: relative;
 }
 
 .testimonial:hover {
-    transform: translateY(-10px);
-    box-shadow: none;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+
+/* Хедер месенджера */
+.testimonial::before {
+    content: '';
+    display: block;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+/* Wrapper для контенту */
+.testimonial-wrapper {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: 180px;
+}
+
+/* Бульбашка повідомлення */
+.testimonial-message {
+    background: #ffffff;
+    padding: 15px 18px;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+    margin-bottom: 12px;
+    position: relative;
+    text-align: left;
+}
+
+/* Хвостик бульбашки */
+.testimonial-message::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 12px 12px;
+    border-color: transparent transparent #ffffff transparent;
 }
 
 .testimonial p {
-    font-style: italic;
-    margin-bottom: 10px;
+    font-style: normal;
+    margin: 0 0 8px 0;
     color: #2d3748;
-    /* Темніше для кращого контрасту */
     font-size: 14px;
-    line-height: 1.6;
+    line-height: 1.5;
+}
+
+/* Мета-інфо (час, статус прочитання) */
+.testimonial-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 8px;
+    padding: 0 5px;
+}
+
+.testimonial-time::before {
+    content: '✓✓ ';
+    color: #0088cc;
+    margin-right: 3px;
 }
 
 .testimonial cite {
     color: #667eea;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
+    font-size: 13px;
 }
 
-/* СУЧАСНЕ ОФОРМЛЕННЯ ФОТО */
+/* Фото як аватар в месенджері */
 .testimonial-photo {
-    width: 110px;
-    height: 110px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    opacity: 0;
-    transform: scale(.8) rotate(-5deg);
-    transition: all .6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    position: relative;
-    flex-shrink: 0;
-
-    /* Градієнтна рамка */
-    padding: 4px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, .4),
-        0 5px 15px rgba(0, 0, 0, .07);
-}
-
-/* Внутрішній білий круг для зображення */
-.testimonial-photo::after {
-    content: '';
     position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    background: white;
-    z-index: -1;
+    top: 5px;
+    left: 15px;
+    border: 2px solid rgba(255, 255, 255, .9);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+    opacity: 0;
+    transform: scale(.8);
+    transition: all .5s ease;
+    z-index: 10;
 }
 
 .testimonial-photo.visible {
     opacity: 1;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1);
 }
 
-.testimonial:hover .testimonial-photo {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 20px 50px rgba(102, 126, 234, .5),
-        0 10px 25px rgba(118, 75, 162, .3);
+/* Ім'я в хедері */
+.testimonial-header-name {
+    position: absolute;
+    top: 15px;
+    left: 65px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 }
 
 .testimonial-content {
-    max-width: 220px;
+    width: 100%;
     text-align: left;
-}
-
-/* Додаємо цитату іконку */
-.testimonial-content::before {
-    display: none;
 }
 
 #testimonials-title {
@@ -3932,7 +3975,7 @@ a.cta-button:hover {
     -webkit-text-fill-color: transparent;
     margin-bottom: 40px;
     position: relative;
-    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 #testimonials-title::after {
@@ -3947,7 +3990,6 @@ a.cta-button:hover {
 
 #testimonials-title:hover {
     transform: scale(1.03);
-    text-shadow: 0 3px 15px rgba(118, 75, 162, 0.5);
 }
 
 /* Адаптив */
@@ -3957,34 +3999,13 @@ a.cta-button:hover {
     }
 
     .testimonials-container {
-        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        width: 100%;
+        align-items: center;
+        gap: 25px;
     }
 
     .testimonial {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        max-width: none;
-        box-sizing: border-box;
-        padding: 25px;
-    }
-
-    .testimonial-photo {
-        margin-bottom: 15px;
-    }
-
-    .testimonial-content {
-        text-align: center;
         max-width: 100%;
-    }
-
-    .testimonial-content::before {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 90px;
     }
 }
 
@@ -3993,80 +4014,54 @@ a.cta-button:hover {
         padding: 30px 10px;
     }
 
-    .testimonials-container {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 20px;
+    .testimonial {
+        max-width: 100%;
+        border-radius: 10px;
     }
 
-    .testimonial {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        max-width: none;
-        padding: 20px;
-        gap: 15px;
-        box-sizing: border-box;
-        border-radius: 15px;
+    .testimonial::before {
+        height: 45px;
     }
 
     .testimonial-photo {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 10px;
+        width: 36px;
+        height: 36px;
+        top: 5px;
+        left: 12px;
         opacity: 1;
-        transform: none;
-        object-fit: cover;
-        padding: 3px;
-        box-shadow: 0 10px 25px rgba(102, 126, 234, .3);
+        transform: scale(1);
     }
 
-    .testimonial-content {
-        max-width: 100%;
-        text-align: center;
+    .testimonial-header-name {
+        top: 12px;
+        left: 58px;
         font-size: 14px;
     }
 
-    .testimonial-content::before {
-        font-size: 50px;
-        top: 75px;
+    .testimonial-wrapper {
+        padding: 15px;
+    }
+
+    .testimonial-message {
+        padding: 12px 15px;
     }
 
     .testimonial p {
-        font-size: 14px;
-    }
-
-    .testimonial cite {
         font-size: 13px;
     }
 }
 
 @media (max-width: 320px) {
-    .testimonial {
-        padding: 15px;
-        gap: 12px;
+    .testimonial-wrapper {
+        padding: 12px;
     }
 
-    .testimonial-photo {
-        width: 70px;
-        height: 70px;
-        margin-bottom: 8px;
-        padding: 3px;
-    }
-
-    .testimonial-content {
-        max-width: 100%;
-        font-size: 13px;
-    }
-
-    .testimonial-content::before {
-        font-size: 40px;
-        top: 60px;
+    .testimonial-message {
+        padding: 10px 12px;
     }
 
     .testimonial p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .testimonial cite {

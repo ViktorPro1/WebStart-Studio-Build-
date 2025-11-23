@@ -1,20 +1,83 @@
-// Ротація відгуків з безпечним завантаженням фото
+// Ротація відгуків у стилі месенджерів
 export function initTestimonials() {
     const testimonialsData = {
         testimonial1: [
-            { img: "foto/olena.webp", alt: "Олена", text: "Всього за три дні отримала повноцінне портфоліо. Стильний дизайн, адаптивність — усе на рівні!", cite: "— Олена, маркетолог" },
-            { img: "foto/nadija.webp", alt: "Надія", text: "Робота виконана якісно та швидко. Дизайн мені дуже підійшов. Рекомендую усім фрілансерам!", cite: "— Надія, фрілансер" },
-            { img: "foto/volodumer.webp", alt: "Володимир", text: "Мій лендінг виглядає професійно і привабливо — чудове рішення для будівельного бізнесу!", cite: "— Володимир, власник будівельної фірми" }
+            {
+                img: "foto/olena.webp",
+                alt: "Олена",
+                name: "Олена",
+                text: "Портфоліо зробили за три дні, загалом непогано. Спочатку був косяк з кольорами на мобільній версії, але швидко виправили. Тепер виглядає стильно.",
+                cite: "маркетолог",
+                time: "14:23"
+            },
+            {
+                img: "foto/nadija.webp",
+                alt: "Надія",
+                name: "Надія",
+                text: "Якість добра, хоча довелося пару разів уточнювати деталі. Дизайн сучасний, але я б хотіла трохи більше варіантів на вибір. В цілому задоволена.",
+                cite: "фрілансер",
+                time: "09:45"
+            },
+            {
+                img: "foto/volodumer.webp",
+                alt: "Володимир",
+                name: "Володимир",
+                text: "Лендінг вийшов професійно, клієнти дзвонять. Єдине — довелося самому додавати пару фото, бо спочатку їх було замало. Але результат того вартий!",
+                cite: "будівельник",
+                time: "16:12"
+            }
         ],
         testimonial2: [
-            { img: "foto/andriy.webp", alt: "Андрій", text: "Отримав сучасний сайт для магазину за рекордні строки. Робота перевершила очікування!", cite: "— Андрій, власник онлайн-магазину" },
-            { img: "foto/vika.webp", alt: "Віка", text: "Лендінг зробили за два дні! Стильно, зрозуміло, і клієнтам подобається. Я задоволена!", cite: "— Віка, власниця перукарні" },
-            { img: "foto/sergey.webp", alt: "Сергій", text: "Після запуску сайту заявки почали приходити відразу. Дуже ефективно!", cite: "— Сергій, фермер" }
+            {
+                img: "foto/andriy.webp",
+                alt: "Андрій",
+                name: "Андрій",
+                text: "Сайт зробили швидко, це плюс. Мінус — не все працювало ідеально з першого разу, довелося виправляти форму замовлення. Зараз усе ок, магазин працює.",
+                cite: "власник магазину",
+                time: "11:30"
+            },
+            {
+                img: "foto/vika.webp",
+                alt: "Віка",
+                name: "Віка",
+                text: "За два дні готовий лендінг — це круто! Правда, шрифт спочатку був занадто дрібний, попросила збільшити. Клієнти кажуть, що сайт зручний, я рада.",
+                cite: "власниця перукарні",
+                time: "13:18"
+            },
+            {
+                img: "foto/sergey.webp",
+                alt: "Сергій",
+                name: "Сергій",
+                text: "Після запуску заявки пішли, це головне. Хотілося б більше фішок, але як для стартового пакету — нормально. Може потім ще щось додам.",
+                cite: "фермер",
+                time: "10:05"
+            }
         ],
         testimonial3: [
-            { img: "foto/mariya.webp", alt: "Марія", text: "Після отримання електронного резюме мене запросили одразу на кілька співбесід. Дуже вдячна!", cite: "— Марія, шукачка роботи" },
-            { img: "foto/bogdan.webp", alt: "Богдан", text: "Резюме виконане професійно. Подача, структура — все на високому рівні. Отримав нову посаду!", cite: "— Богдан, рекрутер" },
-            { img: "foto/sofia.webp", alt: "Софія", text: "Сайт портфоліо зроблений з креативом і смаком. Замовлятиму ще банери й сторінки!", cite: "— Софія, маркетолог" }
+            {
+                img: "foto/mariya.webp",
+                alt: "Марія",
+                name: "Марія",
+                text: "Резюме допомогло потрапити на співбесіди, це факт. Хоча довелося самій трохи підправити текст під себе — не все було точно сформульовано. Але загалом дуже корисно!",
+                cite: "шукачка роботи",
+                time: "15:42"
+            },
+            {
+                img: "foto/bogdan.webp",
+                alt: "Богдан",
+                name: "Богдан",
+                text: "Структура резюме добра, подача професійна. Мінус — затримали на день, але попередили. Зараз працюю на новій посаді, тож дякую!",
+                cite: "рекрутер",
+                time: "08:55"
+            },
+            {
+                img: "foto/sofia.webp",
+                alt: "Софія",
+                name: "Софія",
+                text: "Портфоліо вийшло креативним, мені подобається. Правда, не з першого разу вловили мій стиль, але після правок — супер. Точно замовлятиму ще.",
+                cite: "маркетолог",
+                time: "17:20"
+            }
         ]
     };
 
@@ -41,33 +104,41 @@ export function initTestimonials() {
         const container = document.getElementById(id);
         if (!container || !testimonialsData[id]) return;
 
-        const imgElement = container.querySelector('img');
-        const contentP = container.querySelector('.testimonial-content p');
-        const contentCite = container.querySelector('.testimonial-content cite');
+        const imgElement = container.querySelector('.testimonial-photo');
+        const headerName = container.querySelector('.testimonial-header-name');
+        const contentP = container.querySelector('.testimonial-message p');
+        const contentCite = container.querySelector('.testimonial-meta cite');
+        const timeElement = container.querySelector('.testimonial-time');
 
         let index = 0;
 
-        // ===== Завантаження першого фото =====
-        const t0 = testimonialsData[id][0];
-        imgElement.style.opacity = '0'; // приховати до завантаження
-        loadImageSafely(imgElement, t0.img, t0.alt).then(() => {
-            contentP.textContent = t0.text;
-            contentCite.textContent = t0.cite;
-            imgElement.style.opacity = '1'; // показати після завантаження
-        });
+        // ===== Функція оновлення контенту =====
+        const updateContent = (data) => {
+            imgElement.classList.remove('visible');
 
+            setTimeout(() => {
+                loadImageSafely(imgElement, data.img, data.alt).then(() => {
+                    headerName.textContent = data.name;
+                    contentP.textContent = data.text;
+                    contentCite.textContent = data.cite;
+                    timeElement.textContent = data.time;
+
+                    setTimeout(() => {
+                        imgElement.classList.add('visible');
+                    }, 100);
+                });
+            }, 300);
+        };
+
+        // ===== Завантаження першого відгуку =====
+        const t0 = testimonialsData[id][0];
+        updateContent(t0);
+
+        // ===== Ротація кожні 20 секунд =====
         setInterval(() => {
             index = (index + 1) % testimonialsData[id].length;
             const t = testimonialsData[id][index];
-
-            imgElement.style.opacity = '0';
-            setTimeout(() => {
-                loadImageSafely(imgElement, t.img, t.alt).then(() => {
-                    contentP.textContent = t.text;
-                    contentCite.textContent = t.cite;
-                    imgElement.style.opacity = '1';
-                });
-            }, 300);
+            updateContent(t);
         }, 20000);
     }
 
@@ -84,5 +155,5 @@ export function initTestimonials() {
 
 // ===== Placeholder =====
 function createPlaceholder() {
-    return 'foto/placeholder.webp'; // або будь-який ваш локальний placeholder
+    return 'foto/placeholder.webp';
 }
