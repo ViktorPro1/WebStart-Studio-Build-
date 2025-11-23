@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Генератор оголошень Google Ads - Створіть ефективні рекламні тексти</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Безкоштовний генератор оголошень для Google Ads. Створюйте ефективні заголовки та описи для рекламних кампаній за лічені хвилини. Готові шаблони для різних ніш.">
+    <meta name="keywords"
+        content="генератор оголошень Google Ads, створити оголошення, рекламні тексти, заголовки Google Ads, шаблони оголошень, копірайтинг для реклами">
+    <meta name="robots" content="index, follow">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-generator.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Генератор оголошень Google Ads - Створіть ефективні рекламні тексти">
+    <meta property="og:description"
+        content="Безкоштовний інструмент для створення ефективних оголошень Google Ads. Готові шаблони та поради експертів.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-generator.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Генератор оголошень Google Ads">
+    <meta name="twitter:description"
+        content="Створюйте ефективні рекламні оголошення за лічені хвилини. Готові шаблони для різних ніш.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/google-ads-generator.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✍️ Генератор оголошень Google Ads</h1>
+            <p>Створіть ефективні рекламні оголошення за лічені хвилини</p>
+        </div>
+
+        <div class="content">
+            <!-- Інформаційна панель -->
+            <div class="info-panel">
+                <div class="info-item">
+                    <div class="info-icon">📏</div>
+                    <div class="info-content">
+                        <strong>Заголовки:</strong> до 30 символів (3 шт)
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📝</div>
+                    <div class="info-content">
+                        <strong>Описи:</strong> до 90 символів (2 шт)
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💡</div>
+                    <div class="info-content">
+                        <strong>Порада:</strong> Використовуйте ключові слова
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-layout">
+                <!-- Форма введення -->
+                <div class="form-section">
+                    <h2>Введіть інформацію</h2>
+
+                    <div class="form-group">
+                        <label for="businessName">Назва бізнесу / продукту</label>
+                        <input type="text" id="businessName" placeholder="Наприклад: Супер Піца" maxlength="50">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keywords">Ключові слова (через кому)</label>
+                        <input type="text" id="keywords" placeholder="Наприклад: піца, доставка, київ">
+                        <p class="hint">Ці слова будуть використані в оголошеннях</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usp">Унікальна пропозиція (УТП)</label>
+                        <input type="text" id="usp" placeholder="Наприклад: Доставка за 30 хвилин або безкоштовно"
+                            maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="offer">Спеціальна пропозиція / знижка</label>
+                        <input type="text" id="offer" placeholder="Наприклад: Знижка 20% на перше замовлення"
+                            maxlength="80">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cta">Заклик до дії (CTA)</label>
+                        <select id="cta">
+                            <option value="Замовити зараз">Замовити зараз</option>
+                            <option value="Купити">Купити</option>
+                            <option value="Дізнатись більше">Дізнатись більше</option>
+                            <option value="Спробувати безкоштовно">Спробувати безкоштовно</option>
+                            <option value="Отримати знижку">Отримати знижку</option>
+                            <option value="Зв'язатися з нами">Зв'язатися з нами</option>
+                            <option value="Переглянути каталог">Переглянути каталог</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Місцезнаходження (опціонально)</label>
+                        <input type="text" id="location" placeholder="Наприклад: Київ, Україна" maxlength="30">
+                    </div>
+
+                    <button id="generateBtn" class="generate-btn">🚀 Згенерувати оголошення</button>
+                </div>
+
+                <!-- Прев'ю оголошення -->
+                <div class="preview-section">
+                    <h2>Прев'ю оголошення</h2>
+
+                    <div class="ad-preview">
+                        <div class="ad-label">Реклама · www.example.com</div>
+
+                        <div class="ad-headlines">
+                            <div class="headline-wrapper">
+                                <div class="headline" id="headline1">Заголовок 1</div>
+                                <div class="char-count">
+                                    <span class="current">0</span>/<span class="max">30</span>
+                                </div>
+                            </div>
+                            <div class="headline-wrapper">
+                                <div class="headline" id="headline2">Заголовок 2</div>
+                                <div class="char-count">
+                                    <span class="current">0</span>/<span class="max">30</span>
+                                </div>
+                            </div>
+                            <div class="headline-wrapper">
+                                <div class="headline" id="headline3">Заголовок 3</div>
+                                <div class="char-count">
+                                    <span class="current">0</span>/<span class="max">30</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ad-descriptions">
+                            <div class="description-wrapper">
+                                <div class="description" id="description1">Опис 1</div>
+                                <div class="char-count">
+                                    <span class="current">0</span>/<span class="max">90</span>
+                                </div>
+                            </div>
+                            <div class="description-wrapper">
+                                <div class="description" id="description2">Опис 2</div>
+                                <div class="char-count">
+                                    <span class="current">0</span>/<span class="max">90</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Результати -->
+                    <div id="results" class="results" style="display: none;">
+                        <h3>📋 Ваші оголошення готові!</h3>
+
+                        <div class="result-block">
+                            <h4>Заголовки (Headlines)</h4>
+                            <div class="result-items" id="headlinesResult"></div>
+                        </div>
+
+                        <div class="result-block">
+                            <h4>Описи (Descriptions)</h4>
+                            <div class="result-items" id="descriptionsResult"></div>
+                        </div>
+
+                        <div class="tips-section">
+                            <h4>💡 Поради для оптимізації</h4>
+                            <ul id="tipsList"></ul>
+                        </div>
+
+                        <button id="copyAllBtn" class="copy-all-btn">📋 Копіювати все</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Шаблони оголошень -->
+            <div class="templates-section">
+                <h2>🎨 Готові шаблони</h2>
+                <p class="templates-desc">Оберіть шаблон для швидкого старту</p>
+
+                <div class="templates-grid">
+                    <div class="template-card" data-template="ecommerce">
+                        <div class="template-icon">🛍️</div>
+                        <h3>E-commerce</h3>
+                        <p>Інтернет-магазин, товари</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+
+                    <div class="template-card" data-template="services">
+                        <div class="template-icon">⚙️</div>
+                        <h3>Послуги</h3>
+                        <p>Ремонт, консультації, сервіс</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+
+                    <div class="template-card" data-template="restaurant">
+                        <div class="template-icon">🍕</div>
+                        <h3>Ресторан / Кафе</h3>
+                        <p>Доставка їжі, заклади</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+
+                    <div class="template-card" data-template="education">
+                        <div class="template-icon">📚</div>
+                        <h3>Освіта</h3>
+                        <p>Курси, навчання, тренінги</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+
+                    <div class="template-card" data-template="realestate">
+                        <div class="template-icon">🏠</div>
+                        <h3>Нерухомість</h3>
+                        <p>Продаж, оренда квартир</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+
+                    <div class="template-card" data-template="health">
+                        <div class="template-icon">⚕️</div>
+                        <h3>Здоров'я</h3>
+                        <p>Клініки, стоматологія</p>
+                        <button class="use-template-btn">Використати</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Поради по написанню -->
+            <div class="writing-tips">
+                <h2>✨ Поради для створення ефективних оголошень</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-number">1</div>
+                        <h3>Використовуйте числа</h3>
+                        <p>"Знижка 30%", "Доставка за 20 хв", "Від 299 грн"</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">2</div>
+                        <h3>Додайте терміновість</h3>
+                        <p>"Тільки сьогодні", "Обмежена пропозиція", "Встигніть до кінця місяця"</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">3</div>
+                        <h3>Включіть ключові слова</h3>
+                        <p>Повторюйте слова з пошукового запиту в заголовках</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">4</div>
+                        <h3>Чіткий заклик до дії</h3>
+                        <p>"Замовити", "Купити", "Спробувати безкоштовно"</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">5</div>
+                        <h3>Підкресліть переваги</h3>
+                        <p>"Безкоштовна доставка", "Гарантія 2 роки", "Без передплати"</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-number">6</div>
+                        <h3>Тестуйте варіанти</h3>
+                        <p>Створіть 3-5 різних варіантів та порівняйте результати</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Кнопка на головну -->
+        <div class="back-home-container">
+            <a href="../index.html" class="back-home-btn">
+                <span class="back-arrow">←</span>
+                <span class="back-text">Повернутись на головну</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="../scripts/google-ads-generator.js"></script>
+</body>
+
+</html>

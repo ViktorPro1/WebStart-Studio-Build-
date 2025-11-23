@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Підбір ключових слів Google Ads - Генератор ключів та мінус-слів</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Безкоштовний інструмент для підбору ключових слів Google Ads. Генератор ключів, мінус-слів та аналіз конкурентів. Поради з оптимізації рекламних кампаній.">
+    <meta name="keywords"
+        content="підбір ключових слів, Google Ads keywords, генератор ключових слів, мінус-слова, keyword research, пошук ключовиків, оптимізація реклами">
+    <meta name="robots" content="index, follow">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-keywords.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Підбір ключових слів Google Ads - Генератор ключів та мінус-слів">
+    <meta property="og:description"
+        content="Безкоштовний інструмент для підбору ключових слів Google Ads. Генератор, аналіз конкурентів та поради експертів.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-keywords.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Підбір ключових слів Google Ads">
+    <meta name="twitter:description"
+        content="Генератор ключових слів, мінус-слів та аналіз конкурентів для Google Ads кампаній.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/google-ads-keywords.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔑 Підбір ключових слів</h1>
+            <p>Створіть ефективний список ключових слів для вашої кампанії</p>
+        </div>
+
+        <div class="content">
+            <!-- Інформаційна панель -->
+            <div class="info-banner">
+                <div class="info-icon">💡</div>
+                <div class="info-text">
+                    <strong>Ключові слова - це основа успішної Google Ads кампанії!</strong>
+                    <p>Правильний підбір ключових слів допоможе залучити цільову аудиторію та оптимізувати витрати</p>
+                </div>
+            </div>
+
+            <!-- Генератор ключових слів -->
+            <div class="generator-section">
+                <h2>🚀 Генератор ключових слів</h2>
+
+                <div class="generator-layout">
+                    <div class="input-section">
+                        <div class="form-group">
+                            <label for="seedKeyword">Основне ключове слово</label>
+                            <input type="text" id="seedKeyword" placeholder="Наприклад: ремонт телефонів"
+                                maxlength="50">
+                            <p class="hint">Введіть основний продукт або послугу</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Місцезнаходження</label>
+                            <input type="text" id="location" placeholder="Наприклад: Київ" maxlength="30">
+                            <p class="hint">Додайте локацію для локального бізнесу</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Модифікатори (оберіть кілька)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="купити" checked> купити
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="замовити" checked> замовити
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="ціна"> ціна
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="вартість"> вартість
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="недорого"> недорого
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="швидко"> швидко
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="терміново"> терміново
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="доставка"> доставка
+                                </label>
+                            </div>
+                        </div>
+
+                        <button id="generateKeywords" class="generate-btn">🔍 Згенерувати ключові слова</button>
+                    </div>
+
+                    <div class="output-section">
+                        <div class="match-types-info">
+                            <h3>Типи відповідності:</h3>
+                            <div class="match-type-item">
+                                <span class="match-badge broad">Широка</span>
+                                <span class="match-example">ключове слово</span>
+                                <p>Показ для синонімів та схожих запитів</p>
+                            </div>
+                            <div class="match-type-item">
+                                <span class="match-badge phrase">Фразова</span>
+                                <span class="match-example">"ключове слово"</span>
+                                <p>Показ для фрази та її варіантів</p>
+                            </div>
+                            <div class="match-type-item">
+                                <span class="match-badge exact">Точна</span>
+                                <span class="match-example">[ключове слово]</span>
+                                <p>Показ тільки для точного запиту</p>
+                            </div>
+                        </div>
+
+                        <div id="keywordsResults" class="keywords-results" style="display: none;">
+                            <h3>📋 Згенеровані ключові слова</h3>
+                            <div class="results-tabs">
+                                <button class="tab-btn active" data-tab="all">Всі</button>
+                                <button class="tab-btn" data-tab="broad">Широкі</button>
+                                <button class="tab-btn" data-tab="phrase">Фразові</button>
+                                <button class="tab-btn" data-tab="exact">Точні</button>
+                            </div>
+                            <div class="keywords-list" id="keywordsList"></div>
+                            <div class="export-section">
+                                <button id="copyKeywords" class="export-btn">📋 Копіювати всі</button>
+                                <button id="downloadKeywords" class="export-btn">⬇️ Завантажити CSV</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Мінус-слова -->
+            <div class="negative-keywords-section">
+                <h2>🚫 Генератор мінус-слів</h2>
+                <p class="section-desc">Мінус-слова допомагають виключити нецільовий трафік та економити бюджет</p>
+
+                <div class="negative-layout">
+                    <div class="negative-input">
+                        <div class="form-group">
+                            <label for="businessType">Тип бізнесу</label>
+                            <select id="businessType">
+                                <option value="">Оберіть тип</option>
+                                <option value="paid">Платні послуги/товари</option>
+                                <option value="new">Нові товари (не б/в)</option>
+                                <option value="professional">Професійні послуги</option>
+                                <option value="premium">Преміум товари</option>
+                                <option value="local">Локальний бізнес</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customNegative">Додаткові мінус-слова (через кому)</label>
+                            <textarea id="customNegative" rows="3"
+                                placeholder="Наприклад: конкуренти, інші міста"></textarea>
+                        </div>
+
+                        <button id="generateNegative" class="generate-btn negative-btn">Згенерувати мінус-слова</button>
+                    </div>
+
+                    <div class="negative-output" id="negativeOutput" style="display: none;">
+                        <h3>🚫 Рекомендовані мінус-слова</h3>
+                        <div class="negative-list" id="negativeList"></div>
+                        <button id="copyNegative" class="export-btn">📋 Копіювати мінус-слова</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Аналізатор конкурентів -->
+            <div class="competitor-section">
+                <h2>🔬 Аналізатор ключових слів конкурентів</h2>
+                <p class="section-desc">Введіть URL конкурента, щоб отримати ідеї для ключових слів (симуляція)</p>
+
+                <div class="competitor-layout">
+                    <div class="form-group">
+                        <label for="competitorUrl">URL конкурента</label>
+                        <input type="url" id="competitorUrl" placeholder="https://example.com">
+                    </div>
+                    <button id="analyzeCompetitor" class="generate-btn">🔍 Аналізувати</button>
+
+                    <div id="competitorResults" class="competitor-results" style="display: none;">
+                        <h3>💡 Потенційні ключові слова</h3>
+                        <p class="note">Це приблизний список на основі типової ніші. Для детального аналізу
+                            використовуйте спеціалізовані інструменти.</p>
+                        <div class="competitor-keywords" id="competitorKeywords"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Поради -->
+            <div class="tips-section">
+                <h2>💡 Поради з підбору ключових слів</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h3>Почніть з широких</h3>
+                        <p>Використовуйте широку відповідність для збору даних на старті, потім звужуйте до точних
+                            конверсійних запитів</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">📊</div>
+                        <h3>Аналізуйте пошукові звіти</h3>
+                        <p>Регулярно переглядайте звіти про пошукових запитах, щоб знаходити нові ключові слова та
+                            мінус-слова</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🎪</div>
+                        <h3>Long-tail ключові слова</h3>
+                        <p>Довгі фрази (3-5 слів) мають нижчу конкуренцію та вищу конверсію: "купити iPhone 15 Pro київ
+                            недорого"</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🚫</div>
+                        <h3>Використовуйте мінус-слова</h3>
+                        <p>Додавайте мінус-слова з першого дня: безкоштовно, б/в, реферат, скачати - економить до 30%
+                            бюджету</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🔄</div>
+                        <h3>Групуйте за темами</h3>
+                        <p>Створюйте окремі групи оголошень для різних тем. Наприклад: "купівля", "ремонт", "доставка"
+                        </p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">📍</div>
+                        <h3>Локальні модифікатори</h3>
+                        <p>Додавайте назви міст, районів, станцій метро для локального бізнесу: "стоматолог Печерськ"
+                        </p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">💰</div>
+                        <h3>Комерційні модифікатори</h3>
+                        <p>Слова "купити", "ціна", "замовити", "доставка" показують високий намір до покупки</p>
+                    </div>
+
+                    <div class="tip-card">
+                        <div class="tip-icon">🔍</div>
+                        <h3>Використовуйте Google Keyword Planner</h3>
+                        <p>Офіційний інструмент Google для пошуку ідей, обсягів пошуку та прогнозування конкуренції</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Інструменти -->
+            <div class="tools-section">
+                <h2>🛠️ Корисні інструменти</h2>
+                <div class="tools-grid">
+
+                    <div class="tool-card">
+                        <h3>Google Trends</h3>
+                        <p>Аналіз популярності пошукових запитів у часі</p>
+                        <a href="https://trends.google.com/" target="_blank" class="tool-link">Перейти →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>Answer The Public</h3>
+                        <p>Візуалізація питань, які задають користувачі</p>
+                        <a href="https://answerthepublic.com/" target="_blank" class="tool-link">Перейти →</a>
+                    </div>
+
+                    <div class="tool-card">
+                        <h3>Пошукові підказки Google</h3>
+                        <p>Використовуйте автодоповнення Google для ідей</p>
+                        <a href="https://www.google.com/" target="_blank" class="tool-link">Перейти →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Кнопка на головну -->
+        <div class="back-home-container">
+            <a href="../index.html" class="back-home-btn">
+                <span class="back-arrow">←</span>
+                <span class="back-text">Повернутись на головну</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="../scripts/google-ads-keywords.js"></script>
+</body>
+
+</html>

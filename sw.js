@@ -10,6 +10,11 @@ const urlsToCache = [
     "/scripts/security.js",
     "/scripts/achievement-page.js",
     "/scripts/utm-page.js",
+    "/scripts/google-ads-calc.js",
+    "/scripts/google-ads-comparison.js",
+    "/scripts/google-ads-generator.js",
+    "/scripts/google-ads-glossary.js",
+    "/scripts/google-ads-keywords.js",
 
     // Для сучасних браузерів (модулі)
     "/scripts/init/app.js",
@@ -102,7 +107,13 @@ const urlsToCache = [
     "/other_styles/ai-automatization.css", "/pages/ai-automatization.html",
     "/other_styles/cabinet.css", "/pages/cabinet.html",
     "/other_styles/security.css", "/pages/security-tips.html",
-    "/other_styles/edit-guide.css", "/pages/edit-instruction.html"
+    "/other_styles/edit-guide.css", "/pages/edit-instruction.html",
+    "/other_styles/google-ads-calc.css", "/pages/google-ads-calc.html",
+    "/other_styles/google-ads-comparison.css", "/pages/google-ads-comparison.html",
+    "/other_styles/google-ads-generator.css", "/pages/google-ads-generator.html",
+    "/other_styles/google-ads-glossary.css", "/pages/google-ads-glossary.html",
+    "/other_styles/google-ads-keywords.css", "/pages/google-ads-keywords.html"
+
 ];
 
 // Встановлення SW - автоматично оновлює кеш

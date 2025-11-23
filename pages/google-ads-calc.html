@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Калькулятор бюджету Google Ads - Розрахунок вартості реклами</title>
+
+    <!-- SEO Метатеги -->
+    <meta name="description"
+        content="Безкоштовний калькулятор для розрахунку бюджету Google Ads. Дізнайтеся орієнтовну вартість кліку, прогноз конверсій та ROAS для вашої рекламної кампанії.">
+    <meta name="keywords"
+        content="калькулятор Google Ads, розрахунок бюджету реклами, вартість Google Ads, CPC калькулятор, ROAS калькулятор, бюджет контекстної реклами">
+    <meta name="robots" content="index, follow">
+
+    <!-- Канонічний URL -->
+    <link rel="canonical" href="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-calc.html">
+
+    <!-- Open Graph для соцмереж -->
+    <meta property="og:title" content="Калькулятор бюджету Google Ads - Розрахунок вартості реклами">
+    <meta property="og:description"
+        content="Безкоштовний калькулятор для розрахунку бюджету Google Ads. Розрахуйте вартість кліку, прогноз конверсій та ROAS.">
+    <meta property="og:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://scintillating-sunshine-94e986.netlify.app/pages/google-ads-calc.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Калькулятор бюджету Google Ads">
+    <meta name="twitter:description"
+        content="Безкоштовний калькулятор для розрахунку бюджету Google Ads. Розрахуйте вартість кліку та прогноз результатів.">
+    <meta name="twitter:image" content="https://scintillating-sunshine-94e986.netlify.app/branding/banner.webp">
+
+    <link rel="stylesheet" href="../other_styles/google-ads-calc.css">
+    <link rel="icon" type="image/webp" href="../branding/favicon-32x32.webp">
+    <link rel="alternate icon" type="image/png" href="../branding/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Калькулятор Google Ads</h1>
+            <p>Розрахуйте орієнтовний бюджет для вашої рекламної кампанії</p>
+        </div>
+
+        <div class="content">
+            <form id="calcForm">
+                <div class="form-group">
+                    <label for="businessType">Тип бізнесу</label>
+                    <select id="businessType" required>
+                        <option value="">Оберіть тип</option>
+                        <option value="0.5">Локальні послуги (низька конкуренція)</option>
+                        <option value="1.5">Малий бізнес (середня конкуренція)</option>
+                        <option value="3">E-commerce (висока конкуренція)</option>
+                        <option value="5">Фінанси/Страхування (дуже висока)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="clicksPerDay">Бажана кількість кліків на день</label>
+                    <input type="number" id="clicksPerDay" min="1" max="1000" placeholder="Наприклад: 20" required>
+                    <p class="info-text">Скільки потенційних клієнтів ви хочете отримати щодня?</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="campaignDuration">Тривалість кампанії (днів)</label>
+                    <input type="number" id="campaignDuration" min="1" max="365" value="30" required>
+                    <p class="info-text">Рекомендуємо мінімум 30 днів для оптимізації</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="conversionRate">Очікуваний коефіцієнт конверсії (%)</label>
+                    <input type="number" id="conversionRate" min="0.1" max="100" step="0.1" value="2" required>
+                    <p class="info-text">Середній показник: 2-5%. Якщо не знаєте - залиште 2%</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="avgOrderValue">Середній чек (грн)</label>
+                    <input type="number" id="avgOrderValue" min="1" placeholder="Наприклад: 1500" required>
+                    <p class="info-text">Скільки в середньому витрачає один клієнт?</p>
+                </div>
+
+                <button type="submit" class="calculate-btn">Розрахувати бюджет</button>
+            </form>
+
+            <div id="results" class="results">
+                <h2>📊 Результати розрахунку</h2>
+
+                <div class="result-grid">
+                    <div class="result-card">
+                        <div class="result-label">Орієнтовна ціна кліку</div>
+                        <div class="result-value" id="cpcValue">-</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Денний бюджет</div>
+                        <div class="result-value" id="dailyBudget">-</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Місячний бюджет</div>
+                        <div class="result-value highlight" id="monthlyBudget">-</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Загальний бюджет кампанії</div>
+                        <div class="result-value" id="totalBudget">-</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Очікувана к-ть кліків</div>
+                        <div class="result-value" id="totalClicks">-</div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-label">Очікувані конверсії</div>
+                        <div class="result-value" id="conversions">-</div>
+                    </div>
+
+                    <div class="result-card full-width">
+                        <div class="result-label">Прогнозований дохід</div>
+                        <div class="result-value success" id="revenue">-</div>
+                    </div>
+
+                    <div class="result-card full-width">
+                        <div class="result-label">Очікуваний ROAS</div>
+                        <div class="result-value" id="roas">-</div>
+                        <p class="roas-explanation">ROAS (Return on Ad Spend) - скільки гривень ви отримаєте з кожної
+                            гривні витраченої на рекламу</p>
+                    </div>
+                </div>
+
+                <div class="recommendations">
+                    <h3>💡 Рекомендації</h3>
+                    <ul id="recommendationsList"></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка на головну -->
+        <div class="back-home-container">
+            <a href="../index.html" class="back-home-btn">
+                <span class="back-arrow">←</span>
+                <span class="back-text">Повернутись на головну</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="../scripts/google-ads-calc.js"></script>
+</body>
+
+</html>

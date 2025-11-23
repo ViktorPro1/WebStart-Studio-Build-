@@ -1,0 +1,844 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, #4285f4 0%, #e94235 100%);
+    color: white;
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 50px 30px;
+}
+
+/* Quiz Section */
+.quiz-section {
+    margin-bottom: 60px;
+}
+
+.quiz-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.quiz-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+.question h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option:hover {
+    border-color: #4285f4;
+    transform: translateX(5px);
+}
+
+.option input[type="radio"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.option span {
+    font-size: 16px;
+    color: #333;
+}
+
+.quiz-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.quiz-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(66, 133, 244, 0.3);
+}
+
+.quiz-result {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Comparison Table */
+.comparison-table {
+    margin-bottom: 60px;
+}
+
+.comparison-table h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+th {
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+th.google-col {
+    background: rgba(66, 133, 244, 0.2);
+}
+
+th.facebook-col {
+    background: rgba(233, 66, 53, 0.2);
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background 0.2s;
+}
+
+tbody tr:hover {
+    background: #f8f9fa;
+}
+
+td {
+    padding: 20px;
+    font-size: 15px;
+    color: #555;
+}
+
+td.criteria {
+    font-weight: 600;
+    color: #333;
+}
+
+td.pro {
+    color: #34a853;
+    font-weight: 600;
+}
+
+td.con {
+    color: #ea4335;
+}
+
+/* Usage Section */
+.usage-section {
+    margin-bottom: 60px;
+}
+
+.usage-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.usage-card {
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.usage-card:hover {
+    transform: translateY(-5px);
+}
+
+.google-card {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 5px solid #4285f4;
+}
+
+.facebook-card {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    border-left: 5px solid #e94235;
+}
+
+.card-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.usage-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.usage-card ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.usage-card li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.usage-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #34a853;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.examples {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.examples strong {
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.examples p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Combined Section */
+.combined-section {
+    margin-bottom: 60px;
+}
+
+.combined-card {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 3px solid #fbc02d;
+}
+
+.combined-icon {
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.combined-card h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.combined-desc {
+    text-align: center;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.funnel {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.funnel-step {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.funnel-step.highlight {
+    background: linear-gradient(135deg, #4caf50 0%, #81c784 100%);
+    color: white;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: #4285f4;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.funnel-step.highlight .step-number {
+    background: white;
+    color: #4caf50;
+}
+
+.step-content h4 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.funnel-step.highlight .step-content h4 {
+    color: white;
+}
+
+.step-content p {
+    color: #666;
+    font-size: 14px;
+}
+
+.funnel-step.highlight .step-content p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.funnel-arrow {
+    text-align: center;
+    font-size: 32px;
+    color: #4285f4;
+    margin: 5px 0;
+}
+
+.combined-benefits {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.combined-benefits h3 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.benefit:hover {
+    transform: translateY(-3px);
+}
+
+.benefit-icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.benefit span:last-child {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Summary Section */
+.summary-section {
+    background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.summary-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.summary-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.summary-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.summary-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.summary-list li {
+    padding: 12px 0;
+    padding-left: 35px;
+    position: relative;
+    color: #555;
+    font-size: 16px;
+}
+
+.summary-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #4285f4;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.summary-cta {
+    text-align: center;
+    font-size: 18px;
+    padding: 25px;
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+    color: white;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+/* Кнопка повернення */
+.back-home-container {
+    padding: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #4285f4 0%, #e94235 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.back-home-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
+}
+
+.back-arrow {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.back-home-btn:hover .back-arrow {
+    transform: translateX(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 10px;
+    }
+
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .content {
+        padding: 30px 20px;
+    }
+
+    .quiz-card {
+        padding: 25px;
+    }
+
+    .usage-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .table-wrapper {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+    .funnel {
+        padding: 0 10px;
+    }
+
+    .funnel-step {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Адаптив для 420px */
+@media (max-width: 420px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 15px;
+    }
+
+    .header {
+        padding: 25px 15px;
+    }
+
+    .header h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .content {
+        padding: 25px 15px;
+    }
+
+    /* Quiz Section */
+    .quiz-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .quiz-card {
+        padding: 20px 15px;
+    }
+
+    .question {
+        margin-bottom: 20px;
+    }
+
+    .question h3 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .option {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .option input[type="radio"] {
+        width: 18px;
+        height: 18px;
+        margin-right: 12px;
+    }
+
+    .quiz-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .quiz-result {
+        padding: 20px 15px;
+    }
+
+    .result-content h3 {
+        font-size: 20px;
+    }
+
+    .result-content p {
+        font-size: 14px;
+    }
+
+    /* Comparison Table */
+    .comparison-table h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .table-wrapper {
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    th {
+        font-size: 14px;
+    }
+
+    /* Usage Cards */
+    .usage-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .usage-card {
+        padding: 20px 15px;
+    }
+
+    .card-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .usage-card h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .usage-card li {
+        font-size: 14px;
+        padding: 8px 0;
+        padding-left: 25px;
+    }
+
+    .examples {
+        padding: 15px;
+    }
+
+    .examples strong {
+        font-size: 14px;
+    }
+
+    .examples p {
+        font-size: 13px;
+    }
+
+    /* Combined Section */
+    .combined-card {
+        padding: 25px 15px;
+    }
+
+    .combined-icon {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .combined-card h2 {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .combined-desc {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .funnel-step {
+        padding: 15px;
+        gap: 12px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .step-number {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .step-content h4 {
+        font-size: 16px;
+    }
+
+    .step-content p {
+        font-size: 13px;
+    }
+
+    .combined-benefits {
+        padding: 20px 15px;
+    }
+
+    .combined-benefits h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .benefit {
+        padding: 15px;
+    }
+
+    .benefit-icon {
+        font-size: 32px;
+    }
+
+    /* Summary Section */
+    .summary-section {
+        padding: 25px 15px;
+    }
+
+    .summary-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .summary-content {
+        padding: 20px 15px;
+    }
+
+    .summary-content p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .summary-list li {
+        font-size: 14px;
+        padding: 10px 0;
+        padding-left: 30px;
+    }
+
+    .summary-cta {
+        font-size: 15px;
+        padding: 20px 15px;
+    }
+
+    .back-home-container {
+        padding: 20px 15px;
+    }
+
+    .back-home-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        gap: 8px;
+    }
+
+    .back-arrow {
+        font-size: 18px;
+    }
+}

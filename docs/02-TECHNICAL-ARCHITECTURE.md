@@ -3,6 +3,28 @@
 ## 📂 Структура Проєкту
 
 ```
+├── pages/ # Додаткові сторінки
+│ ├── google-ads-calc.html # Google Ads калькулятор
+│ ├── google-ads-comparison.html # Порівняння платформ
+│ ├── google-ads-glossary.html # Глосарій термінів
+│ ├── google-ads-generator.html # Генератор оголошень
+│ └── google-ads-keywords.html # Підбір ключових слів
+│
+├── css/ # Стилі
+│ ├── google-ads-calc.css
+│ ├── google-ads-comparison.css
+│ ├── google-ads-glossary.css
+│ ├── google-ads-generator.css
+│ └── google-ads-keywords.css
+│
+├── js/ # JavaScript
+│ ├── google-ads-calc.js
+│ ├── google-ads-comparison.js
+│ ├── google-ads-glossary.js
+│ ├── google-ads-generator.js
+│ └── google-ads-keywords.js
+
+
 WebStart-Studio-Build-/
 ├── index.html                 # Головна сторінка
 ├── djon.html                  # Навігаційний гід

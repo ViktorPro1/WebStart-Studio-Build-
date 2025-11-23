@@ -112,3 +112,94 @@
         max-width: 100%;
     }
 }
+
+
+/* Кнопки для Google Ads секції */
+.google-ads-btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.google-ads-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Різні кольори для кожної кнопки */
+.calc-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+}
+
+.comparison-btn {
+    background: linear-gradient(135deg, #ea4335 0%, #fbbc04 100%);
+}
+
+.glossary-btn {
+    background: linear-gradient(135deg, #34a853 0%, #4285f4 100%);
+}
+
+.generator-btn {
+    background: linear-gradient(135deg, #4285f4 0%, #ea4335 100%);
+}
+
+.keywords-btn {
+    background: linear-gradient(135deg, #34a853 0%, #0f9d58 100%);
+}
+
+/* Бейдж "Вивчаємо" */
+.badge-learning {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0 15px 0;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.learning-icon {
+    font-size: 16px;
+}
+
+.learning-text {
+    letter-spacing: 0.3px;
+}
+
+/* Інформаційна нотатка */
+.info-note {
+    background-color: #f8f9fa;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #495057;
+}
+
+.info-note em {
+    font-style: normal;
+    color: #6c757d;
+}
+
+/* Responsive для кнопок */
+@media (max-width: 768px) {
+    .google-ads-btn {
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+}
