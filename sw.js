@@ -1,5 +1,5 @@
 // 🔥 Автоматичне оновлення - не потрібно нічого міняти вручну
-const CACHE_NAME = `webstart-cache-${self.registration.scope}`;
+const CACHE_NAME = `webstart-cache-${self.registration.scope}-v2`; // Змініть версію!
 const urlsToCache = [
     "/",
     "/index.html",
@@ -79,7 +79,7 @@ const urlsToCache = [
     "/other_styles/blog-portfolio-tips.css", "/pages/blog-portfolio-tips.html",
     "/other_styles/blog-resume-tips.css", "/pages/blog-resume-tips.html",
     "/other_styles/calc.css", "/pages/calc.html",
-    "/other_styles/contact.css", "/pages/contact.html",
+    "/other_styles/contact.css", // НЕ кешуємо contact.html!
     "/other_styles/declaration.css", "/pages/declaration.html",
     "/other_styles/djon.css", "/pages/djon.html",
     "/other_styles/ecommerce-info.css", "/pages/ecommerce-info.html",
@@ -161,6 +161,20 @@ self.addEventListener("fetch", event => {
 
     const url = new URL(event.request.url);
     if (url.origin !== location.origin) return;
+
+    // ⚠️ ВАЖЛИВО: contact.html та зовнішні запити ЗАВЖДИ з мережі
+    if (url.pathname.includes('/pages/contact') ||
+        url.pathname.includes('contact.html') ||
+        url.hostname.includes('script.google.com')) {
+        event.respondWith(
+            fetch(event.request)
+                .catch(() => new Response("⚠️ Немає підключення", {
+                    status: 503,
+                    statusText: "Service Unavailable"
+                }))
+        );
+        return;
+    }
 
     // Для фото - пріоритет мережі (завжди свіжі)
     if (url.pathname.includes('/foto/')) {
