@@ -3,15 +3,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const feedbackForm = document.getElementById('feedback-form');
 
-    // Перевіряємо, чи існує форма на цій сторінці
-    if (!feedbackForm) {
-        return;
-    }
+    if (!feedbackForm) return;
 
     feedbackForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Збираємо дані форми
         const formData = {
             name: document.getElementById('name').value.trim(),
             viber: document.getElementById('viber').value.trim(),
@@ -20,40 +16,36 @@ document.addEventListener('DOMContentLoaded', function () {
             message: document.getElementById('message').value.trim()
         };
 
-        // Валідація обов'язкових полів
         if (!formData.name || !formData.email || !formData.message) {
             alert('Будь ласка, заповніть всі обов\'язкові поля.');
             return;
         }
 
-        // Блокуємо кнопку під час відправки
         const submitButton = feedbackForm.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.textContent;
         submitButton.disabled = true;
         submitButton.textContent = 'Надсилання...';
 
         try {
-            const response = await fetch('https://webstart-feedback.onrender.com/send-feedback', {
+            // Використовуйте метод fetch з правильними заголовками
+            const response = await fetch('https://script.google.com/macros/s/AKfycbzJOAOO5ARyGJy5jY6NqSdNgK11hljkD-iX17PqF35eOmw2-jf1hP61sG_5eldI7oz5rQ/exec', {
                 method: 'POST',
+                mode: 'no-cors', // Додайте цей параметр
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
 
-            const data = await response.json();
+            // З mode: 'no-cors' ви не зможете прочитати відповідь
+            // Тому просто показуємо успіх
+            alert('Повідомлення успішно надіслано!');
+            feedbackForm.reset();
 
-            if (response.ok) {
-                alert(data.message || 'Повідомлення успішно надіслано!');
-                feedbackForm.reset(); // Очищаємо форму
-            } else {
-                alert(data.message || 'Помилка при відправці. Спробуйте пізніше.');
-            }
         } catch (error) {
             console.error('Error:', error);
             alert('Щось пішло не так. Перевірте з\'єднання з інтернетом та спробуйте пізніше.');
         } finally {
-            // Розблоковуємо кнопку
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
         }
