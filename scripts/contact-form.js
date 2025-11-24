@@ -26,25 +26,62 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.disabled = true;
         submitButton.textContent = 'Надсилання...';
 
+        // URL вашого скрипта
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzJOAOO5ARyGJy5jY6NqSdNgK11hljkD-iX17PqF35eOmw2-jf1hP61sG_5eldI7oz5rQ/exec';
+
         try {
-            // Використовуйте метод fetch з правильними заголовками
-            const response = await fetch('https://script.google.com/macros/s/AKfycbzJOAOO5ARyGJy5jY6NqSdNgK11hljkD-iX17PqF35eOmw2-jf1hP61sG_5eldI7oz5rQ/exec', {
-                method: 'POST',
-                mode: 'no-cors', // Додайте цей параметр
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
+            console.log('Відправка даних:', formData);
+
+            // Використовуємо URLSearchParams для надійності
+            const params = new URLSearchParams();
+            params.append('name', formData.name);
+            params.append('viber', formData.viber);
+            params.append('telegram', formData.telegram);
+            params.append('email', formData.email);
+            params.append('message', formData.message);
+
+            const response = await fetch(scriptURL + '?' + params.toString(), {
+                method: 'GET',
+                redirect: 'follow'
             });
 
-            // З mode: 'no-cors' ви не зможете прочитати відповідь
-            // Тому просто показуємо успіх
-            alert('Повідомлення успішно надіслано!');
-            feedbackForm.reset();
+            console.log('Response status:', response.status);
+            console.log('Response ok:', response.ok);
+
+            // Читаємо відповідь як текст спочатку
+            const textResponse = await response.text();
+            console.log('Response text:', textResponse);
+
+            // Пробуємо розпарсити JSON
+            let data;
+            try {
+                data = JSON.parse(textResponse);
+            } catch (parseError) {
+                console.error('JSON parse error:', parseError);
+                // Якщо не можемо розпарсити, але статус OK - вважаємо успішним
+                if (response.ok) {
+                    alert('Повідомлення успішно надіслано!');
+                    feedbackForm.reset();
+                    return;
+                }
+                throw new Error('Невалідна відповідь від сервера');
+            }
+
+            if (data.status === "success") {
+                alert(data.message);
+                feedbackForm.reset();
+            } else {
+                alert(data.message || 'Помилка при відправці. Спробуйте пізніше.');
+            }
 
         } catch (error) {
-            console.error('Error:', error);
-            alert('Щось пішло не так. Перевірте з\'єднання з інтернетом та спробуйте пізніше.');
+            console.error('Детальна помилка:', error);
+            console.error('Error name:', error.name);
+            console.error('Error message:', error.message);
+            console.error('Error stack:', error.stack);
+
+            // Показуємо більш детальну помилку
+            alert('Помилка: ' + error.message + '\n\nПеревірте консоль для деталей (F12)');
         } finally {
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
