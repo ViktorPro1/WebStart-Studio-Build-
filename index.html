@@ -22,15 +22,15 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Розробка:-->
-    <!-- <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/features/exit_intent.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/features/exit_intent.css">
 
     <!-- Продакшен: -->
-    <link rel="stylesheet" href="dist/styles.css">
+    <!-- <link rel="stylesheet" href="dist/styles.css">
     <link rel="preload" href="fonts/fontawesome/css/all.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css">
-    </noscript>
+    </noscript> -->
 
     <!-- 🔹 Preload для LCP-зображення -->
     <link rel="preload" as="image" href="branding/header-photo.webp" fetchpriority="high">
@@ -199,10 +199,28 @@
     <div id="progressBar"></div>
 
     <!-- ======🧢 Шапка сайту====== -->
+    <!-- ❄️ Падаючий сніг по всьому екрану -->
+    <div id="snow-container"></div>
     <header style="position: relative;">
         <div class="flag-ua" aria-label="Прапор України" role="img"></div>
 
-        <h1>Web<span class="logo-header">Start</span> Studio</h1>
+        <!-- <h1>Web<span class="logo-header">Start</span> Studio</h1> -->
+
+        <h1 class="logo-header-main">
+            <span class="letter-w-christmas">
+                Web
+                <span class="santa-hat"></span>
+            </span><span class="logo-header">Start</span> Studio
+            <span class="christmas-tree-header">
+                <div class="tree-star">⭐</div>
+                <div class="snow-on-tree"></div>
+                <div class="tree-top"></div>
+                <div class="tree-middle"></div>
+                <div class="tree-bottom"></div>
+                <div class="tree-trunk"></div>
+            </span>
+            <div class="logo-snow-effect"></div>
+        </h1>
 
         <div class="burger" id="burger">
             <span></span>

@@ -342,6 +342,332 @@ header nav {
 }
 
 
+/* ====== НОВОРІЧНІ СТИЛІ ДЛЯ HEADER ====== */
+
+/* Контейнер для падаючого снігу */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 99999;
+    overflow: hidden;
+}
+
+/* Сніжинки */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Стилі для логотипу в header */
+.logo-header-main {
+    position: relative;
+    display: inline-block;
+}
+
+/* Літера W з шапкою */
+.letter-w-christmas {
+    position: relative;
+    display: inline-block;
+}
+
+/* Червона новорічна шапка на W */
+.santa-hat {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(calc(-50% - 45px));
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 22px solid #dc143c;
+    border-radius: 2px;
+    z-index: 10;
+}
+
+.santa-hat::before {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: -15px;
+    width: 30px;
+    height: 8px;
+    background: white;
+    border-radius: 0 0 8px 8px;
+}
+
+.santa-hat::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Ялинка в header */
+.christmas-tree-header {
+    position: relative;
+    display: inline-block;
+    margin-left: -10px;
+    width: 25px;
+    height: 50px;
+    vertical-align: middle;
+    transform: translateY(-8px);
+}
+
+.tree-top {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid #228b22;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.tree-middle {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 13px solid transparent;
+    border-right: 13px solid transparent;
+    border-bottom: 20px solid #2d8b2d;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.tree-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #196619;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
+}
+
+.tree-trunk {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 10px;
+    background: #8b4513;
+    border-radius: 1px;
+}
+
+.tree-star {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    animation: twinkle 1.5s ease-in-out infinite;
+    z-index: 10;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(1.15);
+        filter: brightness(1.3);
+    }
+}
+
+.snow-on-tree {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Сніг на логотипі */
+.logo-snow-effect {
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(255, 255, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: 50% 50% 0 0 / 12px 12px 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 768px) {
+    .santa-hat {
+        top: -14px;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 18px solid #dc143c;
+    }
+
+    .santa-hat::before {
+        top: 18px;
+        left: -12px;
+        width: 24px;
+        height: 6px;
+    }
+
+    .santa-hat::after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .christmas-tree-header {
+        height: 40px;
+        width: 20px;
+        margin-left: 8px;
+    }
+
+    .tree-star {
+        font-size: 12px;
+        top: -12px;
+    }
+
+    .tree-top {
+        bottom: 24px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 14px solid #228b22;
+    }
+
+    .tree-middle {
+        bottom: 12px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 16px solid #2d8b2d;
+    }
+
+    .tree-bottom {
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 16px solid #196619;
+    }
+}
+
+/* Для дуже маленьких екранів */
+@media (max-width: 480px) {
+    .santa-hat {
+        top: -10px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 14px solid #dc143c;
+    }
+
+    .santa-hat::before {
+        top: 14px;
+        left: -8px;
+        width: 16px;
+        height: 5px;
+    }
+
+    .santa-hat::after {
+        width: 8px;
+        height: 8px;
+        top: -5px;
+        left: -4px;
+    }
+
+    .christmas-tree-header {
+        height: 32px;
+        width: 16px;
+        margin-left: 6px;
+    }
+
+    .tree-star {
+        font-size: 10px;
+        top: -10px;
+    }
+}
+
+@media (max-width: 420px) {
+    .santa-hat {
+        top: -9px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 12px solid #dc143c;
+    }
+
+    .santa-hat::before {
+        top: 12px;
+        left: -7px;
+        width: 14px;
+        height: 4px;
+    }
+
+    .santa-hat::after {
+        width: 7px;
+        height: 7px;
+        top: -4px;
+        left: -4px;
+    }
+
+    .christmas-tree-header {
+        height: 30px;
+        width: 15px;
+        margin-left: 5px;
+    }
+
+    .tree-star {
+        font-size: 9px;
+        top: -9px;
+    }
+}
+
+
 /* ========================================
    css/layout/navigation.css
    ======================================== */

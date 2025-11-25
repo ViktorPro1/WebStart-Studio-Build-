@@ -21,6 +21,7 @@ import { initPullToRefresh } from '../features/pull-to-refresh.js';
 import { initCookieBanner } from '../features/cookie.js';
 import { initToggleSections } from '../features/toggle-sections.js';
 import { initPricingTableToggle } from '../features/pricing-table-toggle.js';
+import { initChristmasEffects } from '../features/christmas-effects.js';
 
 // Init-Modules
 import { initAnalytics } from '../init-modules/analytics.js';
@@ -58,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initPullToRefresh();
     initCookieBanner();
     initToggleSections();
-    initPricingTableToggle()
+    initPricingTableToggle();
+    initChristmasEffects();
 
     // Init-Modules
     initAnalytics()
