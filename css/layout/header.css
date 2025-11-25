@@ -545,4 +545,9 @@ header nav {
         font-size: 9px;
         top: -9px;
     }
+
+    .logo-snow-effect {
+        width: 85%;
+        left: 6%;
+    }
 }
