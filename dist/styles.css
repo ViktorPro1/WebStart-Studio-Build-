@@ -549,9 +549,11 @@ header nav {
 @media (max-width: 768px) {
     .santa-hat {
         top: -14px;
+        left: 50%;
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         border-bottom: 18px solid #dc143c;
+        transform: translateX(calc(-50% - 35px));
     }
 
     .santa-hat::before {
@@ -602,9 +604,11 @@ header nav {
 @media (max-width: 480px) {
     .santa-hat {
         top: -10px;
+        left: 50%;
         border-left: 8px solid transparent;
         border-right: 8px solid transparent;
         border-bottom: 14px solid #dc143c;
+        transform: translateX(calc(-50% - 38px));
     }
 
     .santa-hat::before {
@@ -635,30 +639,33 @@ header nav {
 
 @media (max-width: 420px) {
     .santa-hat {
-        top: -9px;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 12px solid #dc143c;
+        top: -18px;
+        left: 50%;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 18px solid #dc143c;
+        transform: translateX(calc(-50% - 35px));
     }
 
     .santa-hat::before {
-        top: 12px;
-        left: -7px;
-        width: 14px;
-        height: 4px;
+        top: 18px;
+        left: -10px;
+        width: 20px;
+        height: 6px;
     }
 
     .santa-hat::after {
-        width: 7px;
-        height: 7px;
-        top: -4px;
+        width: 8px;
+        height: 8px;
+        top: -5px;
         left: -4px;
     }
 
     .christmas-tree-header {
         height: 30px;
         width: 15px;
-        margin-left: 5px;
+        margin-left: 2px;
+        transform: translate(-5px, -8px);
     }
 
     .tree-star {
