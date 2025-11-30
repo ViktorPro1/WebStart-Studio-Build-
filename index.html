@@ -460,7 +460,9 @@
                     srcset="gallery/img23.webp 64w, gallery/img23.webp 1600w">
             </div>
 
-            <input type="range" class="gallery-marquee-slider" min="0" max="100" value="0">
+            <input type="range" id="gallery-slider" class="gallery-marquee-slider" min="0" max="100" value="0"
+                aria-label="Повзунок для перегляду галереї зображень" aria-valuemin="0" aria-valuemax="100"
+                aria-valuenow="0">
         </div>
         <div class="gallery-marquee-modal hidden" id="galleryModal">
             <span class="gallery-marquee-close" id="galleryClose">&times;</span>
