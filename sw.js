@@ -39,6 +39,7 @@ const urlsToCache = [
     "/scripts/features/cookie.js",
     "/scripts/features/pricing-table-toggle.js",
     "/scripts/features/christmas-effects.js",
+    "/scripts/features/accessibility.js",
     // Init modules
     "/scripts/init-modules/analytics.js",
     "/scripts/init-modules/calculator.js",

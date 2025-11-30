@@ -22,15 +22,15 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <!-- Розробка:-->
-    <!-- <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/features/exit_intent.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/features/exit_intent.css">
 
     <!-- Продакшен: -->
-    <link rel="stylesheet" href="dist/styles.css">
+    <!-- <link rel="stylesheet" href="dist/styles.css">
     <link rel="preload" href="fonts/fontawesome/css/all.min.css" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="fonts/fontawesome/css/all.min.css">
-    </noscript>
+    </noscript> -->
 
     <!-- 🔹 Preload для LCP-зображення -->
     <link rel="preload" as="image" href="branding/header-photo.webp" fetchpriority="high">
@@ -173,6 +173,9 @@
 
 <body>
 
+    <!-- Skip link: приховане посилання для пропуску навігаційного меню і швидкого переходу до основного контенту для користувачів клавіатури та скрінрідерів -->
+    <a href="#main-content" class="skip-link" aria-label="Пропустити меню та перейти до основного контенту"></a>
+
     <!-- ======🧭 Системні та сервісні елементи (невидимі або службові)====== -->
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MGMWZKLK" height="0" width="0"
@@ -185,10 +188,14 @@
         Оновлення доступне — потягніть вниз для оновлення
     </div>
     <!-- Привітальне вікно -->
-    <div id="welcome-modal" class="modal">
+    <div id="welcome-modal" class="modal" role="dialog" aria-labelledby="welcome-modal-title" aria-modal="true">
         <div class="modal-content">
-            <span class="close-btn" id="close-btn">&times;</span>
-            <h2>Ласкаво просимо у нашу студію!</h2>
+            <h2 id="welcome-modal-title">
+                Ласкаво просимо у нашу студію!
+            </h2>
+            <button class="close-btn" id="close-btn" aria-label="Закрити вітальне вікно">
+                &times;
+            </button>
         </div>
     </div>
     <!-- Breadcrumbs -->
@@ -224,40 +231,93 @@
             <div class="logo-snow-effect"></div>
         </h1>
 
-        <div class="burger" id="burger">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- Бургер меню: -->
+        <div class="burger" id="burger" role="button" tabindex="0" aria-label="Відкрити меню навігації"
+            aria-expanded="false" aria-controls="navMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
         </div>
-        <nav id="navMenu">
-            <a href="#for-whom">Аудиторія</a>
-            <a href="#services">Створюємо</a>
-            <a href="#portfolio">Портфоліо</a>
-            <a href="#technical-features">ТехСервіс</a>
-            <a href="#advantages" class="btn-header">Чому ми?</a>
-            <a href="#platform-comparison">Порівняння</a>
-            <a href="#diy-vs-us">Альтернативи</a>
 
-            <a href="#pricing">Пакети</a>
-            <a href="#promo">Акції</a>
-            <a href="#briefs" class="nav-btn">Отримати</a>
+        <nav id="navMenu" role="navigation" aria-label="Головне меню сайту">
 
-            <a href="#mini-services">Міні-сервіс</a>
-            <a href="#ai-prompting-dynamic">АІ Сервіс</a>
-            <a href="#extras">Додаткове</a>
-            <a href="#security">Безпека</a>
-            <a href="#certificate-gift">Сувенір</a>
+            <a href="#for-whom" aria-label="Перейти до секції Аудиторія">
+                Аудиторія
+            </a>
+            <a href="#services" aria-label="Перейти до секції Створюємо">
+                Створюємо
+            </a>
+            <a href="#portfolio" aria-label="Перейти до секції Портфоліо">
+                Портфоліо
+            </a>
+            <a href="#technical-features" aria-label="Перейти до секції Технічний сервіс">
+                ТехСервіс
+            </a>
+            <a href="#advantages" aria-label="Перейти до секції Чому ми?" class="btn-header">
+                Чому ми?
+            </a>
+            <a href="#platform-comparison" aria-label="Перейти до секції Порівняння">
+                Порівняння
+            </a>
+            <a href="#diy-vs-us" aria-label="Перейти до секції Альтернативи">
+                Альтернативи
+            </a>
 
-            <a href="#testimonials">Відгуки</a>
-            <a href="#common-mistakes">Ризики</a>
-            <a href="#faq">FAQ</a>
-            <a href="#hosting-help">Розміщення</a>
+            <a href="#pricing" aria-label="Перейти до секції Пакети">
+                Пакети
+            </a>
+            <a href="#promo" aria-label="Перейти до секції Акції">
+                Акції
+            </a>
+            <a href="#briefs" aria-label="Перейти до форми Отримати" class="nav-btn">
+                Отримати
+            </a>
 
-            <a href="#blog">Дайджест</a>
-            <a href="#international">International</a>
-            <a href="#contact-gift-wrapper">Контакти</a>
-            <a href="#guide-bonus">Бонус+</a>
-            <a href="#social">Соцмережі</a>
+            <a href="#mini-services" aria-label="Перейти до секції Міні-сервіс">
+                Міні-сервіс
+            </a>
+            <a href="#ai-prompting-dynamic" aria-label="Перейти до секції АІ сервіс">
+                АІ Сервіс
+            </a>
+            <a href="#extras" aria-label="Перейти до секції Додаткове">
+                Додаткове
+            </a>
+            <a href="#security" aria-label="Перейти до секції Безпека">
+                Безпека
+            </a>
+            <a href="#certificate-gift" aria-label="Перейти до секції Сувенір">
+                Сувенір
+            </a>
+
+            <a href="#testimonials" aria-label="Перейти до секції Відгуки">
+                Відгуки
+            </a>
+            <a href="#common-mistakes" aria-label="Перейти до секції Ризики">
+                Ризики
+            </a>
+            <a href="#faq" aria-label="Перейти до секції Часті питання">
+                FAQ
+            </a>
+            <a href="#hosting-help" aria-label="Перейти до секції Розміщення">
+                Розміщення
+            </a>
+
+            <a href="#blog" aria-label="Перейти до секції Дайджест">
+                Дайджест
+            </a>
+            <a href="#international" aria-label="Перейти до секції International">
+                International
+            </a>
+            <a href="#contact-gift-wrapper" aria-label="Перейти до секції Контакти">
+                Контакти
+            </a>
+            <a href="#guide-bonus" aria-label="Перейти до секції Бонус+">
+                Бонус+
+            </a>
+            <a href="#social" aria-label="Перейти до секції Соцмережі">
+                Соцмережі
+            </a>
+
         </nav>
 
         <label class="theme-toggle">
@@ -274,1274 +334,1414 @@
         </div>
     </header>
 
-    <!-- ======🧪 Освітній блок====== -->
-    <!-- WebStart LAB  -->
-    <div class="lab-strip">
-        <a href="pages/webstart-lab.html" target="_blank">📂 WebStart LAB – мінікурси, кейси, продукти</a>
-    </div>
+    <main id="main-content" role="main">
 
-    <!-- ======🔝 Вступний блок====== -->
-    <!-- Рухомий рядок  -->
-    <section class="marquee-container">
-        <h2 class="hidden-heading">Рухомий рядок</h2>
-        <div class="marquee">
-            <span>
-                <span class="highlight-propose">🏃‍♂️ Пропонуємо:</span>
-                <span class="highlight-landing">Лендінг</span> |
-                <span class="highlight-portfolio">Портфоліо</span>|
-                <span class="highlight-resume">Резюме</span>|
-                <span class="highlight-additional">🔥 Додаткові можливості для вашого успіху...</span>
-                <span class="highlight-banners">Банери (шаблони) для соцмереж</span> |
-                <span class="highlight-target">Запуск таргетованої реклами у Facebook та Instagram</span> |
-                <span class="highlight-tax">Повернення податків з Польщі (PIT-11)</span>|
-                <span>Чистка та діагностика ПК 💻</span>
-            </span>
-        </div>
-    </section>
-    <!-- Галерея  -->
-    <div class="gallery-marquee-wrapper" style="display:none">
-        <div class="gallery-marquee-container" id="galleryTrack">
-            <!-- Усі зображення оптимізовані -->
-            <img src="gallery/img1.webp" alt="Приклад веб-дизайну - сучасний лендінг для бізнесу з градієнтним фоном"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img1.webp 64w, gallery/img1.webp 1600w">
-
-            <img src="gallery/img2.webp" alt="Портфоліо веб-розробника з темною темою та мінімалістичним дизайном"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img2.webp 64w, gallery/img2.webp 1600w">
-
-            <img src="gallery/img3.webp"
-                alt="Електронне резюме з яскравими акцентними кольорами та структурованими блоками"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img3.webp 64w, gallery/img3.webp 1600w">
-
-            <img src="gallery/img4.webp" alt="Односторінковий сайт для стартапу з великими типографськими елементами"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img4.webp 64w, gallery/img4.webp 1600w">
-
-            <img src="gallery/img5.webp" alt="Лендінг для фрілансера з секціями послуг та портфоліо робіт"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img5.webp 64w, gallery/img5.webp 1600w">
-
-            <img src="gallery/img6.webp" alt="Корпоративне портфоліо з галереєю проектів у вигляді карток"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img6.webp 64w, gallery/img6.webp 1600w">
-
-            <img src="gallery/img7.webp" alt="Резюме IT-спеціаліста з інфографікою навичок та досвіду"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img7.webp 64w, gallery/img7.webp 1600w">
-
-            <img src="gallery/img8.webp" alt="Промо-сайт продукту з анімованими секціями та CTA кнопками"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img8.webp 64w, gallery/img8.webp 1600w">
-
-            <img src="gallery/img9.webp" alt="Портфоліо дизайнера з великими зображеннями робіт"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img9.webp 64w, gallery/img9.webp 1600w">
-
-            <img src="gallery/img10.webp" alt="Лендінг для івент-агенції з яскравою кольоровою схемою"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img10.webp 64w, gallery/img10.webp 1600w">
-
-            <img src="gallery/img11.webp" alt="Сайт-візитка перукаря з галереєю робіт до/після"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img11.webp 64w, gallery/img11.webp 1600w">
-
-            <img src="gallery/img12.webp" alt="Адаптивне резюме з мобільною версією для різних пристроїв"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img12.webp 64w, gallery/img12.webp 1600w">
-
-            <img src="gallery/img13.webp" alt="Лендінг з відео-фоном та великими заголовками"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img13.webp 64w, gallery/img13.webp 1600w">
-
-            <img src="gallery/img14.webp" alt="Портфоліо фотографа з повноекранною галереєю зображень"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img14.webp 64w, gallery/img14.webp 1600w">
-
-            <img src="gallery/img15.webp" alt="Сайт для ресторану з меню та онлайн-бронюванням столиків"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img15.webp 64w, gallery/img15.webp 1600w">
-
-            <img src="gallery/img16.webp" alt="Резюме маркетолога з графіками досягнень та метрик"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img16.webp 64w, gallery/img16.webp 1600w">
-
-            <img src="gallery/img17.webp" alt="Лендінг для SaaS продукту з демонстрацією функціоналу"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img17.webp 64w, gallery/img17.webp 1600w">
-
-            <img src="gallery/img18.webp" alt="Портфоліо архітектора з 3D візуалізаціями проектів"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img18.webp 64w, gallery/img18.webp 1600w">
-
-            <img src="gallery/img19.webp" alt="Сайт для фітнес-тренера з розкладом занять та формою запису"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img19.webp 64w, gallery/img19.webp 1600w">
-
-            <img src="gallery/img20.webp" alt="Електронне резюме викладача з досвідом та сертифікатами"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img20.webp 64w, gallery/img20.webp 1600w">
-
-            <img src="gallery/img21.webp" alt="Лендінг для юридичної фірми з описом послуг та контактами"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img21.webp 64w, gallery/img21.webp 1600w">
-
-            <img src="gallery/img22.webp" alt="Портфоліо ілюстратора з колекцією художніх робіт"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img22.webp 64w, gallery/img22.webp 1600w">
-
-            <img src="gallery/img23.webp" alt="Сайт для будівельної компанії з портфоліо завершених об'єктів"
-                class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
-                srcset="gallery/img23.webp 64w, gallery/img23.webp 1600w">
+        <!-- ======🧪 Освітній блок====== -->
+        <!-- WebStart LAB  -->
+        <div class="lab-strip">
+            <a href="pages/webstart-lab.html" target="_blank">📂 WebStart LAB – мінікурси, кейси, продукти</a>
         </div>
 
-        <input type="range" class="gallery-marquee-slider" min="0" max="100" value="0">
-    </div>
-    <div class="gallery-marquee-modal hidden" id="galleryModal">
-        <span class="gallery-marquee-close" id="galleryClose">&times;</span>
-        <img class="gallery-marquee-modal-img" id="galleryModalImg" src="gallery/empty.png" alt="Вибране зображення">
-    </div>
-    <!-- Пошук по секціям -->
-    <form id="simple-search-form" class="search-form">
-        <label for="search-input" class="visually-hidden">Пошук по секціям</label>
-        <input type="text" id="search-input" placeholder="Пошук..." aria-label="Пошук по секціям" class="search-input">
-        <button type="submit" aria-label="Знайти" class="search-btn">
-            🔍
-        </button>
-    </form>
-    <div id="search-feedback" class="search-feedback"></div>
-    <!-- Про нас  -->
-    <section>
-        <h2 class="centered">Про нас</h2>
-        <p class="centered">
-            Web<span style="color:#B00000;">Start</span> Studio — це невелика творча команда, яка працює для того, щоб у
-            кожної
-            людини була своя сучасна онлайн-візитка. Ми робимо прості та зрозумілі лендінги,портфоліо та резюме, які
-            легко сприймаються і
-            добре
-            виглядають на будь-якому пристрої.
-        </p>
-        <p class="centered">
-            Наш підхід — “менше слів, більше результату”: компактний дизайн, зрозуміла структура, зручний доступ до
-            всієї потрібної
-            інформації. Ми прагнемо, щоб кожен лендінг, портфоліо та резюме був водночас красивим і практичним.
-        </p>
-        <p class="centered">
-            Крім того, ми допомагаємо людям просувати свої послуги та продукти у соцмережах, налаштовуємо рекламу
-            та
-            створюємо прості, але ефективні візуальні матеріали.
-        </p>
+        <!-- ======🔝 Вступний блок====== -->
+        <!-- Рухомий рядок  -->
+        <section class="marquee-container">
+            <h2 class="hidden-heading">Рухомий рядок</h2>
+            <div class="marquee">
+                <span>
+                    <span class="highlight-propose">🏃‍♂️ Пропонуємо:</span>
+                    <span class="highlight-landing">Лендінг</span> |
+                    <span class="highlight-portfolio">Портфоліо</span>|
+                    <span class="highlight-resume">Резюме</span>|
+                    <span class="highlight-additional">🔥 Додаткові можливості для вашого успіху...</span>
+                    <span class="highlight-banners">Банери (шаблони) для соцмереж</span> |
+                    <span class="highlight-target">Запуск таргетованої реклами у Facebook та Instagram</span> |
+                    <span class="highlight-tax">Повернення податків з Польщі (PIT-11)</span>|
+                    <span>Чистка та діагностика ПК 💻</span>
+                </span>
+            </div>
+        </section>
+        <!-- Галерея  -->
+        <div class="gallery-marquee-wrapper" style="display:none">
+            <div class="gallery-marquee-container" id="galleryTrack">
+                <!-- Усі зображення оптимізовані -->
+                <img src="gallery/img1.webp"
+                    alt="Приклад веб-дизайну - сучасний лендінг для бізнесу з градієнтним фоном"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img1.webp 64w, gallery/img1.webp 1600w">
 
-        <!-- Кнопка для показу історії -->
-        <div class="history-toggle-container">
-            <button id="toggleHistory" class="history-toggle-btn">
-                Показати історію платформи
+                <img src="gallery/img2.webp" alt="Портфоліо веб-розробника з темною темою та мінімалістичним дизайном"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img2.webp 64w, gallery/img2.webp 1600w">
+
+                <img src="gallery/img3.webp"
+                    alt="Електронне резюме з яскравими акцентними кольорами та структурованими блоками"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img3.webp 64w, gallery/img3.webp 1600w">
+
+                <img src="gallery/img4.webp"
+                    alt="Односторінковий сайт для стартапу з великими типографськими елементами"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img4.webp 64w, gallery/img4.webp 1600w">
+
+                <img src="gallery/img5.webp" alt="Лендінг для фрілансера з секціями послуг та портфоліо робіт"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img5.webp 64w, gallery/img5.webp 1600w">
+
+                <img src="gallery/img6.webp" alt="Корпоративне портфоліо з галереєю проектів у вигляді карток"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img6.webp 64w, gallery/img6.webp 1600w">
+
+                <img src="gallery/img7.webp" alt="Резюме IT-спеціаліста з інфографікою навичок та досвіду"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img7.webp 64w, gallery/img7.webp 1600w">
+
+                <img src="gallery/img8.webp" alt="Промо-сайт продукту з анімованими секціями та CTA кнопками"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img8.webp 64w, gallery/img8.webp 1600w">
+
+                <img src="gallery/img9.webp" alt="Портфоліо дизайнера з великими зображеннями робіт"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img9.webp 64w, gallery/img9.webp 1600w">
+
+                <img src="gallery/img10.webp" alt="Лендінг для івент-агенції з яскравою кольоровою схемою"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img10.webp 64w, gallery/img10.webp 1600w">
+
+                <img src="gallery/img11.webp" alt="Сайт-візитка перукаря з галереєю робіт до/після"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img11.webp 64w, gallery/img11.webp 1600w">
+
+                <img src="gallery/img12.webp" alt="Адаптивне резюме з мобільною версією для різних пристроїв"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img12.webp 64w, gallery/img12.webp 1600w">
+
+                <img src="gallery/img13.webp" alt="Лендінг з відео-фоном та великими заголовками"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img13.webp 64w, gallery/img13.webp 1600w">
+
+                <img src="gallery/img14.webp" alt="Портфоліо фотографа з повноекранною галереєю зображень"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img14.webp 64w, gallery/img14.webp 1600w">
+
+                <img src="gallery/img15.webp" alt="Сайт для ресторану з меню та онлайн-бронюванням столиків"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img15.webp 64w, gallery/img15.webp 1600w">
+
+                <img src="gallery/img16.webp" alt="Резюме маркетолога з графіками досягнень та метрик"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img16.webp 64w, gallery/img16.webp 1600w">
+
+                <img src="gallery/img17.webp" alt="Лендінг для SaaS продукту з демонстрацією функціоналу"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img17.webp 64w, gallery/img17.webp 1600w">
+
+                <img src="gallery/img18.webp" alt="Портфоліо архітектора з 3D візуалізаціями проектів"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img18.webp 64w, gallery/img18.webp 1600w">
+
+                <img src="gallery/img19.webp" alt="Сайт для фітнес-тренера з розкладом занять та формою запису"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img19.webp 64w, gallery/img19.webp 1600w">
+
+                <img src="gallery/img20.webp" alt="Електронне резюме викладача з досвідом та сертифікатами"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img20.webp 64w, gallery/img20.webp 1600w">
+
+                <img src="gallery/img21.webp" alt="Лендінг для юридичної фірми з описом послуг та контактами"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img21.webp 64w, gallery/img21.webp 1600w">
+
+                <img src="gallery/img22.webp" alt="Портфоліо ілюстратора з колекцією художніх робіт"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img22.webp 64w, gallery/img22.webp 1600w">
+
+                <img src="gallery/img23.webp" alt="Сайт для будівельної компанії з портфоліо завершених об'єктів"
+                    class="gallery-marquee-image" loading="lazy" decoding="async" fetchpriority="low" sizes="64px"
+                    srcset="gallery/img23.webp 64w, gallery/img23.webp 1600w">
+            </div>
+
+            <input type="range" class="gallery-marquee-slider" min="0" max="100" value="0">
+        </div>
+        <div class="gallery-marquee-modal hidden" id="galleryModal">
+            <span class="gallery-marquee-close" id="galleryClose">&times;</span>
+            <img class="gallery-marquee-modal-img" id="galleryModalImg" src="gallery/empty.png"
+                alt="Вибране зображення">
+        </div>
+        <!-- Пошук по секціям -->
+        <form id="simple-search-form" class="search-form" role="search" aria-label="Пошук по секціях платформи">
+            <label for="search-input" class="visually-hidden">
+                Пошук по секціям
+            </label>
+            <input type="text" id="search-input" placeholder="Пошук..." aria-label="Введіть запит для пошуку"
+                autocomplete="off">
+            <button type="submit" aria-label="Виконати пошук" class="search-btn">
+                🔍
             </button>
+        </form>
+        <div id="search-feedback" class="search-feedback" role="status" aria-live="polite" aria-atomic="true">
         </div>
-
-        <!-- Історія платформи (спочатку приховано) -->
-        <div id="historySection" class="history-section">
-            <h2 class="centered">Історія платформи</h2>
+        <!-- Про нас  -->
+        <section>
+            <h2 class="centered">Про нас</h2>
             <p class="centered">
-                Ідея Web<span style="color:#B00000;">Start</span> Studio народилася з бажання зробити запуск у
-                digital-простір доступним
-                для кожного. У 2025 році ми вирішили об’єднати досвід веброзробки, дизайну та маркетингу в одну просту
-                платформу.
+                Web<span style="color:#B00000;">Start</span> Studio — це невелика творча команда, яка працює для того,
+                щоб у
+                кожної
+                людини була своя сучасна онлайн-візитка. Ми робимо прості та зрозумілі лендінги,портфоліо та резюме, які
+                легко сприймаються і
+                добре
+                виглядають на будь-якому пристрої.
             </p>
             <p class="centered">
-                Наш перший проєкт був створений для знайомих, які потребували швидкого сайту для презентації своєїх
-                справ. Він
-                виявився настільки успішним, що надихнув нас рухатися далі.
+                Наш підхід — “менше слів, більше результату”: компактний дизайн, зрозуміла структура, зручний доступ до
+                всієї потрібної
+                інформації. Ми прагнемо, щоб кожен лендінг, портфоліо та резюме був водночас красивим і практичним.
             </p>
             <p class="centered">
-                Сьогодні ми зростаємо разом із нововведеннями в світі ІТ, приймаючи нові виклики та постійно шукаючи
-                свіжі ідеї, щоб
-                зробити онлайн-простір ще цікавішим і ближчим для кожного.
+                Крім того, ми допомагаємо людям просувати свої послуги та продукти у соцмережах, налаштовуємо рекламу
+                та
+                створюємо прості, але ефективні візуальні матеріали.
             </p>
-        </div>
 
-        <!-- Кнопка для показу команди -->
-        <div class="team-toggle-container">
-            <button id="toggleTeam" class="team-toggle-btn">Показати нашу команду</button>
-        </div>
+            <!-- Кнопка для показу історії -->
+            <div class="history-toggle-container">
+                <button id="toggleHistory" class="history-toggle-btn" aria-expanded="false"
+                    aria-controls="historySection" aria-label="Показати історію платформи">
+                    Показати історію платформи
+                </button>
+            </div>
 
-        <!-- Наша команда (спочатку приховано) -->
-        <div id="teamSection" class="team-section">
-            <h2 class="centered">Наша команда</h2>
-            <div class="team-container">
-                <!-- Учасники -->
-                <div class="team-member">
-                    <img src="nasha_komanda/member1.webp" alt="Dima Sviy - Веб-розробник та UI/UX дизайнер"
-                        loading="lazy">
-                    <h3>Dima Sviy</h3>
-                    <p>Майбутній веброзробник та UI/UX дизайнер, продовжує навчання</p>
-                    <a href="https://www.facebook.com/dima.sviy/" target="_blank">Facebook</a>
+            <!-- Історія платформи (спочатку приховано) -->
+            <div id="historySection" class="history-section">
+                <h2 class="centered">Історія платформи</h2>
+                <p class="centered">
+                    Ідея Web<span style="color:#B00000;">Start</span> Studio народилася з бажання зробити запуск у
+                    digital-простір доступним
+                    для кожного. У 2025 році ми вирішили об’єднати досвід веброзробки, дизайну та маркетингу в одну
+                    просту
+                    платформу.
+                </p>
+                <p class="centered">
+                    Наш перший проєкт був створений для знайомих, які потребували швидкого сайту для презентації своєїх
+                    справ. Він
+                    виявився настільки успішним, що надихнув нас рухатися далі.
+                </p>
+                <p class="centered">
+                    Сьогодні ми зростаємо разом із нововведеннями в світі ІТ, приймаючи нові виклики та постійно шукаючи
+                    свіжі ідеї, щоб
+                    зробити онлайн-простір ще цікавішим і ближчим для кожного.
+                </p>
+            </div>
+
+            <!-- Кнопка для показу команди -->
+            <div class="team-toggle-container">
+                <button id="toggleTeam" class="team-toggle-btn" aria-expanded="false" aria-controls="teamSection"
+                    aria-label="Показати нашу команду">
+                    Показати нашу команду
+                </button>
+            </div>
+
+            <!-- Наша команда (спочатку приховано) -->
+            <div id="teamSection" class="team-section">
+                <h2 class="centered">Наша команда</h2>
+                <div class="team-container">
+                    <!-- Учасники -->
+                    <div class="team-member">
+                        <img src="nasha_komanda/member1.webp" alt="Dima Sviy - Веб-розробник та UI/UX дизайнер"
+                            loading="lazy">
+                        <h3>Dima Sviy</h3>
+                        <p>Майбутній веброзробник та UI/UX дизайнер, продовжує навчання</p>
+                        <a href="https://www.facebook.com/dima.sviy/" target="_blank">Facebook</a>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="nasha_komanda/member2.webp"
+                            alt="Mr. Victor - маркетолог та таргетинг Facebook/Instagram" loading="lazy">
+                        <h3>Mr. Victor</h3>
+                        <p>Маркетолог, таргетинг Facebook/Instagram.</p>
+                        <a href="https://www.facebook.com/VictorAbroadPro/" target="_blank">Facebook</a>
+                    </div>
+
+                    <div class="team-member">
+                        <img src="nasha_komanda/assistant.webp" alt="Асистент Djon - ваш гіт та помічник на платформі"
+                            loading="lazy">
+                        <h3>Гід та Асистент Djon</h3>
+                        <p>Допомагає створювати контент, структурувати інформацію та давати технічні поради.</p>
+                        <a href="pages/djon.html">Деталі</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-1_5">
+                <a href="pages/skills.html" class="btn btn-open-skills">Наші технічні навички</a>
+            </div>
+
+            <div class="text-center mt-1_5">
+                <a href="pages/achievement.html" class="btn btn-achievement">Наші досягнення</a>
+            </div>
+        </section>
+        <!-- Для кого ми -->
+        <section id="for-whom" class="audience-section">
+            <h2>👥 Кому підійдуть наші можливості</h2>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-emoji">💼</div>
+                    <h3>Фрілансерам</h3>
+                    <p>Потрібне портфоліо для Upwork, Fiverr, LinkedIn</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">🎓</div>
+                    <h3>Випускникам</h3>
+                    <p>Перше резюме без досвіду — покажемо ваш потенціал</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">🚀</div>
+                    <h3>Стартапам</h3>
+                    <p>Швидкий лендінг для MVP або презентації інвесторам</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">🏢</div>
+                    <h3>Малому бізнесу</h3>
+                    <p>Візитка в інтернеті без зайвих витрат</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">🎨</div>
+                    <h3>Креативникам</h3>
+                    <p>Дизайнери, фотографи, художники — ваші роботи заслуговують на красиву подачу</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">🔧</div>
+                    <h3>Майстрам</h3>
+                    <p>Електрики, сантехніки, будівельники — сторінка з контактами і прикладами робіт</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======💼 Основні послуги та переваги====== -->
+        <!-- Наші послуги -->
+        <section id="services">
+            <h2 id="what-we-create">Що ми створюємо</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Дизайн портфоліо</h3>
+                    <a href="pages/portfolio-info.html" class="btn">Що таке портфоліо?</a>
                 </div>
 
-                <div class="team-member">
-                    <img src="nasha_komanda/member2.webp" alt="Mr. Victor - маркетолог та таргетинг Facebook/Instagram"
-                        loading="lazy">
-                    <h3>Mr. Victor</h3>
-                    <p>Маркетолог, таргетинг Facebook/Instagram.</p>
-                    <a href="https://www.facebook.com/VictorAbroadPro/" target="_blank">Facebook</a>
+                <div class="service-card">
+                    <div class="service-icon">📝</div>
+                    <h3>Електронне резюме</h3>
+                    <a href="pages/resume-info.html" class="btn">Що таке резюме?</a>
                 </div>
 
-                <div class="team-member">
-                    <img src="nasha_komanda/assistant.webp" alt="Асистент Djon - ваш гіт та помічник на платформі"
-                        loading="lazy">
-                    <h3>Гід та Асистент Djon</h3>
-                    <p>Допомагає створювати контент, структурувати інформацію та давати технічні поради.</p>
-                    <a href="pages/djon.html">Деталі</a>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Адаптивна верстка</h3>
+                    <a href="pages/adaptive-info.html" class="btn">Що таке адаптивна верстка?</a>
                 </div>
             </div>
-        </div>
 
-        <div class="text-center mt-1_5">
-            <a href="pages/skills.html" class="btn btn-open-skills">Наші технічні навички</a>
-        </div>
+            <div class="services-full">
+                <h2><span>🌐</span>Лендінги та односторінкові сайти</h2>
+                <p>Ми спеціалізуємось на створенні різноманітних рішень для вашого онлайн-простору:</p>
 
-        <div class="text-center mt-1_5">
-            <a href="pages/achievement.html" class="btn btn-achievement">Наші досягнення</a>
-        </div>
-    </section>
-    <!-- Для кого ми -->
-    <section id="for-whom" class="audience-section">
-        <h2>👥 Кому підійдуть наші можливості</h2>
-        <div class="audience-grid">
-            <div class="audience-card">
-                <div class="audience-emoji">💼</div>
-                <h3>Фрілансерам</h3>
-                <p>Потрібне портфоліо для Upwork, Fiverr, LinkedIn</p>
-            </div>
-            <div class="audience-card">
-                <div class="audience-emoji">🎓</div>
-                <h3>Випускникам</h3>
-                <p>Перше резюме без досвіду — покажемо ваш потенціал</p>
-            </div>
-            <div class="audience-card">
-                <div class="audience-emoji">🚀</div>
-                <h3>Стартапам</h3>
-                <p>Швидкий лендінг для MVP або презентації інвесторам</p>
-            </div>
-            <div class="audience-card">
-                <div class="audience-emoji">🏢</div>
-                <h3>Малому бізнесу</h3>
-                <p>Візитка в інтернеті без зайвих витрат</p>
-            </div>
-            <div class="audience-card">
-                <div class="audience-emoji">🎨</div>
-                <h3>Креативникам</h3>
-                <p>Дизайнери, фотографи, художники — ваші роботи заслуговують на красиву подачу</p>
-            </div>
-            <div class="audience-card">
-                <div class="audience-emoji">🔧</div>
-                <h3>Майстрам</h3>
-                <p>Електрики, сантехніки, будівельники — сторінка з контактами і прикладами робіт</p>
-            </div>
-        </div>
-    </section>
+                <div class="services-grid services-grid-large">
+                    <div class="service-card-large">
+                        <div class="service-icon-large">💻</div>
+                        <h3>Веб-додатки</h3>
+                        <p>Розробка інтерактивних веб-додатків: калькулятори, чат-боти, інтерактивні інтерфейси.</p>
+                        <a href="pages/webapp-info.html" class="btn">Дізнатися більше</a>
+                    </div>
 
-    <!-- ======💼 Основні послуги та переваги====== -->
-    <!-- Наші послуги -->
-    <section id="services">
-        <h2 id="what-we-create">Що ми створюємо</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Дизайн портфоліо</h3>
-                <a href="pages/portfolio-info.html" class="btn">Що таке портфоліо?</a>
-            </div>
+                    <div class="service-card-large">
+                        <div class="service-icon-large">🔍</div>
+                        <h3>SEO-оптимізація</h3>
+                        <p>Покращення видимості вашого сайту в пошукових системах для залучення більшої аудиторії.</p>
+                        <a href="pages/seo-info.html" class="btn">Дізнатися більше</a>
+                    </div>
 
-            <div class="service-card">
-                <div class="service-icon">📝</div>
-                <h3>Електронне резюме</h3>
-                <a href="pages/resume-info.html" class="btn">Що таке резюме?</a>
-            </div>
+                    <div class="service-card-large">
+                        <div class="service-icon-large">📱</div>
+                        <h3>Інтеграція з соцмережами</h3>
+                        <p>Автоматичне публікування контенту та додавання віджетів соцмереж на сайт для більшої
+                            взаємодії.
+                        </p>
+                        <a href="pages/socialmedia-info.html" class="btn">Дізнатися більше</a>
+                    </div>
 
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Адаптивна верстка</h3>
-                <a href="pages/adaptive-info.html" class="btn">Що таке адаптивна верстка?</a>
-            </div>
-        </div>
+                    <div class="service-card-large">
+                        <div class="service-icon-large">🎥</div>
+                        <h3>Динамічні анімації</h3>
+                        <p>Створюємо анімації для елементів на сайті, щоб він виглядав яскраво та інтерактивно.</p>
+                        <a href="pages/animations-info.html" class="btn">Дізнатися більше</a>
+                    </div>
 
-        <div class="services-full">
-            <h2><span>🌐</span>Лендінги та односторінкові сайти</h2>
-            <p>Ми спеціалізуємось на створенні різноманітних рішень для вашого онлайн-простору:</p>
+                    <div class="service-card-large">
+                        <div class="service-icon-large">🛒</div>
+                        <h3>Інтернет-магазини</h3>
+                        <p>Розробка та налаштування онлайн-магазинів для продажу товарів або послуг.</p>
+                        <a href="pages/ecommerce-info.html" class="btn">Дізнатися більше</a>
+                    </div>
 
-            <div class="services-grid services-grid-large">
-                <div class="service-card-large">
-                    <div class="service-icon-large">💻</div>
-                    <h3>Веб-додатки</h3>
-                    <p>Розробка інтерактивних веб-додатків: калькулятори, чат-боти, інтерактивні інтерфейси.</p>
-                    <a href="pages/webapp-info.html" class="btn">Дізнатися більше</a>
+                    <div class="service-card-large">
+                        <div class="service-icon-large">📰</div>
+                        <h3>Блоги та новини</h3>
+                        <p>Створення блогів та новин для публікацій, статей та оновлень на вашому сайті.</p>
+                        <a href="pages/blog-info.html" class="btn">Дізнатися більше</a>
+                    </div>
+
+                    <div class="service-card-large">
+                        <div class="service-icon-large">💍</div>
+                        <h3>Персоналізовані лендінги</h3>
+                        <p>Створення унікальних лендінгів для ваших подій, виставок, весіль та інших особливих моментів.
+                        </p>
+                        <a href="pages/personalized-landing-info.html" class="btn">Дізнатися більше</a>
+                    </div>
                 </div>
 
-                <div class="service-card-large">
-                    <div class="service-icon-large">🔍</div>
-                    <h3>SEO-оптимізація</h3>
-                    <p>Покращення видимості вашого сайту в пошукових системах для залучення більшої аудиторії.</p>
-                    <a href="pages/seo-info.html" class="btn">Дізнатися більше</a>
-                </div>
-
-                <div class="service-card-large">
-                    <div class="service-icon-large">📱</div>
-                    <h3>Інтеграція з соцмережами</h3>
-                    <p>Автоматичне публікування контенту та додавання віджетів соцмереж на сайт для більшої взаємодії.
+                <p>Кожен наш проект створюється з урахуванням ваших потреб та індивідуальних вимог. Ми працюємо для
+                    того,
+                    щоб
+                    ваше онлайн-представництво було ефективним, інтуїтивно зрозумілим і привабливим для користувачів.
+                </p>
+            </div>
+        </section>
+        <!-- Наші роботи -->
+        <section id="portfolio">
+            <h2 id="portfolio-title">Готові макети</h2>
+            <div class="portfolio-container">
+                <div class="project-card">
+                    <div class="project-icon">🎨</div>
+                    <h3>Дизайн портфоліо</h3>
+                    <p>
+                        Ми створюємо стильні та функціональні макети, поєднуючи Developer
+                        style,Minimal style,Modern gradient та безліч інших трендових
+                        рішень. Кожен проєкт – це унікальне поєднання елегантного дизайну і
+                        адаптивності, що підходить для різних вакансій і платформ.
                     </p>
-                    <a href="pages/socialmedia-info.html" class="btn">Дізнатися більше</a>
+
+                    <details aria-labelledby="portfolio-details">
+                        <summary id="portfolio-details">
+                            Переглянути
+                        </summary>
+
+                        <a href="https://benevolent-naiad-cb3a58.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Developer style у новому вікні">
+                            Developer style
+                        </a><br>
+
+                        <a href="https://dashing-tanuki-7f8fb0.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Minimal style у новому вікні">
+                            Minimal style
+                        </a><br>
+
+                        <a href="https://fantastic-parfait-65ff15.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Modern gradient у новому вікні">
+                            Modern gradient
+                        </a><br>
+
+                        <a href="https://starlit-tapioca-5f8da4.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Premium у новому вікні">
+                            Premium
+                        </a>
+                    </details>
                 </div>
 
-                <div class="service-card-large">
-                    <div class="service-icon-large">🎥</div>
-                    <h3>Динамічні анімації</h3>
-                    <p>Створюємо анімації для елементів на сайті, щоб він виглядав яскраво та інтерактивно.</p>
-                    <a href="pages/animations-info.html" class="btn">Дізнатися більше</a>
-                </div>
-
-                <div class="service-card-large">
-                    <div class="service-icon-large">🛒</div>
-                    <h3>Інтернет-магазини</h3>
-                    <p>Розробка та налаштування онлайн-магазинів для продажу товарів або послуг.</p>
-                    <a href="pages/ecommerce-info.html" class="btn">Дізнатися більше</a>
-                </div>
-
-                <div class="service-card-large">
-                    <div class="service-icon-large">📰</div>
-                    <h3>Блоги та новини</h3>
-                    <p>Створення блогів та новин для публікацій, статей та оновлень на вашому сайті.</p>
-                    <a href="pages/blog-info.html" class="btn">Дізнатися більше</a>
-                </div>
-
-                <div class="service-card-large">
-                    <div class="service-icon-large">💍</div>
-                    <h3>Персоналізовані лендінги</h3>
-                    <p>Створення унікальних лендінгів для ваших подій, виставок, весіль та інших особливих моментів.</p>
-                    <a href="pages/personalized-landing-info.html" class="btn">Дізнатися більше</a>
-                </div>
-            </div>
-
-            <p>Кожен наш проект створюється з урахуванням ваших потреб та індивідуальних вимог. Ми працюємо для того,
-                щоб
-                ваше онлайн-представництво було ефективним, інтуїтивно зрозумілим і привабливим для користувачів.</p>
-        </div>
-    </section>
-    <!-- Наші роботи -->
-    <section id="portfolio">
-        <h2 id="portfolio-title">Готові макети</h2>
-        <div class="portfolio-container">
-            <div class="project-card">
-                <div class="project-icon">🎨</div>
-                <h3>Дизайн портфоліо</h3>
-                <p>
-                    Ми створюємо стильні та функціональні макети, поєднуючи Developer
-                    style,Minimal style,Modern gradient та безліч інших трендових
-                    рішень. Кожен проєкт – це унікальне поєднання елегантного дизайну і
-                    адаптивності, що підходить для різних вакансій і платформ.
-                </p>
-
-                <details>
-                    <summary>Переглянути</summary>
-                    <a href="https://benevolent-naiad-cb3a58.netlify.app/" target="_blank" class="btn">Developer
-                        style</a><br>
-                    <a href="https://dashing-tanuki-7f8fb0.netlify.app/" target="_blank" class="btn">Minimal
-                        style</a><br>
-                    <a href="https://fantastic-parfait-65ff15.netlify.app/" target="_blank" class="btn">Modern
-                        gradient</a><br>
-                    <a href="https://starlit-tapioca-5f8da4.netlify.app/" target="_blank" class="btn">Premium</a>
-                </details>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">📝</div>
-                <h3>Електронне резюме</h3>
-                <p>
-                    Ми можемо створити різноманітні варіанти резюме, такі як класичне,
-                    креативне, мінімалістичне та багато інших, в залежності від вашого
-                    стилю та потреб. Легка сторінка з інтерактивним блоком навичок – це
-                    ідеальний спосіб ефективно презентувати свої вміння та досвід. Кожне
-                    резюме адаптується під різні пристрої, щоб виглядати бездоганно на
-                    будь-якому екрані.
-                </p>
-                <details>
-                    <summary>Переглянути</summary>
-                    <a href="https://cute-eclair-b92b0f.netlify.app/" target="_blank" class="btn">Classic</a>
-                    <a href="https://resonant-fudge-055f66.netlify.app/" target="_blank" class="btn">Creative</a>
-                    <a href="https://frolicking-sunflower-90993f.netlify.app/" target="_blank" class="btn">Minimal</a>
-                    <a href="https://fluffy-sawine-100fa8.netlify.app/" target="_blank" class="btn">Premium</a>
-                </details>
-            </div>
-
-            <div class="project-card">
-                <div class="project-icon">📄</div>
-                <h3>Односторінкові сайти</h3>
-                <p>
-                    Ось деякі з наших проєктів, які ви можете оглянути: лендінг для
-                    Instagram "taplink", що ідеально підходить для брендів і
-                    фрілансерів; стильний лендінг для рекрутера, щоб залучати
-                    кандидатів; мікрокредитування для просування, що дає можливість
-                    швидко залучати клієнтів; а також сайт для пасажирських перевезень
-                    по ЄС, з легким доступом до маршруту і ціни. І це лише частина того,
-                    що ми можемо створити!
-                </p>
-
-                <details>
-                    <summary>Переглянути</summary>
-                    <a href="https://sage-naiad-50b7a5.netlify.app/" target="_blank" class="btn">Landing recruiter</a>
-                    <a href="https://clinquant-melomakarona-a088a5.netlify.app/" target="_blank" class="btn">Instagram
-                        "taplink"</a>
-                    <a href="https://celebrated-faun-808026.netlify.app/" target="_blank" class="btn">Microlending for
-                        promotion</a>
-                    <a href="https://shimmering-tulumba-a21566.netlify.app/" target="_blank" class="btn">Eu Passenger
-                        Transport Site</a>
-                    <a href="https://give-a-giftholiday.netlify.app/" target="_blank" class="btn"
-                        style="display: inline-block; padding: 0.6rem 1.2rem; background: #ff7f50; color: #fff; border-radius: 8px; text-decoration: none;">
-                        🎁 ПодаруйСвято
-                    </a>
-                    <a href="https://landing-page-in-windows-xp.netlify.app/" target="_blank" class="btn"
-                        style="display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.2rem; background: #0078d7; color: #fff; border-radius: 8px; text-decoration: none;">
-                        🖥️ Лендінг у стилі Windows XP
-                    </a>
-                </details>
-            </div>
-        </div>
-    </section>
-    <!-- Технічні можливості -->
-    <section class="technical-features" id="technical-features">
-        <h2>Технічні можливості для вашого лендінгу</h2>
-        <p>За потреби ми додаємо функції безпеки (CSP) та мобільні можливості (PWA) — щоб ваш сайт працював швидко,
-            захищено
-            та як мобільний додаток.</p>
-        <a href="pages/technical-details.html" class="btn">Дізнатись більше</a>
-    </section>
-    <!-- Чому WebStart Studio -->
-    <section id="advantages" class="advantages">
-        <h2>Чому Web<span class="highlight">Start</span> Studio?</h2>
-        <div class="advantages-grid">
-            <div class="adv-item">
-                <div class="emoji">⚡</div>
-                <h3>Швидко</h3>
-                <p>Створення резюме та лендінгів за лічені хвилини.</p>
-            </div>
-            <div class="adv-item">
-                <div class="emoji">🧩</div>
-                <h3>Зручно</h3>
-                <p>Інтерфейс, що не потребує технічних знань.</p>
-            </div>
-            <div class="adv-item">
-                <div class="emoji">🎯</div>
-                <h3>Результативно</h3>
-                <p>Резюме, що справляють враження і приносять роботу.</p>
-            </div>
-        </div>
-    </section>
-    <!-- Порівняльна таблиця -->
-    <section id="platform-comparison">
-        <h2 class="centered-header">Порівняльний аналіз платформ</h2>
-        <p class="centered-text">
-            Порівняння <strong>
-                Web<span class="highlight-start">Start</span> Studio
-            </strong> з популярними конструкторами Webstudio та WebStarts.
-            Ми маємо інший підхід — робимо все за вас, додаючи додаткові можливості
-            (таргет, PIT, технічна підтримка), яких немає в стандартних конструкторах.
-        </p>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Критерій</th>
-                    <th>WebStart Studio (стартує)</th>
-                    <th>Webstudio</th>
-                    <th>WebStarts</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Призначення</td>
-                    <td>Розробка резюме, портфоліо та лендінгів з адаптацією під мобільні пристрої</td>
-                    <td>Open-source конструктор для дизайнерів і розробників</td>
-                    <td>Онлайн-конструктор сайтів для початківців і бізнесу</td>
-                </tr>
-                <tr>
-                    <td>Швидкість роботи</td>
-                    <td>Оптимізовано під легкі сторінки</td>
-                    <td>Залежить від налаштувань</td>
-                    <td>Стабільна</td>
-                </tr>
-                <tr>
-                    <td>Мобільна адаптація</td>
-                    <td>PWA, базова адаптивність</td>
-                    <td>Адаптивні шаблони</td>
-                    <td>Адаптивні шаблони</td>
-                </tr>
-                <tr>
-                    <td>Гнучкість дизайну</td>
-                    <td>Індивідуально під замовника</td>
-                    <td>Висока</td>
-                    <td>Середня</td>
-                </tr>
-                <tr>
-                    <td>SEO-оптимізація</td>
-                    <td>Базові налаштування</td>
-                    <td>Є базова</td>
-                    <td>Є базова</td>
-                </tr>
-                <tr>
-                    <td>Підтримка клієнтів</td>
-                    <td>Email, онлайн-чат, спільнота, особистий контакт</td>
-                    <td>Спільнота (форум), email</td>
-                    <td>Онлайн-чат, email, спільнота</td>
-                </tr>
-                <tr>
-                    <td>Ціноутворення</td>
-                    <td>Узгоджується індивідуально</td>
-                    <td>Безкоштовно / платно</td>
-                    <td>Від $6/міс</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <!-- DIY vs З нами -->
-    <section id="diy-vs-us" class="comparison-table-section">
-        <h2>🆚 Самому vs З нами</h2>
-        <table class="vs-table">
-            <thead>
-                <tr>
-                    <th>Критерій</th>
-                    <th>Створити самому</th>
-                    <th>Web<span class="logo-header">Start</span> Studio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Час</td>
-                    <td>❌ 2-4 тижні вивчення + робота</td>
-                    <td>✅ 1-3 дні готовий результат</td>
-                </tr>
-                <tr>
-                    <td>Дизайн</td>
-                    <td>❌ Шаблонний або кривий</td>
-                    <td>✅ Сучасний, унікальний</td>
-                </tr>
-                <tr>
-                    <td>Технічні знання</td>
-                    <td>❌ Потрібно вчити HTML/CSS</td>
-                    <td>✅ Нічого не треба знати</td>
-                </tr>
-                <tr>
-                    <td>Мобільна версія</td>
-                    <td>❌ Часто ламається</td>
-                    <td>✅ Ідеально на всіх екранах</td>
-                </tr>
-                <tr>
-                    <td>SEO</td>
-                    <td>❌ Без оптимізації</td>
-                    <td>✅ Базове SEO включено</td>
-                </tr>
-                <tr>
-                    <td>Підтримка</td>
-                    <td>❌ Сам собі майстер</td>
-                    <td>✅ 30 днів допомоги</td>
-                </tr>
-            </tbody>
-        </table>
-        <p class="vs-cta">Економте час — довірте нам 💪</p>
-    </section>
-
-    <!-- ======🎯 Конверсійні блоки====== -->
-    <!-- Вікторина  -->
-    <section class="cta-section">
-        <h2>Пройдіть нашу вікторину і знайдіть найкращий варіант для себе!</h2>
-        <p>Завдяки нашій вікторині ви отримаєте індивідуальні рекомендації, які допоможуть обрати найкраще рішення.</p>
-        <a href="pages/service-recommendation.html" class="cta-button">Перейти до вікторини</a>
-    </section>
-    <!-- Вартість -->
-    <section id="pricing">
-        <div style="text-align: center;">
-            <div class="pricing-emoji">💰</div>
-            <h2 style="color: #007BFF;">Пакети</h2>
-            <p>
-                Щоб детально ознайомитися з усіма актуальними пропозиціями, будь-ласка, перегляньте доступні пакети та
-                їх умови.Кожна пропозиція містить повну інформацію про тарифи, що допоможе вам обрати
-                найзручніший та оптимальний варіант для ваших потреб.
-            </p>
-
-            <button id="togglePricing" aria-expanded="false">Знайти найвигідніший пакет</button>
-
-        </div>
-        <table id="pricingTable" style="display: none; margin-top: 20px; width: 100%; border-collapse: collapse;">
-            <tr>
-                <th style="border: 1px solid #ccc; padding: 8px;">Послуга</th>
-                <th style="border: 1px solid #ccc; padding: 8px;">Ціна</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 8px;">Портфоліо</td>
-                <td style="border: 1px solid #ccc; padding: 8px;">від 500 грн</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 8px;">Резюме</td>
-                <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 8px;">Лендінг</td>
-                <td style="border: 1px solid #ccc; padding: 8px;">від 800 грн</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid #ccc; padding: 8px;">Адаптивна верстка (мобільна версія)</td>
-                <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
-            </tr>
-        </table>
-
-        <div id="linkWrapper" style="display: none; margin-top: 15px;">
-            <a href="pages/offer.html" target="_blank" rel="noopener noreferrer" class="btn-link">Дізнатись більше</a>
-        </div>
-    </section>
-    <!-- Акція -->
-    <section class="promo" id="promo">
-        <div class="promo-container">
-            <h2>🔥 Чорна П’ятниця: <br>час оновити себе і свій бренд</h2>
-            <p><strong>14.11 — 30.11</strong></p>
-            <p>💸 Знижки до –50% на ключові пропозиції, які працюють на вас:</p>
-            <p>📄 <strong>Резюме та CV</strong> — сильна структура, сучасний вигляд.
-                <br>📁 <strong>Портфоліо</strong> — професійна подача вашого досвіду.
-                <br>🌐 <strong>Лендінги</strong> — дизайн + текст, що продає.
-            </p>
-            <p>🎁 Подарунок кожному <strong>учаснику, який звернеться до нас</strong>:<br>
-                ✨ Соцбанер із QR-кодом у бренд-стилі — для постів, сторіс і реклами.</p>
-            <div id="countdown" class="countdown"></div>
-            <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank" class="promo-btn">Скористатися
-                пропозицією</a>
-        </div>
-    </section>
-    <!-- Замовити -->
-    <section id="briefs" class="briefs">
-        <div class="briefs-container">
-            <h2 class="briefs-title">Для отримання індивідуального проєкту.</h2>
-            <p class="briefs-description">
-                Оберіть напрям і завантажте короткий бриф. <br>Після того, як ви
-                його заповните, надішліть нам у
-                <a href="viber://chat?number=+380661391932">Viber</a>
-            </p>
-
-            <div class="briefs-buttons">
-                <a href="documents/brief_resume.docx" download class="brief-btn brief-resume">Бриф на резюме</a>
-                <a href="documents/brief_portfolio.docx" download class="brief-btn brief-portfolio">Бриф на
-                    портфоліо</a>
-                <a href="documents/brief_site.docx" download class="brief-btn brief-site">Бриф на сайт</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======🧩 Додаткові сервіси====== -->
-    <!-- Міні-сервіс -->
-    <section id="mini-services">
-        <h2 id="mini-services-title">Міні-сервіс</h2>
-        <p>
-            Створюй, оцінюй та покращуй свої проєкти швидко і зручно: перевірка лендінгів, генератор текстів для резюме
-            та
-            портфоліо, а також універсальні інструменти для оптимізації.
-            Всі сервіси зібрані в одному місці, щоб заощадити час та отримати максимум результату.
-        </p>
-        <div class="services-container">
-            <div class="service-card">
-                <h3>Універсальна перевірка проектів</h3>
-                <p>Швидка оцінка лендінгів, резюме та портфоліо з детальними рекомендаціями для покращення.</p>
-                <a href="pages/project-checker.html" class="service-btn">Перейти</a>
-            </div>
-            <div class="service-card">
-                <h3>Генератор заголовків та описів</h3>
-                <p>Введи сферу діяльності та досягнення – отримай готові тексти для резюме або портфоліо.</p>
-                <a href="pages/portfolio-text-generator.html" class="service-btn">Спробувати</a>
-            </div>
-            <div class="service-card">
-                <h3>Генератор структури резюме</h3>
-                <p>
-                    Обери тип роботи або сферу діяльності, і сервіс запропонує готову структуру резюме з усіма
-                    необхідними секціями.
-                    Для кожного блоку доступні поради: як описати досвід, навички та досягнення.
-                </p>
-                <a href="pages/resume-structure-generator.html" class="service-btn">Спробувати</a>
-            </div>
-        </div>
-    </section>
-    <!-- АІ Сервіс -->
-    <section id="ai-prompting-dynamic">
-        <h2 id="ai-services-title">AI Сервіс</h2>
-        <div class="ai-prompting-row">
-            <!-- Перша карта -->
-            <div class="ai-dynamic-card">
-                <img src="images/ai-circle.webp" alt="AI Ілюстрація" class="ai-prompting-image">
-                <h2 class="ai-prompting-title">AI Промптинг</h2>
-                <p class="ai-prompting-text">Дізнайся, як писати ефективні промпти для створення текстів та зображень за
-                    допомогою ШІ.</p>
-                <a href="pages/ai-prompting.html" class="ai-prompting-btn ai-dynamic-btn">Детальніше</a>
-            </div>
-            <!-- Друга карта -->
-            <div class="ai-dynamic-card">
-                <img src="images/ai-automation.webp" alt="AI Автоматизація" class="ai-prompting-image">
-                <h2 class="ai-prompting-title">AI Автоматизація</h2>
-                <p class="ai-prompting-text">
-                    Повний гайд по AI автоматизації: що це таке, де використовується, які інструменти безкоштовні та
-                    платні,
-                    практичні поради для початківців.
-                </p>
-                <a href="pages/ai-automatization.html" class="ai-prompting-btn ai-dynamic-btn">Детальніше</a>
-            </div>
-            <!-- Третя карта -->
-            <div class="ai-dynamic-card">
-                <img src="images/prompt-writing.webp" alt="Редактор промптів" class="ai-prompting-image">
-                <h2 class="ai-prompting-title">Індивідуальне виготовлення промпта</h2>
-                <p class="ai-prompting-text">Не витрачайте час! <br>Отримайте унікальний, готовий до використання промт,
-                    розроблений під ваші цілі.
-                </p>
-                <a href="pages/prompt-editor.html" class="ai-prompting-btn ai-dynamic-btn">Перейти</a>
-            </div>
-            <!-- Четверта карта -->
-            <div class="ai-dynamic-card">
-                <img src="images/ai-studio.webp" alt="AI Prompt Studio" class="ai-prompting-image">
-                <h2 class="ai-prompting-title">AI Prompt Studio</h2>
-                <p class="ai-prompting-text">
-                    Тут ви зможете базово створити свій промпт і побачити, як це працює.
-                    Це допоможе зрозуміти логіку створення запитів до ШІ.
-                    Якщо ж хочете точний і ефективний результат — перегляньте <strong>індивідуальне виготовлення
-                        промпта</strong>.
-                </p>
-                <a href="https://ai-prompt-studio-webstart.netlify.app/" class="ai-prompting-btn ai-dynamic-btn"
-                    target="_blank" rel="noopener noreferrer">Спробувати</a>
-            </div>
-        </div>
-    </section>
-    <!-- Додаткові можливості -->
-    <section id="extras" class="extras-section">
-        <h2 id="extras-title">Додаткові можливості</h2>
-        <div class="extras-container">
-            <!-- Перша секція - Google Ads -->
-            <div class="extra-card">
-                <div class="extra-icon">🔍</div>
-                <h3>Google Ads</h3>
-                <p>
-                    Налаштовуємо контекстну рекламу в Google для максимального охоплення вашої цільової аудиторії.
-                    Допомагаємо з'явитись у верхніх позиціях пошуку та залучати клієнтів, які активно шукають ваші
-                    послуги.
-                </p>
-
-                <!-- Посилання на інструменти -->
-                <a href="pages/google-ads-calc.html" class="google-ads-btn calc-btn">
-                    💰 Калькулятор бюджету
-                </a>
-                <a href="pages/google-ads-comparison.html" class="google-ads-btn comparison-btn">
-                    ⚖️ Порівняння з Facebook/Instagram
-                </a>
-                <a href="pages/google-ads-glossary.html" class="google-ads-btn glossary-btn">
-                    📚 Глосарій термінів
-                </a>
-                <a href="pages/google-ads-generator.html" class="google-ads-btn generator-btn">
-                    ✍️ Генератор оголошень
-                </a>
-                <a href="pages/google-ads-keywords.html" class="google-ads-btn keywords-btn">
-                    🔑 Підбір ключових слів
-                </a>
-
-                <div class="badge-learning">
-                    <span class="learning-icon">📚</span>
-                    <span class="learning-text">Вивчаємо та розвиваємо</span>
-                </div>
-                <p class="info-note">
-                    <em>Наразі активно опановуємо Google Ads. Скористайтеся нашими інструментами для підготовки
-                        до запуску кампаній. Після завершення навчання буде доступна повна інформація про,
-                        приклади кампаній та детальні консультації.</em>
-                </p>
-            </div>
-            <!-- Друга секція -->
-            <div class="extra-card">
-                <div class="extra-icon">🎯</div>
-                <h3>Таргетована реклама</h3>
-                <p>
-                    Запускаємо ефективну рекламу у Facebook та Instagram, щоб допомогти вам залучати більше
-                    клієнтів.<br>
-                    Ніша: <br>- Робота за кордоном. <br>- Пасажирські перевезення до ЄС
-                </p>
-                <a href="pages/target.html" class="calc-button-1">Роз'яснення</a>
-                <a href="pages/calc.html" class="calc-button">Розрахувати рекламу</a>
-                <a href="https://target-and-design-a-simple-start.netlify.app/" class="mini-course-button"
-                    target="_blank">
-                    Мінікурс: простий старт у рекламі
-                </a>
-                <a href="pages/utm.html" class="utm-link-btn">
-                    Створення UTM-міток
-                </a>
-                <section class="result-section">
-                    <h2 hidden>Результати</h2>
-                    <button class="show-results">
-                        Результати кампаній <span class="arrow">▼</span>
-                    </button>
-                    <div class="results-slider">
-                        <div class="slider-wrapper">
-                            <div class="slider-item"><img src="images/target1.webp" alt="Приклад 1" loading="lazy">
-                            </div>
-                            <div class="slider-item"><img src="images/target2.webp" alt="Приклад 2" loading="lazy">
-                            </div>
-                            <div class="slider-item"><img src="images/target3.webp" alt="Приклад 3" loading="lazy">
-                            </div>
-                            <div class="slider-item"><img src="images/target4.webp" alt="Приклад 4" loading="lazy">
-                            </div>
-                            <div class="slider-item"><img src="images/target5.webp" alt="Приклад 5" loading="lazy">
-                            </div>
-                            <div class="slider-item"><img src="images/target6.webp" alt="Приклад 6" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Третя секція -->
-            <div class="extra-card">
-                <div class="extra-icon">🖼️</div>
-                <h3>Банери та Шаблони</h3>
-                <p>
-                    Створюємо банери, шаблони та креативи для реклами, соцмереж і сайтів за допомогою Canva.
-                    Можемо додати QR-коди, згенерувати фото штучним інтелектом та інші елементи для максимального
-                    візуального ефекту.
-                </p>
-                <a href="pages/price.html" class="price-btn">Переглянути вартість</a>
-                <a href="https://target-and-design-a-simple-start.netlify.app/" class="mini-course-canva-button"
-                    target="_blank">
-                    Мінікурс: простий старт у Canva 🎨
-                </a>
-
-                <section class="result-section">
-                    <h2 hidden>Приклади креативів</h2>
-                    <button class="show-results">
-                        Приклади креативів <span class="arrow">▼</span>
-                    </button>
-                    <div class="results-slider">
-                        <div class="slider-wrapper">
-                            <div class="slider-item"><img src="images/canva1.webp" alt="Приклад 1" loading="lazy"></div>
-                            <div class="slider-item"><img src="images/canva2.webp" alt="Приклад 2" loading="lazy"></div>
-                            <div class="slider-item"><img src="images/canva3.webp" alt="Приклад 3" loading="lazy"></div>
-                            <div class="slider-item"><img src="images/canva4.webp" alt="Приклад 4" loading="lazy"></div>
-                            <div class="slider-item"><img src="images/canva5.webp" alt="Приклад 5" loading="lazy"></div>
-                            <div class="slider-item"><img src="images/canva6.webp" alt="Приклад 6" loading="lazy"></div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Четверта секція -->
-            <div class="extra-card">
-                <div class="extra-icon">🧾</div>
-                <h3>Повернення податків з Польщі</h3>
-                <p>
-                    Допомагаємо повертати податки після офіційної роботи в Польщі. Оформлюємо декларацію онлайн,
-                    працюємо з PIT-11, коригуємо помилки. Усе просто — надаєш документи, ми робимо решту.
-                </p>
-                <a href="pages/declaration.html" class="price-btn-1">Дізнатись більше</a>
-                <a href="https://everything-related-to-pit.netlify.app/" class="mini-course-pit-button" target="_blank">
-                    Все що стосується PIT 🧾
-                </a>
-            </div>
-
-            <!-- П'ята секція -->
-            <div class="extra-card">
-                <div class="extra-icon">💻</div>
-                <h3>Чистка та діагностика ПК</h3>
-                <p>
-                    Проведемо повну діагностику та програмну чистку вашого комп'ютера або ноутбука від зайвого сміття,
-                    вірусів та непотрібних програм через <strong>TeamViewer</strong>.
-                    Прискоримо роботу системи та оптимізуємо її продуктивність.
-                </p>
-                <a href="pages/pc-service.html" class="diag-button">Детальніше про процес</a>
-            </div>
-        </div>
-    </section>
-    <!-- Секція кібербезпеки -->
-    <section id="security" class="security-home">
-        <div class="container">
-            <h2>🛡️ Кібербезпека</h2>
-            <p class="security-description">
-                Отримали підозрілий лист чи посилання? Не впевнені чи це фішинг?
-                Ми допоможемо перевірити посилання, файли та повідомлення на безпеку.
-                Професійний аналіз за доступною пропозицією — захистіть себе від шахрайства.
-            </p>
-            <a href="/pages/security-tips.html" class="btn-security">
-                Дізнатися більше →
-            </a>
-        </div>
-    </section>
-    <!-- Сертифікат-сувенір -->
-    <section id="certificate-gift" class="certificate-gift-section">
-        <div class="certificate-gift-container">
-            <div class="certificate-image-wrapper">
-                <img src="certificates/cert-targeting-canva.webp" alt="Сертифікат-сувенір від WebStart Studio"
-                    class="certificate-image" loading="lazy">
-                <div class="certificate-badge">🎁 Сувенір</div>
-            </div>
-            <div class="certificate-content">
-                <h2 class="certificate-title">
-                    Отримайте сертифікат-сувенір від Web<span style="color:#B00000;">Start</span> Studio
-                </h2>
-                <p class="certificate-description">
-                    Переглянули наші безкоштовні мінікурси?
-                    Ми з радістю надішлемо вам <strong>персоналізований сертифікат</strong>
-                    як знак вдячності за вашу увагу! 💙💛
-                </p>
-                <p class="certificate-description">
-                    Це приємна пам'ятка, якою можна поділитися у соцмережах або додати до портфоліо.
-                </p>
-                <div class="certificate-cta-buttons">
-                    <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank"
-                        class="certificate-btn certificate-btn-primary">
-                        💬 Написати у Telegram
-                    </a>
-                    <a href="viber://chat?number=+380661391932" class="certificate-btn certificate-btn-secondary">
-                        📱 Написати у Viber
-                    </a>
-                </div>
-                <p class="certificate-note">
-                    <em>* Безкоштовно. Просто напишіть своє ім'я та який курс переглянули!</em>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======🧠 Підтримка та довіра====== -->
-    <!-- Відгуки -->
-    <section id="testimonials">
-        <h2 id="testimonials-title">Відгуки про нас</h2>
-        <div class="testimonials-container">
-
-            <div class="testimonial" id="testimonial1">
-                <img src="foto/olena.webp" alt="Олена" class="testimonial-photo">
-                <div class="testimonial-header-name">Олена</div>
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-message">
-                        <p>Портфоліо зробили за три дні, загалом непогано. Спочатку був косяк з кольорами на мобільній
-                            версії, але швидко виправили.</p>
-                        <div class="testimonial-meta">
-                            <cite>маркетолог</cite>
-                            <span class="testimonial-time">14:23</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial" id="testimonial2">
-                <img src="foto/andriy.webp" alt="Андрій" class="testimonial-photo">
-                <div class="testimonial-header-name">Андрій</div>
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-message">
-                        <p>Сайт зробили швидко, це плюс. Мінус — не все працювало ідеально з першого разу, довелося
-                            виправляти форму замовлення.</p>
-                        <div class="testimonial-meta">
-                            <cite>власник магазину</cite>
-                            <span class="testimonial-time">11:30</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="testimonial" id="testimonial3">
-                <img src="foto/mariya.webp" alt="Марія" class="testimonial-photo">
-                <div class="testimonial-header-name">Марія</div>
-                <div class="testimonial-wrapper">
-                    <div class="testimonial-message">
-                        <p>Резюме допомогло потрапити на співбесіди, це факт. Хоча довелося самій трохи підправити текст
-                            під
-                            себе.</p>
-                        <div class="testimonial-meta">
-                            <cite>шукачка роботи</cite>
-                            <span class="testimonial-time">15:42</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- Часті помилки -->
-    <section id="common-mistakes" class="mistakes-section">
-        <h2>❌ Топ-5 помилок при створенні <br>резюме/портфоліо</h2>
-        <p class="mistakes-intro">Багато людей роблять ці помилки. Натисніть на кожну, щоб дізнатися деталі:</p>
-
-        <div class="mistakes-list">
-            <details class="mistake-item">
-                <summary>
-                    <span class="mistake-icon">🚫</span>
-                    <span class="mistake-title">Занадто багато тексту</span>
-                </summary>
-                <div class="mistake-content">
-                    <p>Роботодавець дивиться резюме лише 6 секунд — структура важливіша за обсяг.</p>
-                    <p><strong>Чому це проблема:</strong> Перевантажене текстом резюме втомлює очі, і важливу інформацію
-                        можна просто не помітити.</p>
-                    <p><strong>Як виправити:</strong> Використовуйте короткі списки, заголовки та виділяйте ключові
-                        досягнення. Один екран = одна сторінка резюме.</p>
-                </div>
-            </details>
-
-            <details class="mistake-item">
-                <summary>
-                    <span class="mistake-icon">📱</span>
-                    <span class="mistake-title">Не адаптоване під мобільні</span>
-                </summary>
-                <div class="mistake-content">
-                    <p>70% переглядів — зі смартфонів. Ваше портфоліо має виглядати ідеально на телефоні.</p>
-                    <p><strong>Чому це проблема:</strong> Якщо сайт на телефоні "їде", роботодавець просто закриє його і
-                        перейде до наступного кандидата.</p>
-                    <p><strong>Як виправити:</strong> Використовуйте адаптивну верстку (responsive design). Ми завжди
-                        робимо
-                        версії для всіх пристроїв.</p>
-                </div>
-            </details>
-
-            <details class="mistake-item">
-                <summary>
-                    <span class="mistake-icon">🎨</span>
-                    <span class="mistake-title">Застарілий дизайн</span>
-                </summary>
-                <div class="mistake-content">
-                    <p>Шаблони з 2015 року одразу видно — сучасний вигляд = сучасний фахівець.</p>
-                    <p><strong>Чому це проблема:</strong> Старий дизайн асоціюється з відсутністю розвитку і бажання йти
-                        в
-                        ногу з часом.</p>
-                    <p><strong>Як виправити:</strong> Використовуйте сучасні шрифти, кольори та мінімалістичний підхід.
-                        Подивіться наші приклади у розділі <a href="#portfolio">Портфоліо</a>.</p>
-                </div>
-            </details>
-
-            <details class="mistake-item">
-                <summary>
-                    <span class="mistake-icon">🔗</span>
-                    <span class="mistake-title">Немає посилань на роботи</span>
-                </summary>
-                <div class="mistake-content">
-                    <p>Портфоліо без live-прикладів = пусті слова. Покажіть реальні кейси.</p>
-                    <p><strong>Чому це проблема:</strong> Роботодавець не може оцінити ваші навички без реальних
-                        прикладів
-                        роботи.</p>
-                    <p><strong>Як виправити:</strong> Додайте посилання на GitHub, Behance, Dribbble або інші платформи.
-                        Якщо немає робочих проектів — створіть тестові.</p>
-                </div>
-            </details>
-
-            <details class="mistake-item">
-                <summary>
-                    <span class="mistake-icon">⚡</span>
-                    <span class="mistake-title">Повільне завантаження</span>
-                </summary>
-                <div class="mistake-content">
-                    <p>Якщо сайт грузиться 5+ секунд — 50% людей закриють його.</p>
-                    <p><strong>Чому це проблема:</strong> У 2025 році люди не чекають. Повільний сайт = втрачені
-                        можливості.
+                <div class="project-card">
+                    <div class="project-icon">📝</div>
+                    <h3>Електронне резюме</h3>
+                    <p>
+                        Ми можемо створити різноманітні варіанти резюме, такі як класичне,
+                        креативне, мінімалістичне та багато інших, в залежності від вашого
+                        стилю та потреб. Легка сторінка з інтерактивним блоком навичок – це
+                        ідеальний спосіб ефективно презентувати свої вміння та досвід. Кожне
+                        резюме адаптується під різні пристрої, щоб виглядати бездоганно на
+                        будь-якому екрані.
                     </p>
-                    <p><strong>Як виправити:</strong> Оптимізуйте зображення (WebP формат), використовуйте CDN,
-                        мінімізуйте
-                        CSS/JS. Ми робимо це автоматично для всіх проектів.</p>
+                    <details aria-labelledby="portfolio-details-2">
+                        <summary id="portfolio-details-2">
+                            Переглянути
+                        </summary>
+
+                        <a href="https://cute-eclair-b92b0f.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Classic у новому вікні">
+                            Classic
+                        </a><br>
+
+                        <a href="https://resonant-fudge-055f66.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Creative у новому вікні">
+                            Creative
+                        </a><br>
+
+                        <a href="https://frolicking-sunflower-90993f.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Minimal у новому вікні">
+                            Minimal
+                        </a><br>
+
+                        <a href="https://fluffy-sawine-100fa8.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити приклад Premium у новому вікні">
+                            Premium
+                        </a>
+                    </details>
                 </div>
-            </details>
-        </div>
 
-        <a href="#briefs" class="btn-primary">Уникнути цих помилок →</a>
-    </section>
-    <!-- Поширені запитання (FAQ) -->
-    <section id="faq" class="faq-section">
-        <h2 id="faq-title">Поширені запитання</h2>
+                <div class="project-card">
+                    <div class="project-icon">📄</div>
+                    <h3>Односторінкові сайти</h3>
+                    <p>
+                        Ось деякі з наших проєктів, які ви можете оглянути: лендінг для
+                        Instagram "taplink", що ідеально підходить для брендів і
+                        фрілансерів; стильний лендінг для рекрутера, щоб залучати
+                        кандидатів; мікрокредитування для просування, що дає можливість
+                        швидко залучати клієнтів; а також сайт для пасажирських перевезень
+                        по ЄС, з легким доступом до маршруту і ціни. І це лише частина того,
+                        що ми можемо створити!
+                    </p>
 
-        <details>
-            <summary>А якщо я в цьому нічого не тямлю?</summary>
-            <p>
-                Нічого страшного — усе зробимо за вас. Лише відповісте на кілька
-                простих питань у файлі (брифі). Детальніше дивіться у розділі
-                <a href="#briefs" class="nav-btn">Отримати</a>.
+                    <details aria-labelledby="portfolio-details-3">
+                        <summary id="portfolio-details-3">
+                            Переглянути
+                        </summary>
+
+                        <a href="https://sage-naiad-50b7a5.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити проєкт Landing recruiter у новому вікні">
+                            Landing recruiter
+                        </a><br>
+
+                        <a href="https://clinquant-melomakarona-a088a5.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити проєкт Instagram taplink у новому вікні">
+                            Instagram “taplink”
+                        </a><br>
+
+                        <a href="https://celebrated-faun-808026.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити проєкт Microlending for promotion у новому вікні">
+                            Microlending for promotion
+                        </a><br>
+
+                        <a href="https://shimmering-tulumba-a21566.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити сайт Eu Passenger Transport Site у новому вікні">
+                            Eu Passenger Transport Site
+                        </a><br>
+
+                        <a href="https://give-a-giftholiday.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити проєкт ПодаруйСвято у новому вікні"
+                            style="display: inline-block; padding: 0.6rem 1.2rem; background: #ff7f50; color: #fff; border-radius: 8px; text-decoration: none;">
+                            🎁 ПодаруйСвято
+                        </a><br>
+
+                        <a href="https://landing-page-in-windows-xp.netlify.app/" target="_blank" class="btn"
+                            aria-label="Відкрити лендінг у стилі Windows XP у новому вікні"
+                            style="display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.2rem; background: #0078d7; color: #fff; border-radius: 8px; text-decoration: none;">
+                            🖥️ Лендінг у стилі Windows XP
+                        </a>
+
+                    </details>
+                </div>
+            </div>
+        </section>
+        <!-- Технічні можливості -->
+        <section class="technical-features" id="technical-features">
+            <h2>Технічні можливості для вашого лендінгу</h2>
+            <p>За потреби ми додаємо функції безпеки (CSP) та мобільні можливості (PWA) — щоб ваш сайт працював швидко,
+                захищено
+                та як мобільний додаток.</p>
+            <a href="pages/technical-details.html" class="btn">Дізнатись більше</a>
+        </section>
+        <!-- Чому WebStart Studio -->
+        <section id="advantages" class="advantages">
+            <h2>Чому Web<span class="highlight">Start</span> Studio?</h2>
+            <div class="advantages-grid">
+                <div class="adv-item">
+                    <div class="emoji">⚡</div>
+                    <h3>Швидко</h3>
+                    <p>Створення резюме та лендінгів за лічені хвилини.</p>
+                </div>
+                <div class="adv-item">
+                    <div class="emoji">🧩</div>
+                    <h3>Зручно</h3>
+                    <p>Інтерфейс, що не потребує технічних знань.</p>
+                </div>
+                <div class="adv-item">
+                    <div class="emoji">🎯</div>
+                    <h3>Результативно</h3>
+                    <p>Резюме, що справляють враження і приносять роботу.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Порівняльна таблиця -->
+        <section id="platform-comparison">
+            <h2 class="centered-header">Порівняльний аналіз платформ</h2>
+            <p class="centered-text">
+                Порівняння <strong>
+                    Web<span class="highlight-start">Start</span> Studio
+                </strong> з популярними конструкторами Webstudio та WebStarts.
+                Ми маємо інший підхід — робимо все за вас, додаючи додаткові можливості
+                (таргет, PIT, технічна підтримка), яких немає в стандартних конструкторах.
             </p>
-        </details>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Критерій</th>
+                        <th>WebStart Studio (стартує)</th>
+                        <th>Webstudio</th>
+                        <th>WebStarts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Призначення</td>
+                        <td>Розробка резюме, портфоліо та лендінгів з адаптацією під мобільні пристрої</td>
+                        <td>Open-source конструктор для дизайнерів і розробників</td>
+                        <td>Онлайн-конструктор сайтів для початківців і бізнесу</td>
+                    </tr>
+                    <tr>
+                        <td>Швидкість роботи</td>
+                        <td>Оптимізовано під легкі сторінки</td>
+                        <td>Залежить від налаштувань</td>
+                        <td>Стабільна</td>
+                    </tr>
+                    <tr>
+                        <td>Мобільна адаптація</td>
+                        <td>PWA, базова адаптивність</td>
+                        <td>Адаптивні шаблони</td>
+                        <td>Адаптивні шаблони</td>
+                    </tr>
+                    <tr>
+                        <td>Гнучкість дизайну</td>
+                        <td>Індивідуально під замовника</td>
+                        <td>Висока</td>
+                        <td>Середня</td>
+                    </tr>
+                    <tr>
+                        <td>SEO-оптимізація</td>
+                        <td>Базові налаштування</td>
+                        <td>Є базова</td>
+                        <td>Є базова</td>
+                    </tr>
+                    <tr>
+                        <td>Підтримка клієнтів</td>
+                        <td>Email, онлайн-чат, спільнота, особистий контакт</td>
+                        <td>Спільнота (форум), email</td>
+                        <td>Онлайн-чат, email, спільнота</td>
+                    </tr>
+                    <tr>
+                        <td>Ціноутворення</td>
+                        <td>Узгоджується індивідуально</td>
+                        <td>Безкоштовно / платно</td>
+                        <td>Від $6/міс</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <!-- DIY vs З нами -->
+        <section id="diy-vs-us" class="comparison-table-section">
+            <h2>🆚 Самому vs З нами</h2>
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th>Критерій</th>
+                        <th>Створити самому</th>
+                        <th>Web<span class="logo-header">Start</span> Studio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Час</td>
+                        <td>❌ 2-4 тижні вивчення + робота</td>
+                        <td>✅ 1-3 дні готовий результат</td>
+                    </tr>
+                    <tr>
+                        <td>Дизайн</td>
+                        <td>❌ Шаблонний або кривий</td>
+                        <td>✅ Сучасний, унікальний</td>
+                    </tr>
+                    <tr>
+                        <td>Технічні знання</td>
+                        <td>❌ Потрібно вчити HTML/CSS</td>
+                        <td>✅ Нічого не треба знати</td>
+                    </tr>
+                    <tr>
+                        <td>Мобільна версія</td>
+                        <td>❌ Часто ламається</td>
+                        <td>✅ Ідеально на всіх екранах</td>
+                    </tr>
+                    <tr>
+                        <td>SEO</td>
+                        <td>❌ Без оптимізації</td>
+                        <td>✅ Базове SEO включено</td>
+                    </tr>
+                    <tr>
+                        <td>Підтримка</td>
+                        <td>❌ Сам собі майстер</td>
+                        <td>✅ 30 днів допомоги</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="vs-cta">Економте час — довірте нам 💪</p>
+        </section>
 
-        <details>
-            <summary>Скільки часу йде на створення?</summary>
-            <p>Залежно від завдання, терміни виконання можуть варіюватися.
-                Зазвичай це займає від кількох годин до 3 днів. Якщо проєкт складніший —
-                ми повідомимо вас про це заздалегідь.</p>
-        </details>
-
-        <details>
-            <summary>А можна щось підправити, якщо мені не сподобається?</summary>
-            <p>
-                Звісно. Якщо щось не підходить — разом підкоригуємо до бажаного
-                вигляду.
+        <!-- ======🎯 Конверсійні блоки====== -->
+        <!-- Вікторина  -->
+        <section class="cta-section">
+            <h2>Пройдіть нашу вікторину і знайдіть найкращий варіант для себе!</h2>
+            <p>Завдяки нашій вікторині ви отримаєте індивідуальні рекомендації, які допоможуть обрати найкраще рішення.
             </p>
-        </details>
-
-        <details>
-            <summary>Як отримати своє резюме, портфоліо або лендінг?</summary>
-            <p>
-                Ви отримаєте архів з усіма файлами та інструкцією. Також можемо
-                розмістити сторінку в інтернеті для вас. Ви можете ознайомитись із
-                деталями у розділі <a href="#hosting-help">Розміщення</a>.
-            </p>
-        </details>
-
-        <details>
-            <summary>А якщо я щось забуду або не зрозумію?</summary>
-            <p>
-                Пишіть нам у Viber чи Telegram — допоможемо розібратись або нагадаємо,
-                що і як.
-            </p>
-        </details>
-    </section>
-    <!-- Розміщення та допомога -->
-    <section id="hosting-help" class="info-section">
-        <h2 id="info-title">Розміщення та підтримка</h2>
-        <p>
-            Після створення вашого портфоліо, резюме або сайту, ви отримаєте архів з
-            усіма файлами у форматі
-            <strong>ZIP</strong>.
-        </p>
-        <p>
-            Якщо у вас ще немає хостингу — ми допоможемо з
-            <strong>реєстрацією на безкоштовній платформі</strong>, такі як
-            <a href="https://www.netlify.com" target="_blank">Netlify</a>
-        </p>
-        <p>
-            Після цього ви зможете
-            <strong>самостійно керувати своїми файлами</strong> або звернутися до
-            нас за подальшою підтримкою.
-        </p>
-        <a href="pages/instruction.html" class="brief-btn"> 🌐Детальна інструкція щодо Netlify</a>
-        <a href="pages/edit-instruction.html" class="brief-btn">
-            ✏️ Як редагувати проект самостійно
-        </a>
-    </section>
-
-    <!-- ======🌍 Контекст і зв’язок====== -->
-    <!-- Інтернаціональний розділ -->
-    <section id="international">
-        <h2>🌍 International</h2>
-        <p>Choose your country to view our platform in your language:</p>
-        <div class="lang-slider">
-            <a href="international/en.html" class="lang-card">
-                <img src="international/flags/us.webp" alt="English" width="60">
-                <p>Welcome to our studio!</p>
-            </a>
-            <a href="international/fr.html" class="lang-card">
-                <img src="international/flags/fr.webp" alt="Français" width="60">
-                <p>Bienvenue dans notre studio!</p>
-            </a>
-            <a href="international/cz.html" class="lang-card">
-                <img src="international/flags/cz.webp" alt="Čeština" width="60">
-                <p>Vítejte v našem studiu!</p>
-            </a>
-            <a href="international/se.html" class="lang-card">
-                <img src="international/flags/se.webp" alt="Svenska" width="60">
-                <p>Välkommen till vår studio!</p>
-            </a>
-            <a href="international/de.html" class="lang-card">
-                <img src="international/flags/de.webp" alt="Deutsch" width="60">
-                <p>Willkommen in unserem Studio!</p>
-            </a>
-            <a href="international/pl.html" class="lang-card">
-                <img src="international/flags/pl.webp" alt="Polski" width="60">
-                <p>Witamy w naszym studiu!</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- Блог / Новини -->
-    <section id="blog" class="blog-section">
-        <h2 class="blog-title">Дайджест</h2>
-        <div class="blog-posts">
-            <article class="blog-card">
-                <h3>🚀 Тренди створення лендінгів у 2025 році</h3>
-                <p>Дізнайтеся про сучасні дизайни, інтеграції AI та ефективні CTA, які допомагають конвертувати
-                    відвідувачів
-                    у клієнтів.</p>
-                <a href="pages/blog-landing-trends.html" class="read-more">Читати далі →</a>
-            </article>
-            <article class="blog-card">
-                <h3>⚡ Як зробити портфоліо, яке продає</h3>
-                <p>Поради щодо створення резюме та портфоліо, які справді показують ваші навички та привертають увагу
-                    роботодавців або клієнтів.</p>
-                <a href="pages/blog-portfolio-tips.html" class="read-more">Читати далі →</a>
-            </article>
-            <article class="blog-card">
-                <h3>🔥 Топ-5 порад для ефективного резюме</h3>
-                <p>Від структури до дизайну: як зробити резюме зрозумілим, професійним та помітним серед сотень інших.
+            <a href="pages/service-recommendation.html" class="cta-button">Перейти до вікторини</a>
+        </section>
+        <!-- Вартість -->
+        <section id="pricing">
+            <div style="text-align: center;">
+                <div class="pricing-emoji">💰</div>
+                <h2 style="color: #007BFF;">Пакети</h2>
+                <p>
+                    Щоб детально ознайомитися з усіма актуальними пропозиціями, будь-ласка, перегляньте доступні пакети
+                    та
+                    їх умови.Кожна пропозиція містить повну інформацію про тарифи, що допоможе вам обрати
+                    найзручніший та оптимальний варіант для ваших потреб.
                 </p>
-                <a href="pages/blog-resume-tips.html" class="read-more">Читати далі →</a>
-            </article>
-        </div>
-    </section>
-    <!-- Контакти  -->
-    <section id="contact-gift-wrapper">
-        <div class="contact-block">
-            <h2>Контакти</h2>
-            <p>
-                📧 Email:
-                <a href="mailto:webstartstudio978@gmail.com">webstartstudio978@gmail.com</a>
-            </p>
-            <p>📱 Telefon: <a href="tel:+380661391932">+38(066) 139 19 32</a></p>
-            <p>
-                <a href="viber://chat?number=+380661391932" class="viber-button">Написати у Viber</a>
-            </p>
-        </div>
 
-        <div class="gift-block" id="guide-bonus">
-            <h3>🎁 Путівник новачка (бонус+)</h3>
+                <button id="togglePricing" aria-expanded="false" aria-controls="pricingTable"
+                    aria-label="Показати таблицю цін">
+                    Знайти найвигідніший пакет
+                </button>
+
+            </div>
+            <table id="pricingTable" style="display: none; margin-top: 20px; width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Послуга</th>
+                    <th style="border: 1px solid #ccc; padding: 8px;">Ціна</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Портфоліо</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">від 500 грн</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Резюме</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Лендінг</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">від 800 грн</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #ccc; padding: 8px;">Адаптивна верстка (мобільна версія)</td>
+                    <td style="border: 1px solid #ccc; padding: 8px;">від 300 грн</td>
+                </tr>
+            </table>
+
+            <div id="linkWrapper" style="display: none; margin-top: 15px;">
+                <a href="pages/offer.html" target="_blank" rel="noopener noreferrer" class="btn-link">Дізнатись
+                    більше</a>
+            </div>
+        </section>
+        <!-- Акція -->
+        <section class="promo" id="promo">
+            <div class="promo-container">
+                <h2>🔥 Чорна П’ятниця: <br>час оновити себе і свій бренд</h2>
+                <p><strong>14.11 — 30.11</strong></p>
+                <p>💸 Знижки до –50% на ключові пропозиції, які працюють на вас:</p>
+                <p>📄 <strong>Резюме та CV</strong> — сильна структура, сучасний вигляд.
+                    <br>📁 <strong>Портфоліо</strong> — професійна подача вашого досвіду.
+                    <br>🌐 <strong>Лендінги</strong> — дизайн + текст, що продає.
+                </p>
+                <p>🎁 Подарунок кожному <strong>учаснику, який звернеться до нас</strong>:<br>
+                    ✨ Соцбанер із QR-кодом у бренд-стилі — для постів, сторіс і реклами.</p>
+                <div id="countdown" class="countdown"></div>
+                <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank" class="promo-btn">Скористатися
+                    пропозицією</a>
+            </div>
+        </section>
+        <!-- Замовити -->
+        <section id="briefs" class="briefs">
+            <div class="briefs-container">
+                <h2 class="briefs-title">Для отримання індивідуального проєкту.</h2>
+                <p class="briefs-description">
+                    Оберіть напрям і завантажте короткий бриф. <br>Після того, як ви
+                    його заповните, надішліть нам у
+                    <a href="viber://chat?number=+380661391932">Viber</a>
+                </p>
+
+                <div class="briefs-buttons">
+                    <a href="documents/brief_resume.docx" download class="brief-btn brief-resume">Бриф на резюме</a>
+                    <a href="documents/brief_portfolio.docx" download class="brief-btn brief-portfolio">Бриф на
+                        портфоліо</a>
+                    <a href="documents/brief_site.docx" download class="brief-btn brief-site">Бриф на сайт</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======🧩 Додаткові сервіси====== -->
+        <!-- Міні-сервіс -->
+        <section id="mini-services">
+            <h2 id="mini-services-title">Міні-сервіс</h2>
             <p>
-                🧑‍🎓 Завантажте наш безкоштовний путівник, щоб дізнатися, як створити
-                своє перше портфоліо, навіть якщо у вас ще немає досвіду!
+                Створюй, оцінюй та покращуй свої проєкти швидко і зручно: перевірка лендінгів, генератор текстів для
+                резюме
+                та
+                портфоліо, а також універсальні інструменти для оптимізації.
+                Всі сервіси зібрані в одному місці, щоб заощадити час та отримати максимум результату.
             </p>
-            <a href="documents/WebStart_Portfolio_Guide.docx" download class="btn-primary">Завантажити путівник</a>
-        </div>
-    </section>
-    <!-- Соцмережі -->
-    <section id="social" class="socials">
-        <h3>Ми в соцмережах</h3>
-        <ul class="social-list">
-            <li>
-                <a href="https://t.me/+IleSiwteF2NlOWVi" target="_blank" class="telegram">Telegram</a>
-            </li>
-            <li>
-                <a href="https://invite.viber.com/?g2=AQB%2FfR4KvKip91SwMbV0bYMLZbEbchx7bj7gNYwkp7xEy3eZ8%2BIvyHL9YpqymDtE"
-                    target="_blank" class="viber">Viber</a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/profile.php?id=61575866647011&locale=uk_UA" target="_blank"
-                    class="facebook">Facebook</a>
-            </li>
-            <li>
-                <a href="https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka" target="_blank" class="whatsapp">WhatsApp</a>
-            </li>
-        </ul>
-        <!-- Підписка на Instagram та TikTok -->
-        <ul class="social-subscribe">
-            <li>
-                <a href="https://www.instagram.com/freelancer_pit_frontend?igsh=dHJrc3BhcHU5bXp6" target="_blank"
-                    class="instagram-subscribe">Підписатися в Instagram</a>
-            </li>
-            <li>
-                <a href="https://www.tiktok.com/@freelancer_pit_frontend?_t=ZM-8zdhuJlVwCU&_r=1" target="_blank"
-                    class="tiktok-subscribe">Підписатися в TikTok</a>
-            </li>
-        </ul>
-    </section>
-    <!-- Поділитись платформою -->
-    <section class="share-platform">
-        <h3>Розкажіть про нашу платформу у своїх соцмережах</h3>
-        <div class="share-buttons">
-            <button class="share-btn facebook" onclick="share('facebook')">
-                Facebook
-            </button>
-            <button class="share-btn telegram" onclick="share('telegram')">
-                Telegram
-            </button>
-            <button class="share-btn messenger" onclick="share('messenger')">
-                Messenger
-            </button>
-            <button class="share-btn viber" onclick="share('viber')">Viber</button>
-            <button class="share-btn linkedin" onclick="share('linkedin')">
-                LinkedIn
-            </button>
-        </div>
-    </section>
+            <div class="services-container">
+                <div class="service-card">
+                    <h3>Універсальна перевірка проектів</h3>
+                    <p>Швидка оцінка лендінгів, резюме та портфоліо з детальними рекомендаціями для покращення.</p>
+                    <a href="pages/project-checker.html" class="service-btn">Перейти</a>
+                </div>
+                <div class="service-card">
+                    <h3>Генератор заголовків та описів</h3>
+                    <p>Введи сферу діяльності та досягнення – отримай готові тексти для резюме або портфоліо.</p>
+                    <a href="pages/portfolio-text-generator.html" class="service-btn">Спробувати</a>
+                </div>
+                <div class="service-card">
+                    <h3>Генератор структури резюме</h3>
+                    <p>
+                        Обери тип роботи або сферу діяльності, і сервіс запропонує готову структуру резюме з усіма
+                        необхідними секціями.
+                        Для кожного блоку доступні поради: як описати досвід, навички та досягнення.
+                    </p>
+                    <a href="pages/resume-structure-generator.html" class="service-btn">Спробувати</a>
+                </div>
+            </div>
+        </section>
+        <!-- АІ Сервіс -->
+        <section id="ai-prompting-dynamic">
+            <h2 id="ai-services-title">AI Сервіс</h2>
+            <div class="ai-prompting-row">
+                <!-- Перша карта -->
+                <div class="ai-dynamic-card">
+                    <img src="images/ai-circle.webp" alt="AI Ілюстрація" class="ai-prompting-image">
+                    <h2 class="ai-prompting-title">AI Промптинг</h2>
+                    <p class="ai-prompting-text">Дізнайся, як писати ефективні промпти для створення текстів та
+                        зображень за
+                        допомогою ШІ.</p>
+                    <a href="pages/ai-prompting.html" class="ai-prompting-btn ai-dynamic-btn">Детальніше</a>
+                </div>
+                <!-- Друга карта -->
+                <div class="ai-dynamic-card">
+                    <img src="images/ai-automation.webp" alt="AI Автоматизація" class="ai-prompting-image">
+                    <h2 class="ai-prompting-title">AI Автоматизація</h2>
+                    <p class="ai-prompting-text">
+                        Повний гайд по AI автоматизації: що це таке, де використовується, які інструменти безкоштовні та
+                        платні,
+                        практичні поради для початківців.
+                    </p>
+                    <a href="pages/ai-automatization.html" class="ai-prompting-btn ai-dynamic-btn">Детальніше</a>
+                </div>
+                <!-- Третя карта -->
+                <div class="ai-dynamic-card">
+                    <img src="images/prompt-writing.webp" alt="Редактор промптів" class="ai-prompting-image">
+                    <h2 class="ai-prompting-title">Індивідуальне виготовлення промпта</h2>
+                    <p class="ai-prompting-text">Не витрачайте час! <br>Отримайте унікальний, готовий до використання
+                        промт,
+                        розроблений під ваші цілі.
+                    </p>
+                    <a href="pages/prompt-editor.html" class="ai-prompting-btn ai-dynamic-btn">Перейти</a>
+                </div>
+                <!-- Четверта карта -->
+                <div class="ai-dynamic-card">
+                    <img src="images/ai-studio.webp" alt="AI Prompt Studio" class="ai-prompting-image">
+                    <h2 class="ai-prompting-title">AI Prompt Studio</h2>
+                    <p class="ai-prompting-text">
+                        Тут ви зможете базово створити свій промпт і побачити, як це працює.
+                        Це допоможе зрозуміти логіку створення запитів до ШІ.
+                        Якщо ж хочете точний і ефективний результат — перегляньте <strong>індивідуальне виготовлення
+                            промпта</strong>.
+                    </p>
+                    <a href="https://ai-prompt-studio-webstart.netlify.app/" class="ai-prompting-btn ai-dynamic-btn"
+                        target="_blank" rel="noopener noreferrer">Спробувати</a>
+                </div>
+            </div>
+        </section>
+        <!-- Додаткові можливості -->
+        <section id="extras" class="extras-section">
+            <h2 id="extras-title">Додаткові можливості</h2>
+            <div class="extras-container">
+                <!-- Перша секція - Google Ads -->
+                <div class="extra-card">
+                    <div class="extra-icon">🔍</div>
+                    <h3>Google Ads</h3>
+                    <p>
+                        Налаштовуємо контекстну рекламу в Google для максимального охоплення вашої цільової аудиторії.
+                        Допомагаємо з'явитись у верхніх позиціях пошуку та залучати клієнтів, які активно шукають ваші
+                        послуги.
+                    </p>
+
+                    <!-- Посилання на інструменти -->
+                    <a href="pages/google-ads-calc.html" class="google-ads-btn calc-btn">
+                        💰 Калькулятор бюджету
+                    </a>
+                    <a href="pages/google-ads-comparison.html" class="google-ads-btn comparison-btn">
+                        ⚖️ Порівняння з Facebook/Instagram
+                    </a>
+                    <a href="pages/google-ads-glossary.html" class="google-ads-btn glossary-btn">
+                        📚 Глосарій термінів
+                    </a>
+                    <a href="pages/google-ads-generator.html" class="google-ads-btn generator-btn">
+                        ✍️ Генератор оголошень
+                    </a>
+                    <a href="pages/google-ads-keywords.html" class="google-ads-btn keywords-btn">
+                        🔑 Підбір ключових слів
+                    </a>
+
+                    <div class="badge-learning">
+                        <span class="learning-icon">📚</span>
+                        <span class="learning-text">Вивчаємо та розвиваємо</span>
+                    </div>
+                    <p class="info-note">
+                        <em>Наразі активно опановуємо Google Ads. Скористайтеся нашими інструментами для підготовки
+                            до запуску кампаній. Після завершення навчання буде доступна повна інформація про,
+                            приклади кампаній та детальні консультації.</em>
+                    </p>
+                </div>
+                <!-- Друга секція -->
+                <div class="extra-card">
+                    <div class="extra-icon">🎯</div>
+                    <h3>Таргетована реклама</h3>
+                    <p>
+                        Запускаємо ефективну рекламу у Facebook та Instagram, щоб допомогти вам залучати більше
+                        клієнтів.<br>
+                        Ніша: <br>- Робота за кордоном. <br>- Пасажирські перевезення до ЄС
+                    </p>
+                    <a href="pages/target.html" class="calc-button-1">Роз'яснення</a>
+                    <a href="pages/calc.html" class="calc-button">Розрахувати рекламу</a>
+                    <a href="https://target-and-design-a-simple-start.netlify.app/" class="mini-course-button"
+                        target="_blank">
+                        Мінікурс: простий старт у рекламі
+                    </a>
+                    <a href="pages/utm.html" class="utm-link-btn">
+                        Створення UTM-міток
+                    </a>
+                    <section class="result-section">
+                        <h2 hidden>Результати</h2>
+                        <button class="show-results" aria-label="Показати результати кампаній" aria-expanded="false">
+                            Результати кампаній <span class="arrow">▼</span>
+                        </button>
+                        <div class="results-slider" role="region"
+                            aria-label="Слайдер з результатами рекламних кампаній">
+                            <div class="slider-wrapper">
+
+                                <div class="slider-item">
+                                    <img src="images/target1.webp"
+                                        alt="Результат кампанії 1 – зростання звернень на 15%" loading="lazy">
+                                </div>
+
+                                <div class="slider-item">
+                                    <img src="images/target2.webp"
+                                        alt="Результат кампанії 2 – зниження ціни за клік до 0.12$" loading="lazy">
+                                </div>
+
+                                <div class="slider-item">
+                                    <img src="images/target3.webp"
+                                        alt="Результат кампанії 3 – збільшення кількості лідів у 2.4 раза"
+                                        loading="lazy">
+                                </div>
+
+                                <div class="slider-item">
+                                    <img src="images/target4.webp"
+                                        alt="Результат кампанії 4 – стабільна конверсія протягом 30 днів"
+                                        loading="lazy">
+                                </div>
+
+                                <div class="slider-item">
+                                    <img src="images/target5.webp"
+                                        alt="Результат кампанії 5 – оптимізована аудиторія та нижча вартість ліда"
+                                        loading="lazy">
+                                </div>
+
+                                <div class="slider-item">
+                                    <img src="images/target6.webp"
+                                        alt="Результат кампанії 6 – реклама на теплу аудиторію дала найвищу ефективність"
+                                        loading="lazy">
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Третя секція -->
+                <div class="extra-card">
+                    <div class="extra-icon">🖼️</div>
+                    <h3>Банери та Шаблони</h3>
+                    <p>
+                        Створюємо банери, шаблони та креативи для реклами, соцмереж і сайтів за допомогою Canva.
+                        Можемо додати QR-коди, згенерувати фото штучним інтелектом та інші елементи для максимального
+                        візуального ефекту.
+                    </p>
+                    <a href="pages/price.html" class="price-btn">Переглянути вартість</a>
+                    <a href="https://target-and-design-a-simple-start.netlify.app/" class="mini-course-canva-button"
+                        target="_blank">
+                        Мінікурс: простий старт у Canva 🎨
+                    </a>
+
+                    <section class="result-section">
+                        <h2 hidden>Приклади креативів</h2>
+                        <button class="show-results">
+                            Приклади креативів <span class="arrow">▼</span>
+                        </button>
+                        <div class="results-slider">
+                            <div class="slider-wrapper">
+                                <div class="slider-item"><img src="images/canva1.webp" alt="Приклад 1" loading="lazy">
+                                </div>
+                                <div class="slider-item"><img src="images/canva2.webp" alt="Приклад 2" loading="lazy">
+                                </div>
+                                <div class="slider-item"><img src="images/canva3.webp" alt="Приклад 3" loading="lazy">
+                                </div>
+                                <div class="slider-item"><img src="images/canva4.webp" alt="Приклад 4" loading="lazy">
+                                </div>
+                                <div class="slider-item"><img src="images/canva5.webp" alt="Приклад 5" loading="lazy">
+                                </div>
+                                <div class="slider-item"><img src="images/canva6.webp" alt="Приклад 6" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Четверта секція -->
+                <div class="extra-card">
+                    <div class="extra-icon">🧾</div>
+                    <h3>Повернення податків з Польщі</h3>
+                    <p>
+                        Допомагаємо повертати податки після офіційної роботи в Польщі. Оформлюємо декларацію онлайн,
+                        працюємо з PIT-11, коригуємо помилки. Усе просто — надаєш документи, ми робимо решту.
+                    </p>
+                    <a href="pages/declaration.html" class="price-btn-1">Дізнатись більше</a>
+                    <a href="https://everything-related-to-pit.netlify.app/" class="mini-course-pit-button"
+                        target="_blank">
+                        Все що стосується PIT 🧾
+                    </a>
+                </div>
+
+                <!-- П'ята секція -->
+                <div class="extra-card">
+                    <div class="extra-icon">💻</div>
+                    <h3>Чистка та діагностика ПК</h3>
+                    <p>
+                        Проведемо повну діагностику та програмну чистку вашого комп'ютера або ноутбука від зайвого
+                        сміття,
+                        вірусів та непотрібних програм через <strong>TeamViewer</strong>.
+                        Прискоримо роботу системи та оптимізуємо її продуктивність.
+                    </p>
+                    <a href="pages/pc-service.html" class="diag-button">Детальніше про процес</a>
+                </div>
+            </div>
+        </section>
+        <!-- Секція кібербезпеки -->
+        <section id="security" class="security-home">
+            <div class="container">
+                <h2>🛡️ Кібербезпека</h2>
+                <p class="security-description">
+                    Отримали підозрілий лист чи посилання? Не впевнені чи це фішинг?
+                    Ми допоможемо перевірити посилання, файли та повідомлення на безпеку.
+                    Професійний аналіз за доступною пропозицією — захистіть себе від шахрайства.
+                </p>
+                <a href="/pages/security-tips.html" class="btn-security">
+                    Дізнатися більше →
+                </a>
+            </div>
+        </section>
+        <!-- Сертифікат-сувенір -->
+        <section id="certificate-gift" class="certificate-gift-section">
+            <div class="certificate-gift-container">
+                <div class="certificate-image-wrapper">
+                    <img src="certificates/cert-targeting-canva.webp" alt="Сертифікат-сувенір від WebStart Studio"
+                        class="certificate-image" loading="lazy">
+                    <div class="certificate-badge">🎁 Сувенір</div>
+                </div>
+                <div class="certificate-content">
+                    <h2 class="certificate-title">
+                        Отримайте сертифікат-сувенір від Web<span style="color:#B00000;">Start</span> Studio
+                    </h2>
+                    <p class="certificate-description">
+                        Переглянули наші безкоштовні мінікурси?
+                        Ми з радістю надішлемо вам <strong>персоналізований сертифікат</strong>
+                        як знак вдячності за вашу увагу! 💙💛
+                    </p>
+                    <p class="certificate-description">
+                        Це приємна пам'ятка, якою можна поділитися у соцмережах або додати до портфоліо.
+                    </p>
+                    <div class="certificate-cta-buttons">
+                        <a href="https://t.me/Viktor_freelancer_recruiting_pit" target="_blank"
+                            class="certificate-btn certificate-btn-primary">
+                            💬 Написати у Telegram
+                        </a>
+                        <a href="viber://chat?number=+380661391932" class="certificate-btn certificate-btn-secondary">
+                            📱 Написати у Viber
+                        </a>
+                    </div>
+                    <p class="certificate-note">
+                        <em>* Безкоштовно. Просто напишіть своє ім'я та який курс переглянули!</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======🧠 Підтримка та довіра====== -->
+        <!-- Відгуки -->
+        <section id="testimonials">
+            <h2 id="testimonials-title">Відгуки про нас</h2>
+            <div class="testimonials-container">
+
+                <div class="testimonial" id="testimonial1">
+                    <img src="foto/olena.webp" alt="Олена" class="testimonial-photo">
+                    <div class="testimonial-header-name">Олена</div>
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-message">
+                            <p>Портфоліо зробили за три дні, загалом непогано. Спочатку був косяк з кольорами на
+                                мобільній
+                                версії, але швидко виправили.</p>
+                            <div class="testimonial-meta">
+                                <cite>маркетолог</cite>
+                                <span class="testimonial-time">14:23</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial" id="testimonial2">
+                    <img src="foto/andriy.webp" alt="Андрій" class="testimonial-photo">
+                    <div class="testimonial-header-name">Андрій</div>
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-message">
+                            <p>Сайт зробили швидко, це плюс. Мінус — не все працювало ідеально з першого разу, довелося
+                                виправляти форму замовлення.</p>
+                            <div class="testimonial-meta">
+                                <cite>власник магазину</cite>
+                                <span class="testimonial-time">11:30</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial" id="testimonial3">
+                    <img src="foto/mariya.webp" alt="Марія" class="testimonial-photo">
+                    <div class="testimonial-header-name">Марія</div>
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-message">
+                            <p>Резюме допомогло потрапити на співбесіди, це факт. Хоча довелося самій трохи підправити
+                                текст
+                                під
+                                себе.</p>
+                            <div class="testimonial-meta">
+                                <cite>шукачка роботи</cite>
+                                <span class="testimonial-time">15:42</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Часті помилки -->
+        <section id="common-mistakes" class="mistakes-section">
+            <h2>❌ Топ-5 помилок при створенні <br>резюме/портфоліо</h2>
+            <p class="mistakes-intro">Багато людей роблять ці помилки. Натисніть на кожну, щоб дізнатися деталі:</p>
+
+            <div class="mistakes-list">
+                <details class="mistake-item">
+                    <summary>
+                        <span class="mistake-icon">🚫</span>
+                        <span class="mistake-title">Занадто багато тексту</span>
+                    </summary>
+                    <div class="mistake-content">
+                        <p>Роботодавець дивиться резюме лише 6 секунд — структура важливіша за обсяг.</p>
+                        <p><strong>Чому це проблема:</strong> Перевантажене текстом резюме втомлює очі, і важливу
+                            інформацію
+                            можна просто не помітити.</p>
+                        <p><strong>Як виправити:</strong> Використовуйте короткі списки, заголовки та виділяйте ключові
+                            досягнення. Один екран = одна сторінка резюме.</p>
+                    </div>
+                </details>
+
+                <details class="mistake-item">
+                    <summary>
+                        <span class="mistake-icon">📱</span>
+                        <span class="mistake-title">Не адаптоване під мобільні</span>
+                    </summary>
+                    <div class="mistake-content">
+                        <p>70% переглядів — зі смартфонів. Ваше портфоліо має виглядати ідеально на телефоні.</p>
+                        <p><strong>Чому це проблема:</strong> Якщо сайт на телефоні "їде", роботодавець просто закриє
+                            його і
+                            перейде до наступного кандидата.</p>
+                        <p><strong>Як виправити:</strong> Використовуйте адаптивну верстку (responsive design). Ми
+                            завжди
+                            робимо
+                            версії для всіх пристроїв.</p>
+                    </div>
+                </details>
+
+                <details class="mistake-item">
+                    <summary>
+                        <span class="mistake-icon">🎨</span>
+                        <span class="mistake-title">Застарілий дизайн</span>
+                    </summary>
+                    <div class="mistake-content">
+                        <p>Шаблони з 2015 року одразу видно — сучасний вигляд = сучасний фахівець.</p>
+                        <p><strong>Чому це проблема:</strong> Старий дизайн асоціюється з відсутністю розвитку і бажання
+                            йти
+                            в
+                            ногу з часом.</p>
+                        <p><strong>Як виправити:</strong> Використовуйте сучасні шрифти, кольори та мінімалістичний
+                            підхід.
+                            Подивіться наші приклади у розділі <a href="#portfolio">Портфоліо</a>.</p>
+                    </div>
+                </details>
+
+                <details class="mistake-item">
+                    <summary>
+                        <span class="mistake-icon">🔗</span>
+                        <span class="mistake-title">Немає посилань на роботи</span>
+                    </summary>
+                    <div class="mistake-content">
+                        <p>Портфоліо без live-прикладів = пусті слова. Покажіть реальні кейси.</p>
+                        <p><strong>Чому це проблема:</strong> Роботодавець не може оцінити ваші навички без реальних
+                            прикладів
+                            роботи.</p>
+                        <p><strong>Як виправити:</strong> Додайте посилання на GitHub, Behance, Dribbble або інші
+                            платформи.
+                            Якщо немає робочих проектів — створіть тестові.</p>
+                    </div>
+                </details>
+
+                <details class="mistake-item">
+                    <summary>
+                        <span class="mistake-icon">⚡</span>
+                        <span class="mistake-title">Повільне завантаження</span>
+                    </summary>
+                    <div class="mistake-content">
+                        <p>Якщо сайт грузиться 5+ секунд — 50% людей закриють його.</p>
+                        <p><strong>Чому це проблема:</strong> У 2025 році люди не чекають. Повільний сайт = втрачені
+                            можливості.
+                        </p>
+                        <p><strong>Як виправити:</strong> Оптимізуйте зображення (WebP формат), використовуйте CDN,
+                            мінімізуйте
+                            CSS/JS. Ми робимо це автоматично для всіх проектів.</p>
+                    </div>
+                </details>
+            </div>
+
+            <a href="#briefs" class="btn-primary">Уникнути цих помилок →</a>
+        </section>
+        <!-- Поширені запитання (FAQ) -->
+        <section id="faq" class="faq-section">
+            <h2 id="faq-title">Поширені запитання</h2>
+
+            <details>
+                <summary>А якщо я в цьому нічого не тямлю?</summary>
+                <p>
+                    Нічого страшного — усе зробимо за вас. Лише відповісте на кілька
+                    простих питань у файлі (брифі). Детальніше дивіться у розділі
+                    <a href="#briefs" class="nav-btn">Отримати</a>.
+                </p>
+            </details>
+
+            <details>
+                <summary>Скільки часу йде на створення?</summary>
+                <p>Залежно від завдання, терміни виконання можуть варіюватися.
+                    Зазвичай це займає від кількох годин до 3 днів. Якщо проєкт складніший —
+                    ми повідомимо вас про це заздалегідь.</p>
+            </details>
+
+            <details>
+                <summary>А можна щось підправити, якщо мені не сподобається?</summary>
+                <p>
+                    Звісно. Якщо щось не підходить — разом підкоригуємо до бажаного
+                    вигляду.
+                </p>
+            </details>
+
+            <details>
+                <summary>Як отримати своє резюме, портфоліо або лендінг?</summary>
+                <p>
+                    Ви отримаєте архів з усіма файлами та інструкцією. Також можемо
+                    розмістити сторінку в інтернеті для вас. Ви можете ознайомитись із
+                    деталями у розділі <a href="#hosting-help">Розміщення</a>.
+                </p>
+            </details>
+
+            <details>
+                <summary>А якщо я щось забуду або не зрозумію?</summary>
+                <p>
+                    Пишіть нам у Viber чи Telegram — допоможемо розібратись або нагадаємо,
+                    що і як.
+                </p>
+            </details>
+        </section>
+        <!-- Розміщення та допомога -->
+        <section id="hosting-help" class="info-section">
+            <h2 id="info-title">Розміщення та підтримка</h2>
+            <p>
+                Після створення вашого портфоліо, резюме або сайту, ви отримаєте архів з
+                усіма файлами у форматі
+                <strong>ZIP</strong>.
+            </p>
+            <p>
+                Якщо у вас ще немає хостингу — ми допоможемо з
+                <strong>реєстрацією на безкоштовній платформі</strong>, такі як
+                <a href="https://www.netlify.com" target="_blank">Netlify</a>
+            </p>
+            <p>
+                Після цього ви зможете
+                <strong>самостійно керувати своїми файлами</strong> або звернутися до
+                нас за подальшою підтримкою.
+            </p>
+            <a href="pages/instruction.html" class="brief-btn"> 🌐Детальна інструкція щодо Netlify</a>
+            <a href="pages/edit-instruction.html" class="brief-btn">
+                ✏️ Як редагувати проект самостійно
+            </a>
+        </section>
+
+        <!-- ======🌍 Контекст і зв’язок====== -->
+        <!-- Інтернаціональний розділ -->
+        <section id="international">
+            <h2>🌍 International</h2>
+            <p>Choose your country to view our platform in your language:</p>
+            <div class="lang-slider">
+                <a href="international/en.html" class="lang-card">
+                    <img src="international/flags/us.webp" alt="English" width="60">
+                    <p>Welcome to our studio!</p>
+                </a>
+                <a href="international/fr.html" class="lang-card">
+                    <img src="international/flags/fr.webp" alt="Français" width="60">
+                    <p>Bienvenue dans notre studio!</p>
+                </a>
+                <a href="international/cz.html" class="lang-card">
+                    <img src="international/flags/cz.webp" alt="Čeština" width="60">
+                    <p>Vítejte v našem studiu!</p>
+                </a>
+                <a href="international/se.html" class="lang-card">
+                    <img src="international/flags/se.webp" alt="Svenska" width="60">
+                    <p>Välkommen till vår studio!</p>
+                </a>
+                <a href="international/de.html" class="lang-card">
+                    <img src="international/flags/de.webp" alt="Deutsch" width="60">
+                    <p>Willkommen in unserem Studio!</p>
+                </a>
+                <a href="international/pl.html" class="lang-card">
+                    <img src="international/flags/pl.webp" alt="Polski" width="60">
+                    <p>Witamy w naszym studiu!</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Блог / Новини -->
+        <section id="blog" class="blog-section">
+            <h2 class="blog-title">Дайджест</h2>
+            <div class="blog-posts">
+                <article class="blog-card">
+                    <h3>🚀 Тренди створення лендінгів у 2025 році</h3>
+                    <p>Дізнайтеся про сучасні дизайни, інтеграції AI та ефективні CTA, які допомагають конвертувати
+                        відвідувачів
+                        у клієнтів.</p>
+                    <a href="pages/blog-landing-trends.html" class="read-more">Читати далі →</a>
+                </article>
+                <article class="blog-card">
+                    <h3>⚡ Як зробити портфоліо, яке продає</h3>
+                    <p>Поради щодо створення резюме та портфоліо, які справді показують ваші навички та привертають
+                        увагу
+                        роботодавців або клієнтів.</p>
+                    <a href="pages/blog-portfolio-tips.html" class="read-more">Читати далі →</a>
+                </article>
+                <article class="blog-card">
+                    <h3>🔥 Топ-5 порад для ефективного резюме</h3>
+                    <p>Від структури до дизайну: як зробити резюме зрозумілим, професійним та помітним серед сотень
+                        інших.
+                    </p>
+                    <a href="pages/blog-resume-tips.html" class="read-more">Читати далі →</a>
+                </article>
+            </div>
+        </section>
+        <!-- Контакти  -->
+        <section id="contact-gift-wrapper">
+            <div class="contact-block">
+                <h2>Контакти</h2>
+                <p>
+                    📧 Email:
+                    <a href="mailto:webstartstudio978@gmail.com">webstartstudio978@gmail.com</a>
+                </p>
+                <p>📱 Telefon: <a href="tel:+380661391932">+38(066) 139 19 32</a></p>
+                <p>
+                    <a href="viber://chat?number=+380661391932" class="viber-button">Написати у Viber</a>
+                </p>
+            </div>
+
+            <div class="gift-block" id="guide-bonus">
+                <h3>🎁 Путівник новачка (бонус+)</h3>
+                <p>
+                    🧑‍🎓 Завантажте наш безкоштовний путівник, щоб дізнатися, як створити
+                    своє перше портфоліо, навіть якщо у вас ще немає досвіду!
+                </p>
+                <a href="documents/WebStart_Portfolio_Guide.docx" download class="btn-primary">Завантажити путівник</a>
+            </div>
+        </section>
+        <!-- Соцмережі -->
+        <section id="social" class="socials">
+            <h3>Ми в соцмережах</h3>
+            <ul class="social-list">
+                <li>
+                    <a href="https://t.me/+IleSiwteF2NlOWVi" target="_blank" class="telegram" rel="noopener noreferrer"
+                        aria-label="Відкрити наш Telegram канал у новому вікні">
+                        Telegram
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://invite.viber.com/?g2=AQB%2FfR4KvKip91SwMbV0bYMLZbEbchx7bj7gNYwkp7xEy3eZ8%2BIvyHL9YpqymDtE"
+                        target="_blank" class="viber" rel="noopener noreferrer"
+                        aria-label="Відкрити нашу Viber спільноту у новому вікні">
+                        Viber
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/profile.php?id=61575866647011" target="_blank" class="facebook"
+                        rel="noopener noreferrer" aria-label="Відвідати нашу сторінку на Facebook у новому вікні">
+                        Facebook
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://chat.whatsapp.com/H5Mz1CTwCwDJAXvyhPKUka" target="_blank" class="whatsapp"
+                        rel="noopener noreferrer" aria-label="Відкрити нашу WhatsApp групу у новому вікні">
+                        WhatsApp
+                    </a>
+                </li>
+
+            </ul>
+            <!-- Підписка на Instagram та TikTok -->
+            <ul class="social-subscribe">
+                <li>
+                    <a href="https://www.instagram.com/freelancer_pit_frontend?igsh=dHJrc3BhcHU5bXp6" target="_blank"
+                        class="instagram-subscribe">Підписатися в Instagram</a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@freelancer_pit_frontend?_t=ZM-8zdhuJlVwCU&_r=1" target="_blank"
+                        class="tiktok-subscribe">Підписатися в TikTok</a>
+                </li>
+            </ul>
+        </section>
+        <!-- Поділитись платформою -->
+        <section class="share-platform">
+            <h3>Розкажіть про нашу платформу у своїх соцмережах</h3>
+            <div class="share-buttons">
+                <button class="share-btn facebook" onclick="share('facebook')">
+                    Facebook
+                </button>
+                <button class="share-btn telegram" onclick="share('telegram')">
+                    Telegram
+                </button>
+                <button class="share-btn messenger" onclick="share('messenger')">
+                    Messenger
+                </button>
+                <button class="share-btn viber" onclick="share('viber')">Viber</button>
+                <button class="share-btn linkedin" onclick="share('linkedin')">
+                    LinkedIn
+                </button>
+            </div>
+        </section>
+
+    </main>
 
     <!-- ======🛠 Категорія: Технічна підтримка та інфраструктура====== -->
     <!-- Вікно допомоги -->
@@ -1563,7 +1763,7 @@
         </div>
     </div>
     <!-- Кнопка допомоги -->
-    <button id="help-button" class="help-button" style="display: none;">
+    <button id="help-button" class="help-button" aria-label="Відкрити вікно допомоги" style="display: none;">
         💬
     </button>
     <!-- Progressive Web App (PWA) -->
@@ -1578,6 +1778,7 @@
             </p>
         </section>
     </a>
+
 
     <!-- ======📎 Завершальні елементи платформи (Footer, Cookies, Аналітика) ====== -->
     <!-- Футер -->
@@ -1610,7 +1811,9 @@
         </nav>
     </footer>
     <!-- Кнопка "Вгору" -->
-    <button id="scrollTopBtn" title="Вгору">⬆</button>
+    <button id="scrollTopBtn" title="Повернутися вгору" aria-label="Прокрутити сторінку вгору">
+        ⬆
+    </button>
     <!-- Cookie Notification Section -->
     <div id="cookie-banner">
 
@@ -1630,7 +1833,7 @@
     </div>
 
     <!-- Соціальне підтвердження -->
-    <div id="social-proof" class="hidden">
+    <div id="social-proof" class="hidden" role="status" aria-live="polite">
         <span id="proof-text"></span>
     </div>
 
