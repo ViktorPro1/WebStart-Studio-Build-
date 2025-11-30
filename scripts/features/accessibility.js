@@ -1,18 +1,24 @@
 // JAVASCRIPT ДЛЯ ПОКРАЩЕННЯ ДОСТУПНОСТІ
 
 
-// 1. Управління aria-expanded для toggle кнопок
+// 1. Управління aria-expanded для toggle кнопок та бургер-меню
 function setupToggleButtons() {
     const burger = document.getElementById('burger');
     const navMenu = document.getElementById('navMenu');
 
     if (burger && navMenu) {
-        burger.addEventListener('click', () => {
-            const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-            burger.setAttribute('aria-expanded', !isExpanded);
-            navMenu.classList.toggle('active');
+        const closeMenu = () => {
+            navMenu.classList.remove('active');
+            burger.classList.remove('active');
+            burger.setAttribute('aria-expanded', 'false');
+        };
 
-            if (!isExpanded) {
+        burger.addEventListener('click', () => {
+            const isActive = navMenu.classList.toggle('active');
+            burger.classList.toggle('active');
+            burger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+
+            if (isActive) {
                 const firstLink = navMenu.querySelector('a');
                 if (firstLink) firstLink.focus();
             }
@@ -24,11 +30,22 @@ function setupToggleButtons() {
                 burger.click();
             }
         });
+
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !burger.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
     }
 
+    // Далі toggle кнопки для інших секцій
     const togglePricing = document.getElementById('togglePricing');
     const pricingTable = document.getElementById('pricingTable');
-
     if (togglePricing && pricingTable) {
         togglePricing.addEventListener('click', () => {
             const isExpanded = togglePricing.getAttribute('aria-expanded') === 'true';
@@ -39,7 +56,6 @@ function setupToggleButtons() {
 
     const toggleHistory = document.getElementById('toggleHistory');
     const historySection = document.getElementById('historySection');
-
     if (toggleHistory && historySection) {
         toggleHistory.addEventListener('click', () => {
             const isExpanded = toggleHistory.getAttribute('aria-expanded') === 'true';
@@ -48,6 +64,7 @@ function setupToggleButtons() {
         });
     }
 }
+
 
 // 2. Управління фокусом в модальних вікнах
 export function trapFocus(element) {
