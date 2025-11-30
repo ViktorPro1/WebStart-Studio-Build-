@@ -737,12 +737,21 @@ nav a:hover {
     z-index: 1100;
     margin-top: 20px;
     cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
 }
 
+/* Прибираємо квадрат при звичайному кліку */
 .burger:focus {
     outline: none;
-    box-shadow: 0 0 0 3px #3498db, 0 0 0 6px rgba(255, 255, 255, 0.9);
-    transition: box-shadow 0.2s ease;
+}
+
+/* Показуємо рамку ТІЛЬКИ при клавіатурній навігації (Tab) */
+.burger:focus-visible {
+    outline: 2px solid #3498db;
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 .burger span {

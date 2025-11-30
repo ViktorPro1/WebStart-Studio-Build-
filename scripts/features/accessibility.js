@@ -1,75 +1,28 @@
 // JAVASCRIPT ДЛЯ ПОКРАЩЕННЯ ДОСТУПНОСТІ
 
 
-// 1. Управління aria-expanded для toggle кнопок та бургер-меню
-// function setupToggleButtons() {
-//     const burger = document.getElementById('burger');
-//     const navMenu = document.getElementById('navMenu');
+// 1. Toggle для інших секцій (pricing, history тощо)
+function setupOtherToggles() {
+    const togglePricing = document.getElementById('togglePricing');
+    const pricingTable = document.getElementById('pricingTable');
+    if (togglePricing && pricingTable) {
+        togglePricing.addEventListener('click', () => {
+            const isExpanded = togglePricing.getAttribute('aria-expanded') === 'true';
+            togglePricing.setAttribute('aria-expanded', !isExpanded);
+            pricingTable.style.display = isExpanded ? 'none' : 'table';
+        });
+    }
 
-//     if (burger && navMenu) {
-//         // Функція закриття меню
-//         const closeMenu = () => {
-//             navMenu.classList.remove('active');
-//             burger.classList.remove('active');
-//             burger.setAttribute('aria-expanded', 'false');
-//         };
-
-//         // Клік по бургеру
-//         burger.addEventListener('click', (e) => {
-//             e.stopPropagation(); // Важливо, щоб document click не закрив меню відразу
-//             const isActive = navMenu.classList.toggle('active');
-//             burger.classList.toggle('active');
-//             burger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-
-//             if (isActive) {
-//                 const firstLink = navMenu.querySelector('a');
-//                 if (firstLink) firstLink.focus();
-//             }
-//         });
-
-//         // Клавіатурне відкриття бургер-меню
-//         burger.addEventListener('keydown', (e) => {
-//             if (e.key === 'Enter' || e.key === ' ') {
-//                 e.preventDefault();
-//                 burger.click();
-//             }
-//         });
-
-//         // Клік поза меню закриває його
-//         document.addEventListener('click', (e) => {
-//             if (!navMenu.contains(e.target) && !burger.contains(e.target)) {
-//                 closeMenu();
-//             }
-//         });
-
-//         // Клік по будь-якому пункту меню закриває меню
-//         const navLinks = navMenu.querySelectorAll('a');
-//         navLinks.forEach(link => {
-//             link.addEventListener('click', closeMenu);
-//         });
-//     }
-
-//     // Toggle для інших секцій (як було)
-//     const togglePricing = document.getElementById('togglePricing');
-//     const pricingTable = document.getElementById('pricingTable');
-//     if (togglePricing && pricingTable) {
-//         togglePricing.addEventListener('click', () => {
-//             const isExpanded = togglePricing.getAttribute('aria-expanded') === 'true';
-//             togglePricing.setAttribute('aria-expanded', !isExpanded);
-//             pricingTable.style.display = isExpanded ? 'none' : 'table';
-//         });
-//     }
-
-//     const toggleHistory = document.getElementById('toggleHistory');
-//     const historySection = document.getElementById('historySection');
-//     if (toggleHistory && historySection) {
-//         toggleHistory.addEventListener('click', () => {
-//             const isExpanded = toggleHistory.getAttribute('aria-expanded') === 'true';
-//             toggleHistory.setAttribute('aria-expanded', !isExpanded);
-//             historySection.style.display = isExpanded ? 'none' : 'block';
-//         });
-//     }
-// }
+    const toggleHistory = document.getElementById('toggleHistory');
+    const historySection = document.getElementById('historySection');
+    if (toggleHistory && historySection) {
+        toggleHistory.addEventListener('click', () => {
+            const isExpanded = toggleHistory.getAttribute('aria-expanded') === 'true';
+            toggleHistory.setAttribute('aria-expanded', !isExpanded);
+            historySection.style.display = isExpanded ? 'none' : 'block';
+        });
+    }
+}
 
 
 
@@ -282,7 +235,7 @@ export function hideLoadingIndicator() {
 
 // 12. Ініціалізація всіх функцій доступності
 export function initAccessibility() {
-    setupToggleButtons();
+    setupOtherToggles(); // ✅ ЗМІНЕНО: викликаємо нову функцію
     setupAccessibleSearch();
     setupAccessibleSliders();
     addAccessibleGalleryDescriptions();
