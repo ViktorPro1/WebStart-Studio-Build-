@@ -1,18 +1,7 @@
 // JAVASCRIPT ДЛЯ ПОКРАЩЕННЯ ДОСТУПНОСТІ
 
-
-// 1. Toggle для інших секцій (pricing, history тощо)
+// 1. Toggle для історії (pricing видалено, щоб уникнути конфлікту)
 function setupOtherToggles() {
-    const togglePricing = document.getElementById('togglePricing');
-    const pricingTable = document.getElementById('pricingTable');
-    if (togglePricing && pricingTable) {
-        togglePricing.addEventListener('click', () => {
-            const isExpanded = togglePricing.getAttribute('aria-expanded') === 'true';
-            togglePricing.setAttribute('aria-expanded', !isExpanded);
-            pricingTable.style.display = isExpanded ? 'none' : 'table';
-        });
-    }
-
     const toggleHistory = document.getElementById('toggleHistory');
     const historySection = document.getElementById('historySection');
     if (toggleHistory && historySection) {
@@ -23,8 +12,6 @@ function setupOtherToggles() {
         });
     }
 }
-
-
 
 // 2. Управління фокусом в модальних вікнах
 export function trapFocus(element) {
@@ -63,50 +50,7 @@ export function announceToScreenReader(message, priority = 'polite') {
     setTimeout(() => document.body.removeChild(announcement), 1000);
 }
 
-// 4. Покращення пошуку з анонсами
-function setupAccessibleSearch() {
-    const searchForm = document.getElementById('simple-search-form');
-    const searchInput = document.getElementById('search-input');
-    const searchFeedback = document.getElementById('search-feedback');
-
-    if (searchForm && searchInput && searchFeedback) {
-        searchForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const query = searchInput.value.trim().toLowerCase();
-
-            if (!query) {
-                searchFeedback.textContent = 'Будь ласка, введіть запит для пошуку';
-                announceToScreenReader('Помилка: порожній запит пошуку', 'assertive');
-                searchInput.focus();
-                return;
-            }
-
-            const sections = document.querySelectorAll('section[id]');
-            let found = false;
-
-            sections.forEach(section => {
-                const text = section.textContent.toLowerCase();
-                if (text.includes(query)) {
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    section.classList.add('highlight-search');
-                    found = true;
-                    const sectionTitle = section.querySelector('h2')?.textContent || 'Секція';
-                    announceToScreenReader(`Знайдено: ${sectionTitle}`, 'polite');
-                    searchFeedback.textContent = `Знайдено: ${sectionTitle}`;
-                    setTimeout(() => section.classList.remove('highlight-search'), 2000);
-                    return;
-                }
-            });
-
-            if (!found) {
-                searchFeedback.textContent = 'Нічого не знайдено';
-                announceToScreenReader('Нічого не знайдено за вашим запитом', 'polite');
-            }
-        });
-    }
-}
-
-// 5. Слайдери
+// 4. Слайдери
 function setupAccessibleSliders() {
     const sliderButtons = document.querySelectorAll('.show-results');
     sliderButtons.forEach(button => {
@@ -122,7 +66,7 @@ function setupAccessibleSliders() {
     });
 }
 
-// 6. Галерея
+// 5. Галереї
 function addAccessibleGalleryDescriptions() {
     const galleryImages = document.querySelectorAll('.gallery-marquee-image');
     galleryImages.forEach((img, index) => {
@@ -135,7 +79,7 @@ function addAccessibleGalleryDescriptions() {
     });
 }
 
-// 7. Клавіатурна навігація слайдерів
+// 6. Клавіатурна навігація слайдерів
 function setupKeyboardNavigation() {
     const sliders = document.querySelectorAll('.slider-wrapper');
     sliders.forEach(slider => {
@@ -161,7 +105,7 @@ function setupKeyboardNavigation() {
     });
 }
 
-// 8. Доступність форм
+// 7. Доступність форм
 function setupAccessibleForms() {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
@@ -178,7 +122,7 @@ function setupAccessibleForms() {
     });
 }
 
-// 9. Динамічний контент
+// 8. Динамічний контент
 function observeDynamicContent() {
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
@@ -195,7 +139,7 @@ function observeDynamicContent() {
     observer.observe(document.body, { childList: true, subtree: true });
 }
 
-// 10. Skip link
+// 9. Skip link
 function setupSkipLinks() {
     const skipLink = document.querySelector('.skip-link');
     if (skipLink) {
@@ -211,7 +155,7 @@ function setupSkipLinks() {
     }
 }
 
-// 11. Loading indicator
+// 10. Loading indicator
 export function showLoadingIndicator(message = 'Завантаження...') {
     const loader = document.createElement('div');
     loader.id = 'loading-indicator';
@@ -233,10 +177,10 @@ export function hideLoadingIndicator() {
     }
 }
 
-// 12. Ініціалізація всіх функцій доступності
+// 11. Ініціалізація всіх функцій доступності
 export function initAccessibility() {
-    setupOtherToggles(); // ✅ ЗМІНЕНО: викликаємо нову функцію
-    setupAccessibleSearch();
+    setupOtherToggles();
+    // setupAccessibleSearch() - ВИДАЛЕНО! Використовується окремий модуль search.js
     setupAccessibleSliders();
     addAccessibleGalleryDescriptions();
     setupKeyboardNavigation();
@@ -248,5 +192,5 @@ export function initAccessibility() {
         announceToScreenReader('Сторінка повністю завантажена', 'polite');
     });
 
-    console.log('✅ Accessibility module initialized');
+    console.log('✅ Accessibility module initialized (without search - handled by search.js)');
 }
