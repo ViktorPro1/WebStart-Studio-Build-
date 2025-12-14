@@ -3,7 +3,7 @@ export function initCountdown() {
     const countdown = document.getElementById("countdown");
     if (!countdown) return;
 
-    const deadline = new Date(2025, 10, 30, 23, 59, 59);
+    const deadline = new Date(2026, 0, 15, 23, 59, 59);
 
     const updateCountdown = () => {
         const diff = deadline - new Date();

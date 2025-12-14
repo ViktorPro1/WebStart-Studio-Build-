@@ -1,5 +1,5 @@
 // 🔥 Автоматичне оновлення - не потрібно нічого міняти вручну
-const CACHE_NAME = `webstart-cache-${self.registration.scope}-v17`; // Змініть версію!
+const CACHE_NAME = `webstart-cache-${self.registration.scope}-v18`; // Змініть версію!
 const urlsToCache = [
     "/",
     "/index.html",
