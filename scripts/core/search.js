@@ -57,7 +57,9 @@ export function initSearch() {
         'кібербезпека': 'security',
         'security': 'security',
         'захист': 'security',
-        'шахрайство': 'security'
+        'шахрайство': 'security',
+        'новації': 'evolution',
+        'еволюція': 'evolution'
     };
 
     searchForm.addEventListener('submit', (e) => {

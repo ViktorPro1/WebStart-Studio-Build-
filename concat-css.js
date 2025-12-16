@@ -49,6 +49,7 @@ const cssFiles = [
     'css/sections/mistakes.css',
     'css/sections/audience.css',
     'css/sections/diy-comparison.css',
+    'css/sections/evolution.css',
 
     // ===== FEATURES =====
     'css/features/pwa.css',

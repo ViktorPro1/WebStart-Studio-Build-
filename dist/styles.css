@@ -5828,6 +5828,152 @@ a.cta-button:hover {
 }
 
 /* ========================================
+   css/sections/evolution.css
+   ======================================== */
+
+.evolution-section {
+    /* прибираємо фон, залишаємо твій глобальний */
+    background: none;
+    padding: 80px 20px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    text-align: center;
+    /* центрування всередині секції */
+}
+
+.evolution-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* вертикальне розташування */
+    align-items: center;
+    /* центрування по горизонталі */
+    gap: 40px;
+}
+
+.evolution-text h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0077ff, #00c6ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+.evolution-text h3 {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.evolution-block {
+    background: rgba(255, 255, 255, 0.9);
+    /* повернуто білий фон, але трохи прозорий */
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.evolution-block:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.evolution-icon {
+    font-size: 1.1rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #0077ff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.evolution-block p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.evolution-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #0077ff, #00c6ff);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.evolution-link:hover {
+    background: linear-gradient(90deg, #005fcc, #0099cc);
+    transform: translateY(-2px);
+}
+
+.evolution-image {
+    display: flex;
+    justify-content: center;
+}
+
+.evolution-image img {
+    max-width: 80%;
+    /* трохи менше для гармонії */
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+}
+
+.evolution-image img:hover {
+    transform: scale(1.05);
+}
+
+.evolution-note {
+    margin-top: 40px;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 4px solid #ff9800;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.evolution-note p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Adaptive */
+@media (max-width: 768px) {
+    .evolution-text h2 {
+        font-size: 2rem;
+    }
+
+    .evolution-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .evolution-image img {
+        max-width: 100%;
+    }
+}
+
+/* ========================================
    css/features/pwa.css
    ======================================== */
 

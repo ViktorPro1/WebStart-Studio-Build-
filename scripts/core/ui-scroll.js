@@ -23,7 +23,8 @@ export function initScroll() {
         'contact-gift-wrapper': 'Контакти',
         'guide-bonus': 'Бонус+',
         'social': 'Соцмережі',
-        'security': 'Кібербезпека'
+        'security': 'Кібербезпека',
+        'evolution': 'Новації та Еволюція'
     };
 
     const sections = document.querySelectorAll('section[id]');
