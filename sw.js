@@ -1,5 +1,5 @@
 // 🔥 Автоматичне оновлення - не потрібно нічого міняти вручну
-const CACHE_NAME = `webstart-cache-${self.registration.scope}-v19`; // Змініть версію!
+const CACHE_NAME = `webstart-cache-${self.registration.scope}-v20`; // Змініть версію!
 const urlsToCache = [
     "/",
     "/index.html",
@@ -40,6 +40,8 @@ const urlsToCache = [
     "/scripts/features/pricing-table-toggle.js",
     "/scripts/features/christmas-effects.js",
     "/scripts/features/accessibility.js",
+    "/scripts/features/migration-notice.js",
+
     // Init modules
     "/scripts/init-modules/analytics.js",
     "/scripts/init-modules/calculator.js",

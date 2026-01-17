@@ -23,6 +23,7 @@ import { initToggleSections } from '../features/toggle-sections.js';
 import { initPricingTableToggle } from '../features/pricing-table-toggle.js';
 import { initChristmasEffects } from '../features/christmas-effects.js';
 import { initAccessibility } from '../features/accessibility.js';
+import { initMigrationNotice } from '../features/migration-notice.js';
 
 // Init-Modules
 import { initAnalytics } from '../init-modules/analytics.js';
@@ -63,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPricingTableToggle();
     initChristmasEffects();
     initAccessibility();
+    initMigrationNotice();
 
     // Init-Modules
     initAnalytics()

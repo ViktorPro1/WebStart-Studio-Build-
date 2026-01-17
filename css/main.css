@@ -60,6 +60,7 @@
 @import url('features/social_proof.css');
 @import url('features/exit_intent.css');
 @import url('features/update_banner.css');
+@import url('features/migration_notice.css');
 
 /* ===== THEMES ===== */
 @import url('themes/dark_mode.css');

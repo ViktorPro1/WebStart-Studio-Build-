@@ -60,6 +60,7 @@ const cssFiles = [
     'css/features/social_proof.css',
     'css/features/exit_intent.css',
     'css/features/update_banner.css',
+    'css/features/migration_notice.css',
 
     // ===== THEMES =====
     'css/themes/dark_mode.css',
